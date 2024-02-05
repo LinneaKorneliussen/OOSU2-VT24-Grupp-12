@@ -8,6 +8,7 @@ using System.Linq;
 namespace PatientUIConsole
 {
     //Grupp 12 Linnea Korneliussen, Beata Jacobsson, Clara Hansson, Celina Linnerblom Persson 
+    //Hejhej
     internal class Program
     {
 
