@@ -9,7 +9,11 @@ namespace PatientUIConsole
 {
     //Grupp 12 Linnea Korneliussen, Beata Jacobsson, Clara Hansson, Celina Linnerblom Persson 
     // hejjddååå
+<<<<<<< HEAD
     // Hej från linnea 
+=======
+    //hejhej
+>>>>>>> BeataJacobsson
     internal class Program
     {
 
