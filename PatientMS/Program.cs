@@ -4,6 +4,7 @@ using PatientEntities;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using PatientDL;
 
 namespace PatientUIConsole
 {
@@ -18,7 +19,16 @@ namespace PatientUIConsole
 
         static void Main(string[] args)
         {
-            new Program().Main();
+            //new Program().Main();
+
+            PatientContext context = new PatientContext();
+
+            context.Database.EnsureDeleted();
+            context.Database.EnsureCreated();
+
+
+            PatientContext.resetSeed(context);
+
         }
         private Program()
         {
@@ -355,7 +365,7 @@ namespace PatientUIConsole
                 Console.WriteLine($"All appointments for patient with personal number {personalNumber}:");
                 foreach (var appointment in appointments)
                 {
-                    Console.WriteLine($"Visit Number: {appointment.VisitNumber}");
+                    Console.WriteLine($"Visit Number: {appointment.AppointmentId}");
                     Console.WriteLine($"DateAndTime and Time: {appointment.DateAndTime.ToString("yyyy-MM-dd HH:mm")}");
                     Console.WriteLine($"Reason for Visit: {appointment.ReasonForVisit}");
                 }
@@ -383,7 +393,7 @@ namespace PatientUIConsole
                 Console.Write("Enter treatmentplan: ");
                 string treatmentplanInfo = Console.ReadLine();
 
-                patientMS.AddDiagnosis(setDiagnos, diagnosisInfo, treatmentplanInfo);
+                //patientMS.AddDiagnosis(setDiagnos, diagnosisInfo, treatmentplanInfo);
             }
         }
         #endregion
@@ -440,7 +450,7 @@ namespace PatientUIConsole
 
             foreach (Appointment a in result)
             {
-                Console.WriteLine("{0,-25} {1,-20} {2,-15} {3,-25} {4,-20} {5,-10}", a.Patient.Name, a.DateAndTime.ToShortDateString(), a.DateAndTime.ToShortTimeString(), a.ReasonForVisit, a.Doctor.StaffName, a.VisitNumber);
+                Console.WriteLine("{0,-25} {1,-20} {2,-15} {3,-25} {4,-20} {5,-10}", a.Patient.Name, a.DateAndTime.ToShortDateString(), a.DateAndTime.ToShortTimeString(), a.ReasonForVisit, a.Doctor.StaffName, a.AppointmentId);
             }
 
 

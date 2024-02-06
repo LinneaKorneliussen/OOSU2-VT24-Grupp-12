@@ -4,41 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.ComponentModel.DataAnnotations;
 
 namespace PatientEntities
 {
     public class Staff
     {
-        public int EmployeeNumber
-        {
-            get; private set;
-        }
+        public int StaffId { get; set; }
+        public string StaffName { get; set; }
+        public string OccupationalRole { get; set; }
+        public string PasswordHash { get; private set; }
+        public string Specialization { get; set; }
+        public ICollection<Appointment> appointments { get; set; }
 
-        public string StaffName
-        {
-            get; private set;
-        }
-        public string OccupationalRole
-        {
-            get; private set;
-        }
-        public string PasswordHash
-        {
-            get; private set;
-        }
-        public string Specialization
-        {
-            get; private set;
-        }
 
-        public Staff(int employeeNumber, string staffName, string occupationalRole, string password, string specialization)
+        public Staff(string staffName, string occupationalRole, string password, string specialization)
         {
-            EmployeeNumber = employeeNumber;
             StaffName = staffName;
             OccupationalRole = occupationalRole;
             Specialization = specialization;
             PasswordHash = HashFunction(password);
         }
+        public Staff() { }
 
         public string GetHashedPassword(string password)
         {

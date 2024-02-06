@@ -8,25 +8,11 @@ namespace PatientEntities
 {
     public class Prescription 
     {
-        public Patient Patient
-        {
-            get;
-        }
-
-        public string MedicineName
-        {
-            get; set;
-        }
-
-        public string Dose
-        {
-            get; set;
-        }
-
-        public DateTime Date
-        {
-            get; set;
-        }
+        public int PrescriptionId { get; set; }
+        public string MedicineName { get; set; }
+        public string Dose { get; set;}
+        public DateTime Date { get; set; }
+        public Patient Patient { get; set; }
 
         public Prescription(Patient patient, string medicineName, string dose, DateTime prescriptionDate)
         {
@@ -35,6 +21,6 @@ namespace PatientEntities
             Dose = dose;
             Date = prescriptionDate;
         }
-
+        public Prescription() { }
     }
 }
