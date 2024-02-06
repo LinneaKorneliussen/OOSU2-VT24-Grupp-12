@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,25 +9,11 @@ namespace PatientEntities
 {
     public class Diagnosis 
     {
-        public Patient Patient
-        {
-            get;
-        }
-
-        public string DiagnosisDescription
-        {
-            get; private set;
-        }
-
-        public DateTime Date
-        {
-            get; private set;
-        }
-
-        public string Treatmentplan
-        {
-            get; private set;
-        }
+        public int DiagnosisId { get; set; }
+        public string DiagnosisDescription { get; set;}
+        public DateTime Date { get;  set; }
+        public string Treatmentplan { get; set;}
+        public Patient Patient { get; set; }
 
         public Diagnosis(Patient patient, string diagnosis, string treatmentplan)
         {
@@ -36,5 +23,6 @@ namespace PatientEntities
             Treatmentplan = treatmentplan;
 
         }
+        public Diagnosis() { }
     }
 }

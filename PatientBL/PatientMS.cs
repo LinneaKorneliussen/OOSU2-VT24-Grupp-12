@@ -20,7 +20,7 @@ namespace PatientBL
         {
             unitOfWork = new UnitOfWork();
 
-            Staff VerifiedUser = unitOfWork.StaffRepository.FirstOrDefault(s => s.EmployeeNumber == Number);
+            Staff VerifiedUser = unitOfWork.StaffRepository.FirstOrDefault(s => s.StaffId == Number);
 
             if (VerifiedUser != null && VerifiedUser.GetHashedPassword(password) == VerifiedUser.PasswordHash)
             {
@@ -37,8 +37,8 @@ namespace PatientBL
         #region Register new patient Method
         public void CreateNewPatient(string name, string personalNumber, string address, string phoneNumber, string emailAddress)
         {
-            Patient patient = new Patient(name, personalNumber, address, phoneNumber, emailAddress);
-            unitOfWork.PatientRepository.Add(patient);
+            ////Patient patient = new Patient(name, personalNumber, address, phoneNumber, emailAddress);
+            //unitOfWork.PatientRepository.Add(patient);
         }
         #endregion
 
@@ -85,7 +85,7 @@ namespace PatientBL
 
                 unitOfWork.AppointmentRepository.Add(appointment);
 
-                Console.WriteLine($"\nAppointment booked for {patient.Name} on {dateAndTime.ToString()} Reason: {reasonForVisit}. Doctor: {selectedDoctor.StaffName} Patientnumber: {patient.PatientNumber}.\n");
+                Console.WriteLine($"\nAppointment booked for {patient.Name} on {dateAndTime.ToString()} Reason: {reasonForVisit}. Doctor: {selectedDoctor.StaffName} Patientnumber: {patient.PatientId}.\n");
             }
             else
             {
@@ -143,25 +143,25 @@ namespace PatientBL
 
         public Appointment GetAppointmentByVisitNumber(int visitNumber)
         {
-            return unitOfWork.AppointmentRepository.FirstOrDefault(appointment => appointment.VisitNumber == visitNumber);
+            return unitOfWork.AppointmentRepository.FirstOrDefault(appointment => appointment.AppointmentId == visitNumber);
         }
         #endregion
 
         #region Add diagnosis Method
-        public void AddDiagnosis(Patient p, string diagnosis, string treatmentplan)
-        {
-            if (p != null)
-            {
-                Diagnosis newdiagnosis = new Diagnosis(p, diagnosis, treatmentplan);
-                unitOfWork.DiagnosisRepository.Add(newdiagnosis);
-                Console.WriteLine($"Diagnosis added successfully for {p.Name}");
-            }
-            else
-            {
-                Console.WriteLine("Patient not found");
-            }
+        //public void AddDiagnosis(Patient p, string diagnosis, string treatmentplan)
+        //{
+        //    if (p != null)
+        //    {
+        //        Diagnosis newdiagnosis = new Diagnosis(p, diagnosis, treatmentplan);
+        //        unitOfWork.DiagnosisRepository.Add(newdiagnosis);
+        //        Console.WriteLine($"Diagnosis added successfully for {p.Name}");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Patient not found");
+        //    }
 
-        }
+        //}
         #endregion
 
         #region Add Prescription Method
