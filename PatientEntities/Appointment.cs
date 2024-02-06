@@ -1,32 +1,15 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace PatientEntities
 {
     public class Appointment 
     {
-        private static int Count = 100;
-
-        public int VisitNumber { get; private set; }
-
-        public Patient Patient
-        {
-            get;
-        }
-
-        public DateTime DateAndTime
-        {
-            get; set;
-        }
-
-        public string ReasonForVisit
-        {
-            get; private set;
-        }
-
-        public Staff Doctor
-        {
-            get;
-        }
+        public int AppointmentId { get; set; }
+        public DateTime DateAndTime { get; set; }
+        public string ReasonForVisit { get; set; }
+        public Staff Doctor {  get; set; }
+        public Patient Patient { get; set; }
 
         public Appointment(Patient patient, DateTime dateAndTime, string reason, Staff doctor)
         {
@@ -34,16 +17,13 @@ namespace PatientEntities
             DateAndTime = dateAndTime;
             ReasonForVisit = reason;
             Doctor = doctor;
-            VisitNumber = ++Count;
-
         }
+
+        public Appointment() { }
 
         public void UpdateDateTime(DateTime newDateTime)
         {
             DateAndTime = newDateTime;
         }
-
-
-
     }
 }
