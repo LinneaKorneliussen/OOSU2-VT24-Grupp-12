@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,13 +10,24 @@ namespace PatientDL
     public class Repository<T>
         where T : class
     {
+        internal PatientContext context;
+        internal DbSet<T> dbSet;
+
+
+        public Repository(PatientContext context)
+        {
+            this.context = context;
+            dbSet = context.Set<T>();
+        }
+
+
         /// <summary>
         /// Add a new entity to the Table.
         /// </summary>
         /// <param name="entity"></param>
         public void Add(T entity)
         {
-            table.Add(entity);
+            dbSet.Add(entity);
         }
         /// <summary>
         /// Remove an entity from the Table.
@@ -33,7 +45,7 @@ namespace PatientDL
         /// <returns></returns>
         public IEnumerable<T> Find(Func<T, bool> predicate)
         {
-            return table.Where(predicate);
+            return dbSet.Where(predicate);
         }
         /// <summary>
         /// Find the first entity that match a predicate.
@@ -42,7 +54,7 @@ namespace PatientDL
         /// <returns></returns>
         public T FirstOrDefault(Func<T, bool> predicate)
         {
-            return table.FirstOrDefault(predicate);
+            return dbSet.FirstOrDefault(predicate);
         }
         /// <summary>
         /// Is this repository empty?
@@ -50,7 +62,7 @@ namespace PatientDL
         /// <returns>true is it is empty, false otherwise.</returns>
         public bool IsEmpty()
         {
-            return table.Count == 0;
+            return !context.Set<T>().Any();
         }
 
         /// <summary>
@@ -61,23 +73,23 @@ namespace PatientDL
 
         public int Count()
         {
-            return table.Count();
+            return dbSet.Count();
         }
 
-        internal Repository()
-        {
-            if (table == null)
-            {
-                table = new List<T>();
-            }
-        }
+        //internal Repository()
+        //{
+        //    if (table == null)
+        //    {
+        //        table = new List<T>();
+        //    }
+        //}
         // This is a bit strange but I don't want multiple lists of the class T.
         // NOTE: This is very bad if you use multiple threads.
         private static IList<T> table;
 
         public IEnumerable<T> GetAll()
         {
-            return table;
+            return dbSet;
         }
 
     }
