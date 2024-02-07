@@ -8,7 +8,7 @@ namespace PatientBL
 {
     public class PatientMS
     {
-        private UnitOfWork unitOfWork;
+        private PatientDL.UnitOfWork unitOfWork;
         public Staff LoggedIn
         {
             get; private set;
@@ -16,11 +16,11 @@ namespace PatientBL
 
 
         #region Log in Method
-        public bool AuthorizeUser(int Number, string password)
+        public bool AuthorizeUser(int staffId, string password)
         {
-            unitOfWork = new UnitOfWork();
+            unitOfWork = new PatientDL.UnitOfWork();
 
-            Staff VerifiedUser = unitOfWork.StaffRepository.FirstOrDefault(s => s.StaffId == Number);
+            Staff VerifiedUser = unitOfWork.StaffRepository.FirstOrDefault(s => s.StaffId == staffId);
 
             if (VerifiedUser != null && VerifiedUser.GetHashedPassword(password) == VerifiedUser.PasswordHash)
             {
@@ -37,8 +37,9 @@ namespace PatientBL
         #region Register new patient Method
         public void CreateNewPatient(string name, string personalNumber, string address, string phoneNumber, string emailAddress)
         {
-            ////Patient patient = new Patient(name, personalNumber, address, phoneNumber, emailAddress);
-            //unitOfWork.PatientRepository.Add(patient);
+            Patient patient = new Patient(name, personalNumber, address, phoneNumber, emailAddress);
+            unitOfWork.PatientRepository.Add(patient);
+            unitOfWork.Save();
         }
         #endregion
 
@@ -84,6 +85,7 @@ namespace PatientBL
                 Appointment appointment = new Appointment(patient, dateAndTime, reasonForVisit, selectedDoctor);
 
                 unitOfWork.AppointmentRepository.Add(appointment);
+                unitOfWork.Save();
 
                 Console.WriteLine($"\nAppointment booked for {patient.Name} on {dateAndTime.ToString()} Reason: {reasonForVisit}. Doctor: {selectedDoctor.StaffName} Patientnumber: {patient.PatientId}.\n");
             }
@@ -91,6 +93,7 @@ namespace PatientBL
             {
                 Console.WriteLine("No doctor selected.");
             }
+
         }
         #endregion
 
@@ -134,6 +137,7 @@ namespace PatientBL
         public void RemoveAppointment(Appointment appointmentToRemove)
         {
             bool evaluated = unitOfWork.AppointmentRepository.Remove(appointmentToRemove);
+            unitOfWork.Save();
 
             if (evaluated == true)
             {
@@ -148,37 +152,22 @@ namespace PatientBL
         #endregion
 
         #region Add diagnosis Method
-        //public void AddDiagnosis(Patient p, string diagnosis, string treatmentplan)
-        //{
-        //    if (p != null)
-        //    {
-        //        Diagnosis newdiagnosis = new Diagnosis(p, diagnosis, treatmentplan);
-        //        unitOfWork.DiagnosisRepository.Add(newdiagnosis);
-        //        Console.WriteLine($"Diagnosis added successfully for {p.Name}");
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Patient not found");
-        //    }
-
-        //}
+        public void AddDiagnosis(Patient p, string diagnosis, string treatmentplan)
+        {
+            Diagnosis newdiagnosis = new Diagnosis(p, diagnosis, treatmentplan);
+            unitOfWork.DiagnosisRepository.Add(newdiagnosis);
+            unitOfWork.Save();
+            Console.WriteLine($"Diagnosis added successfully for {p.Name}");
+        }
         #endregion
 
         #region Add Prescription Method
         public void AddPrescription(Patient p, string medicineName, string dose, DateTime prescriptionDate)
         {
-            if (p != null)
-            {
-                Prescription newPrescription = new Prescription(p, medicineName, dose, prescriptionDate);
-                unitOfWork.PrescriptionRepository.Add(newPrescription);
-                Console.WriteLine($"Prescription added successfully for {p.Name}");
-            }
-            else
-            {
-                Console.WriteLine("Patient not found");
-            }
-
-
+            Prescription newPrescription = new Prescription(p, medicineName, dose, prescriptionDate);
+            unitOfWork.PrescriptionRepository.Add(newPrescription);
+            unitOfWork.Save();
+            Console.WriteLine($"Prescription added successfully for {p.Name}");
         }
         #endregion
 

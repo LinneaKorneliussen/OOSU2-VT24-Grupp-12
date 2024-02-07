@@ -19,15 +19,15 @@ namespace PatientUIConsole
 
         static void Main(string[] args)
         {
-            //new Program().Main();
+            new Program().Main();
 
-            PatientContext context = new PatientContext();
+            //PatientContext context = new PatientContext();
 
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
+            //context.Database.EnsureDeleted();
+            //context.Database.EnsureCreated();
 
 
-            PatientContext.resetSeed(context);
+            //PatientContext.resetSeed(context);
 
         }
         private Program()
@@ -81,12 +81,12 @@ namespace PatientUIConsole
         private bool LogIn()
         {
             Console.Write("Enter Employee Number: ");
-            int EmployeeNumber = Validation.ValidatePositiveIntegerInput(Console.ReadLine());
+            int StaffId = Validation.ValidatePositiveIntegerInput(Console.ReadLine());
 
             Console.Write("Enter your password: ");
             string password = Console.ReadLine();
 
-            return patientMS.AuthorizeUser(EmployeeNumber, password);
+            return patientMS.AuthorizeUser(StaffId, password);
         }
         #endregion
 
@@ -393,7 +393,7 @@ namespace PatientUIConsole
                 Console.Write("Enter treatmentplan: ");
                 string treatmentplanInfo = Console.ReadLine();
 
-                //patientMS.AddDiagnosis(setDiagnos, diagnosisInfo, treatmentplanInfo);
+                patientMS.AddDiagnosis(setDiagnos, diagnosisInfo, treatmentplanInfo);
             }
         }
         #endregion
@@ -416,7 +416,7 @@ namespace PatientUIConsole
                 Console.Write("Enter prescriptiondate (yyyy-MM-DD HH:MM): ");
                 DateTime presciptionDate = Validation.ValidateDateTimeInput(Console.ReadLine());
 
-                patientMS.AddPrescription(setPrescription, doseInfo, medicineName, presciptionDate);
+                patientMS.AddPrescription(setPrescription, medicineName, doseInfo, presciptionDate);
             }
         }
 
