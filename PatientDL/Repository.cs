@@ -20,7 +20,6 @@ namespace PatientDL
             dbSet = context.Set<T>();
         }
 
-
         /// <summary>
         /// Add a new entity to the Table.
         /// </summary>
@@ -36,7 +35,8 @@ namespace PatientDL
         /// <returns>true if removed and false otherwise.</returns>
         public bool Remove(T entity)
         {
-            return table.Remove(entity);
+            dbSet.Remove(entity);
+            return true;    
         }
         /// <summary>
         /// Find a set of entities that match a predicate.
