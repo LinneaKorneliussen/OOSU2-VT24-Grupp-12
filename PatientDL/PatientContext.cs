@@ -21,12 +21,9 @@ namespace PatientDL
 
         public DbSet<Appointment> Appointments { get; set; }
 
-
         public PatientContext()
         {
-            //INSTRUCTION: Run program once and make a login (might "freeze" ~10 sec, just wait), close down, then comment resetSeed()-line below away. Then the database will be presistent onwards 
-
-            resetSeed(); //uncomment to (re)create database & fill/seed example data
+            resetSeed(); 
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -64,11 +61,7 @@ namespace PatientDL
             Appointment a2 = new Appointment(p, new DateTime(2024, 2, 17, 10, 30, 0), "Mera ont", s);
             Appointments.Add(a2);
 
-
             SaveChanges();
-
-
-
 
             //#region Patients
 
@@ -89,8 +82,6 @@ namespace PatientDL
             ////StaffRepository.Add(new Staff(6, "April Kepner", "Doctor", "6", "Trauma"));
             //#endregion
         }
-
-
 
     }
 }

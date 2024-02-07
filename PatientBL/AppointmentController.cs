@@ -1,0 +1,93 @@
+﻿using PatientDL;
+using PatientEntities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PatientBL
+{
+    public class AppointmentController
+    {
+        private UnitOfWork unitOfWork;
+        public AppointmentController()
+        {
+            unitOfWork = UnitOfWork.GetInstance();
+        }
+
+        #region Book appointment Methods
+        public void BookAppointment(Patient patient, DateTime dateAndTime, string reasonForVisit, Staff selectedDoctor)
+        {
+            if (selectedDoctor != null)
+            {
+                Appointment appointment = new Appointment(patient, dateAndTime, reasonForVisit, selectedDoctor);
+
+                unitOfWork.AppointmentRepository.Add(appointment);
+                unitOfWork.Save();
+
+                Console.WriteLine($"\nAppointment booked for {patient.Name} on {dateAndTime.ToString()} Reason: {reasonForVisit}. Doctor: {selectedDoctor.StaffName} Patientnumber: {patient.PatientId}.\n");
+            }
+            else
+            {
+                Console.WriteLine("No doctor selected.");
+            }
+
+        }
+        #endregion
+
+        #region Get patients and doctors Methods
+        public Patient GetPatient(string patientPersonalNumber)
+        {
+            return unitOfWork.PatientRepository.FirstOrDefault(p => p.PersonalNumber == patientPersonalNumber);
+        }
+        public List<Staff> GetAllDoctors()
+        {
+            return unitOfWork.StaffRepository.Find(s => s.OccupationalRole == "Doctor").ToList();
+        }
+        #endregion
+
+        #region Select doctor Method
+        public Staff SelectDoctor(List<Staff> availableDoctors)
+        {
+            if (availableDoctors.Count > 0)
+            {
+                int doctorIndex;
+                do
+                {
+                    Console.Write("Select doctor: ");
+                } while (!int.TryParse(Console.ReadLine(), out doctorIndex) || doctorIndex < 1 || doctorIndex > availableDoctors.Count);
+
+                return availableDoctors[doctorIndex - 1];
+            }
+            else
+            {
+                return null;
+            }
+        }
+        #endregion
+
+        #region Manage existing appointment Methods
+        public IList<Appointment> GetAppointmentListPersonalNumber(string personalnumber)
+        {
+            return unitOfWork.AppointmentRepository.GetAll().Where(appointment => appointment.Patient.PersonalNumber == personalnumber).ToList();
+        }
+
+        public void RemoveAppointment(Appointment appointmentToRemove)
+        {
+            bool evaluated = unitOfWork.AppointmentRepository.Remove(appointmentToRemove);
+            unitOfWork.Save();
+
+            if (evaluated == true)
+            {
+                Console.WriteLine("Appointment removed successfully");
+            }
+        }
+
+        public Appointment GetAppointmentByVisitNumber(int visitNumber)
+        {
+            return unitOfWork.AppointmentRepository.FirstOrDefault(appointment => appointment.AppointmentId == visitNumber);
+        }
+        #endregion
+    }
+}

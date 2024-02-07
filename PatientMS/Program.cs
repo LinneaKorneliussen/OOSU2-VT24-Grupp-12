@@ -9,30 +9,29 @@ using PatientDL;
 namespace PatientUIConsole
 {
     //Grupp 12 Linnea Korneliussen, Beata Jacobsson, Clara Hansson, Celina Linnerblom Persson 
-    // Hej från linnea 
-    //hejhej
     internal class Program
     {
+        private LoginController loginController;
+        private PatientController patientController;
+        private AppointmentController appointmentController;
+        private DiagnosisController diagnosisController;
+        private PrescriptionController prescriptionController;
+        private JournalController journalController;
 
-        private PatientMS patientMS;
         private bool isLoggedIn = false;
 
         static void Main(string[] args)
         {
             new Program().Main();
-
-            //PatientContext context = new PatientContext();
-
-            //context.Database.EnsureDeleted();
-            //context.Database.EnsureCreated();
-
-
-            //PatientContext.resetSeed(context);
-
         }
         private Program()
         {
-            patientMS = new PatientMS();
+            loginController = new LoginController();
+            patientController = new PatientController();
+            appointmentController = new AppointmentController();
+            diagnosisController = new DiagnosisController();
+            prescriptionController = new PrescriptionController();
+            journalController = new JournalController();
         }
 
         #region Main log in Method
@@ -51,7 +50,7 @@ namespace PatientUIConsole
                     {
                         if (LogIn())
                         {
-                            Console.WriteLine($"\nYou are logged in as Caregiver: {patientMS.LoggedIn.OccupationalRole} {patientMS.LoggedIn.StaffName}\n");
+                            Console.WriteLine($"\nYou are logged in as Caregiver: {loginController.LoggedIn.OccupationalRole} {loginController.LoggedIn.StaffName}\n");
                             isLoggedIn = true;
                         }
                         else
@@ -86,7 +85,7 @@ namespace PatientUIConsole
             Console.Write("Enter your password: ");
             string password = Console.ReadLine();
 
-            return patientMS.AuthorizeUser(StaffId, password);
+            return loginController.AuthorizeUser(StaffId, password);
         }
         #endregion
 
@@ -171,7 +170,7 @@ namespace PatientUIConsole
             Console.Write($"Emailaddress: ");
             EmailAddress = Console.ReadLine();
 
-            patientMS.CreateNewPatient(Name, PersonalNumber, Address, Phonenumber, EmailAddress);
+            patientController.CreateNewPatient(Name, PersonalNumber, Address, Phonenumber, EmailAddress);
         }
         #endregion
 
@@ -213,7 +212,7 @@ namespace PatientUIConsole
                 Console.Write($"Provide new value for option {choice}: ");
                 string newValue = Console.ReadLine();
 
-                patientMS.UpdatePatientInfo(patientToUpdate, choice, newValue);
+                patientController.UpdatePatientInfo(patientToUpdate, choice, newValue);
             }
         }
 
@@ -237,14 +236,14 @@ namespace PatientUIConsole
                 Console.Write("Enter reason for visit: ");
                 string reasonForVisit = Console.ReadLine();
 
-                List<Staff> availableDoctors = patientMS.GetAllDoctors();
+                List<Staff> availableDoctors = appointmentController.GetAllDoctors();
                 DisplayAvailableDoctors(availableDoctors);
 
                 if (availableDoctors.Count > 0)
                 {
-                    Staff selectedDoctor = patientMS.SelectDoctor(availableDoctors);
+                    Staff selectedDoctor = appointmentController.SelectDoctor(availableDoctors);
 
-                    patientMS.BookAppointment(patient, dateAndTime, reasonForVisit, selectedDoctor);
+                    appointmentController.BookAppointment(patient, dateAndTime, reasonForVisit, selectedDoctor);
                 }
                 else
                 {
@@ -306,7 +305,7 @@ namespace PatientUIConsole
                             Console.Write("Enter visit number for the appointment to update: ");
                             int visitNumber = Validation.ValidatePositiveIntegerInput(Console.ReadLine());
 
-                            Appointment appointmentToUpdate = patientMS.GetAppointmentByVisitNumber(visitNumber);
+                            Appointment appointmentToUpdate = appointmentController.GetAppointmentByVisitNumber(visitNumber);
 
                             if (appointmentToUpdate != null)
                             {
@@ -344,11 +343,11 @@ namespace PatientUIConsole
 
         public void RemoveAppointment(int visitNumber)
         {
-            Appointment appointmentToRemove = patientMS.GetAppointmentByVisitNumber(visitNumber);
+            Appointment appointmentToRemove = appointmentController.GetAppointmentByVisitNumber(visitNumber);
 
             if (appointmentToRemove != null)
             {
-                patientMS.RemoveAppointment(appointmentToRemove);
+                appointmentController.RemoveAppointment(appointmentToRemove);
             }
             else
             {
@@ -358,7 +357,7 @@ namespace PatientUIConsole
 
         public void ShowAllAppointments(string personalNumber)
         {
-            IList<Appointment> appointments = patientMS.GetAppointmentListPersonalNumber(personalNumber);
+            IList<Appointment> appointments = appointmentController.GetAppointmentListPersonalNumber(personalNumber);
 
             if (appointments.Any())
             {
@@ -393,7 +392,7 @@ namespace PatientUIConsole
                 Console.Write("Enter treatmentplan: ");
                 string treatmentplanInfo = Console.ReadLine();
 
-                patientMS.AddDiagnosis(setDiagnos, diagnosisInfo, treatmentplanInfo);
+                diagnosisController.AddDiagnosis(setDiagnos, diagnosisInfo, treatmentplanInfo);
             }
         }
         #endregion
@@ -416,7 +415,7 @@ namespace PatientUIConsole
                 Console.Write("Enter prescriptiondate (yyyy-MM-DD HH:MM): ");
                 DateTime presciptionDate = Validation.ValidateDateTimeInput(Console.ReadLine());
 
-                patientMS.AddPrescription(setPrescription, medicineName, doseInfo, presciptionDate);
+                prescriptionController.AddPrescription(setPrescription, medicineName, doseInfo, presciptionDate);
             }
         }
 
@@ -431,7 +430,7 @@ namespace PatientUIConsole
         public void DisplayFutureAppointments()
         {
             Patient patient = GetPatientByPersonalNumber();
-            IList<Appointment> FutureAppointments = patientMS.GetAppointmentList();
+            IList<Appointment> FutureAppointments = journalController.GetAppointmentList();
             var result = from x in FutureAppointments
                          where x.Patient.PersonalNumber.Equals(patient.PersonalNumber) &&
                          x.DateAndTime > DateTime.Now.Date
@@ -473,7 +472,7 @@ namespace PatientUIConsole
                 patientPersonalNumber = Console.ReadLine();
             } while (!Validation.ValidatePersonalNumber(patientPersonalNumber));
 
-            Patient patient = patientMS.GetPatient(patientPersonalNumber);
+            Patient patient = appointmentController.GetPatient(patientPersonalNumber);
 
             if (patient == null)
             {
