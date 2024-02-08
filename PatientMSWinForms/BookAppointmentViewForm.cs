@@ -1,8 +1,11 @@
-﻿using System;
+﻿using PatientBL;
+using PatientEntities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +15,92 @@ namespace PatientMSWinForms
 {
     public partial class BookAppointmentViewForm : Form
     {
+        private AppointmentController appointmentController;
+        private Patient patient;
+        private List<Staff> allDoctors;
+        private DateTime appointmentDateTime;
         public BookAppointmentViewForm()
         {
             InitializeComponent();
+            appointmentController  = new AppointmentController();
+            txtPersonalnumber.ForeColor = Color.Gray;
+            txtDateTime.ForeColor = Color.Gray;
         }
+
+        #region Appointment clicks
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string patientPersonalNumber = txtPersonalnumber.Text;
+
+            patient = appointmentController.GetPatient(patientPersonalNumber);
+
+            if (patient != null)
+            {
+                lblSearchInfo.Text = $"Patient found: {patient.Name}";
+            }
+            else
+            {
+                MessageBox.Show($"Patient with personal number {patientPersonalNumber} not found.\nPlease try again!");
+                lblSearchInfo.Text = $"Patient with personal number {patientPersonalNumber} not found.";
+                listBox_Doctor.Items.Clear();
+            }
+        }
+        private void btnFindDoctor_Click(object sender, EventArgs e)
+        {
+            if (patient != null)
+            {
+                string inputDateTime = txtDateTime.Text;
+
+                if (!DateTime.TryParseExact(inputDateTime, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out appointmentDateTime))
+                {
+                    MessageBox.Show("Invalid date and time format. \nPlease enter the date and time in the format yyyy-mm-dd hh:mm.");
+                    return;
+                }
+
+                allDoctors = appointmentController.GetAllAvailableDoctors(appointmentDateTime);
+                DisplayAvailableDoctors(allDoctors);
+                lblDoctorNumber.Text = $"Number of doctors: {allDoctors.Count}";
+            }
+        }
+        private void btnBookAppointment_Click(object sender, EventArgs e)
+        {
+            if (listBox_Doctor.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a doctor from the list.");
+                return;
+            }
+            Staff selectedDoctor = allDoctors[listBox_Doctor.SelectedIndex];
+            string reasonForVisit = txtReason.Text;
+
+            appointmentController.BookAppointment(patient, appointmentDateTime, reasonForVisit, selectedDoctor);
+            MessageBox.Show("Appointment successfully booked.");
+            this.Close();
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtDateTime.Clear();
+            txtReason.Clear();
+            listBox_Doctor.Items.Clear();
+        }
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
+        #region Appointment Methods
+        private void DisplayAvailableDoctors(List<Staff> availableDoctors)
+        {
+            listBox_Doctor.Items.Clear();
+
+            for (int i = 0; i < availableDoctors.Count; i++)
+            {
+                string doctorInfo = $"{i + 1,-40} {availableDoctors[i].OccupationalRole,-40}" +
+                                    $" {availableDoctors[i].StaffName,-40} {availableDoctors[i].Specialization,-40}";
+                listBox_Doctor.Items.Add(doctorInfo);
+            }
+
+        }
+        #endregion
     }
 }
