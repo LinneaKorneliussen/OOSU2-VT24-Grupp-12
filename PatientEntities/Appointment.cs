@@ -21,9 +21,6 @@ namespace PatientEntities
 
         public Appointment() { }
 
-        public void UpdateDateTime(DateTime newDateTime)
-        {
-            DateAndTime = newDateTime;
-        }
+       
     }
 }
