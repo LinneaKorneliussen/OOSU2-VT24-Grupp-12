@@ -7,6 +7,8 @@ namespace PatientEntities
     {
         public int AppointmentId { get; set; }
         public DateTime DateAndTime { get; set; }
+        public TimeSpan Duration { get; } = TimeSpan.FromMinutes(45);
+        public DateTime EndDateTime => DateAndTime.Add(Duration); 
         public string ReasonForVisit { get; set; }
         public Staff Doctor {  get; set; }
         public Patient Patient { get; set; }
@@ -20,7 +22,5 @@ namespace PatientEntities
         }
 
         public Appointment() { }
-
-       
     }
 }

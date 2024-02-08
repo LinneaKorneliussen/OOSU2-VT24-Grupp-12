@@ -26,14 +26,7 @@ namespace PatientBL
 
                 unitOfWork.AppointmentRepository.Add(appointment);
                 unitOfWork.Save();
-
-                Console.WriteLine($"\nAppointment booked for {patient.Name} on {dateAndTime.ToString()} Reason: {reasonForVisit}. Doctor: {selectedDoctor.StaffName} Patientnumber: {patient.PatientId}.\n");
             }
-            else
-            {
-                Console.WriteLine("No doctor selected.");
-            }
-
         }
         #endregion
 
@@ -48,37 +41,17 @@ namespace PatientBL
         }
         public List<Appointment> GetAppointmentsForDateTime(DateTime appointmentDateTime)
         {
-            return unitOfWork.AppointmentRepository.Find(a => a.DateAndTime == appointmentDateTime).ToList();
+            return unitOfWork.AppointmentRepository.Find(a => (a.DateAndTime >= appointmentDateTime && a.DateAndTime < a.EndDateTime) ||
+            (a.EndDateTime > appointmentDateTime && a.DateAndTime < appointmentDateTime)).ToList();
         }
         public List<Staff> GetAllAvailableDoctors(DateTime appointmentDateTime)
         {
-            List<Staff> allDoctors = unitOfWork.StaffRepository.Find(s => s.OccupationalRole == "Doctor").ToList();
+            List<Staff> allDoctors = GetAllDoctors();
             List<Appointment> appointments = GetAppointmentsForDateTime(appointmentDateTime);
-            List<Staff> availableDoctors = allDoctors.Where(doctor =>
-                !appointments.Any(appointment => appointment.Doctor.StaffId == doctor.StaffId)
-            ).ToList();
+
+            List<Staff> availableDoctors = allDoctors.Where(doctor => !appointments.Any(appointment => appointment.Doctor.StaffId == doctor.StaffId)).ToList();
 
             return availableDoctors;
-        }
-        #endregion
-
-        #region Select doctor Method
-        public Staff SelectDoctor(List<Staff> availableDoctors)
-        {
-            if (availableDoctors.Count > 0)
-            {
-                int doctorIndex;
-                do
-                {
-                    Console.Write("Select doctor: ");
-                } while (!int.TryParse(Console.ReadLine(), out doctorIndex) || doctorIndex < 1 || doctorIndex > availableDoctors.Count);
-
-                return availableDoctors[doctorIndex - 1];
-            }
-            else
-            {
-                return null;
-            }
         }
         #endregion
 
@@ -92,14 +65,11 @@ namespace PatientBL
         {
             unitOfWork.AppointmentRepository.Remove(appointmentToRemove);
             unitOfWork.Save();
-
         }
-
         public Appointment GetAppointmentByVisitNumber(int visitNumber)
         {
             return unitOfWork.AppointmentRepository.FirstOrDefault(appointment => appointment.AppointmentId == visitNumber);
         }
-
         public void UpdateDateTime(DateTime newDateTime, Appointment appointment)
         {
             appointment.DateAndTime = newDateTime;
