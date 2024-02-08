@@ -17,6 +17,13 @@ namespace PatientBL
             unitOfWork = UnitOfWork.GetInstance();
         }
 
+        #region Get patient method
+        public Patient GetPatient(string patientPersonalNumber)
+        {
+            return unitOfWork.PatientRepository.FirstOrDefault(p => p.PersonalNumber == patientPersonalNumber);
+        }
+        #endregion
+
         #region Register new patient Method
         public void CreateNewPatient(string name, string personalNumber, string address, string phoneNumber, string emailAddress)
         {
@@ -33,29 +40,30 @@ namespace PatientBL
             {
                 switch (choice)
                 {
-                    case 1:
+                    case 0:
                         patientToUpdate.Name = newValue;
+                        unitOfWork.Save();
+                        break;
+                    case 1:
+                        patientToUpdate.Address = newValue;
+                        unitOfWork.Save();
                         break;
                     case 2:
-                        patientToUpdate.Address = newValue;
+                        patientToUpdate.Phonenumber = newValue;
+                        unitOfWork.Save();
                         break;
                     case 3:
-                        patientToUpdate.Phonenumber = newValue;
-                        break;
-                    case 4:
                         patientToUpdate.EmailAddress = newValue;
+                        unitOfWork.Save();
                         break;
+
                     default:
-                        Console.WriteLine("Incorrect option, please try again!");
-                        return;
+                    break;
+                
                 }
 
-                Console.WriteLine($"{patientToUpdate.Name}'s information updated!");
             }
-            else
-            {
-                Console.WriteLine($"Patient with personal number {patientToUpdate} not found.");
-            }
+         
         }
 
         #endregion
