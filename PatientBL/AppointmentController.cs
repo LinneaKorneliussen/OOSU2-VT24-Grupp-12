@@ -1,4 +1,5 @@
-﻿using PatientDL;
+﻿using Microsoft.VisualBasic;
+using PatientDL;
 using PatientEntities;
 using System;
 using System.Collections.Generic;
@@ -68,25 +69,27 @@ namespace PatientBL
         #endregion
 
         #region Manage existing appointment Methods
-        public IList<Appointment> GetAppointmentListPersonalNumber(string personalnumber)
+        public List<Appointment> GetAppointmentListPersonalNumber(string personalnumber)
         {
             return unitOfWork.AppointmentRepository.GetAll().Where(appointment => appointment.Patient.PersonalNumber == personalnumber).ToList();
         }
 
         public void RemoveAppointment(Appointment appointmentToRemove)
         {
-            bool evaluated = unitOfWork.AppointmentRepository.Remove(appointmentToRemove);
+            unitOfWork.AppointmentRepository.Remove(appointmentToRemove);
             unitOfWork.Save();
 
-            if (evaluated == true)
-            {
-                Console.WriteLine("Appointment removed successfully");
-            }
         }
 
         public Appointment GetAppointmentByVisitNumber(int visitNumber)
         {
             return unitOfWork.AppointmentRepository.FirstOrDefault(appointment => appointment.AppointmentId == visitNumber);
+        }
+
+        public void UpdateDateTime(DateTime newDateTime, Appointment appointment)
+        {
+            appointment.DateAndTime = newDateTime;
+            unitOfWork.Save();
         }
         #endregion
     }
