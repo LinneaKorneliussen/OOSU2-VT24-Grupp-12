@@ -117,7 +117,7 @@ namespace PatientUIConsole
                     UpdatePatientInfo();
                     break;
                 case 3:
-                    BookNewAppointment();
+ 
                     break;
                 case 4:
                     ManageAppointments();
@@ -217,45 +217,6 @@ namespace PatientUIConsole
 
         #endregion
 
-        #region Book new appointment Method
-        /// <summary>
-        ///  Get patient through personal number
-        ///  Validation of date time input
-        ///  Get and select doctor methods from business layer
-        /// </summary>
-        private void BookNewAppointment()
-        {
-            Patient patient = GetPatientByPersonalNumber();
-
-            if (patient != null)
-            {
-                Console.Write("Enter appointment date (yyyy-MM-dd 00:00): ");
-                DateTime dateAndTime = Validation.ValidateDateTimeInput(Console.ReadLine());
-
-                Console.Write("Enter reason for visit: ");
-                string reasonForVisit = Console.ReadLine();
-
-                List<Staff> availableDoctors = appointmentController.GetAllDoctors();
-                DisplayAvailableDoctors(availableDoctors);
-
-                if (availableDoctors.Count > 0)
-                {
-                    Staff selectedDoctor = appointmentController.SelectDoctor(availableDoctors);
-
-                    appointmentController.BookAppointment(patient, dateAndTime, reasonForVisit, selectedDoctor);
-                }
-                else
-                {
-                    Console.WriteLine("No available doctors.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Appointment booking canceled.\n");
-            }
-        }
-        #endregion
-
         #region Display available doctors Method
         /// <summary>
         /// Get available doctors and displays
@@ -311,7 +272,7 @@ namespace PatientUIConsole
                                 Console.Write("Enter new date and time (yyyy-MM-dd HH:mm): ");
                                 DateTime newDateTime = Validation.ValidateDateTimeInput(Console.ReadLine());
 
-                                appointmentToUpdate.UpdateDateTime(newDateTime);
+                                //appointmentToUpdate.UpdateDateTime(newDateTime);
                                 Console.WriteLine("Appointment date and time updated!");
                             }
                             else

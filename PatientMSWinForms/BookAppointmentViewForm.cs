@@ -56,6 +56,11 @@ namespace PatientMSWinForms
                     MessageBox.Show("Invalid date and time format. \nPlease enter the date and time in the format yyyy-mm-dd hh:mm.");
                     return;
                 }
+                if (appointmentDateTime.Date < DateTime.Today)
+                {
+                    MessageBox.Show("You cannot book appointments for past dates.");
+                    return;
+                }
 
                 allDoctors = appointmentController.GetAllAvailableDoctors(appointmentDateTime);
                 DisplayAvailableDoctors(allDoctors);
