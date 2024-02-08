@@ -21,46 +21,6 @@ namespace PatientMSWinForms
             patientController = new PatientController();    
         }
 
-        //#region Display expected Value 
-        //private void SetPlaceHolderText(object sender, string placeholder) 
-        //{
-        //    TextBox textBox = sender as TextBox;    
-        //    if (textBox != null) 
-        //    {
-        //        textBox.Text = placeholder;
-        //        textBox.ForeColor = Color.Gray; 
-        //    }
-        //}
-
-        //private void TextBox_Enter(object sender, EventArgs e) 
-        //{ 
-        //    TextBox textBox = sender as TextBox;    
-        //    if (textBox != null)
-        //    {
-        //        if (textBox.Text == "yyyy-mm-dd-xxxx" || textBox.Text == "First Name and Last Name")
-        //        {
-        //            textBox.Text = "";
-        //            txtSSN.ForeColor = Color.Black;
-        //        }
-        //    }
-        //}
-
-        //private void TextBox_Leave(object sender, EventArgs e) 
-        //{
-        //    TextBox textBox = sender as TextBox;
-        //    if (textBox != null)
-        //    {
-        //        if (string.IsNullOrWhiteSpace(textBox.Text))
-        //        {
-        //            if (textBox == txtSSN)
-        //                SetPlaceHolderText(sender, "yyyy-mm-dd-xxxx");
-        //            else if (textBox == txtName)
-        //                SetPlaceHolderText(sender, "First Name and Last Name"); 
-        //        }
-        //    }
-        //}
-        //#endregion
-
         #region Register new patient clicks
         private void btnRegister_Click(object sender, EventArgs e)
         {
