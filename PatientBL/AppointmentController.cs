@@ -45,6 +45,20 @@ namespace PatientBL
         {
             return unitOfWork.StaffRepository.Find(s => s.OccupationalRole == "Doctor").ToList();
         }
+        public List<Appointment> GetAppointmentsForDateTime(DateTime appointmentDateTime)
+        {
+            return unitOfWork.AppointmentRepository.Find(a => a.DateAndTime == appointmentDateTime).ToList();
+        }
+        public List<Staff> GetAllAvailableDoctors(DateTime appointmentDateTime)
+        {
+            List<Staff> allDoctors = unitOfWork.StaffRepository.Find(s => s.OccupationalRole == "Doctor").ToList();
+            List<Appointment> appointments = GetAppointmentsForDateTime(appointmentDateTime);
+            List<Staff> availableDoctors = allDoctors.Where(doctor =>
+                !appointments.Any(appointment => appointment.Doctor.StaffId == doctor.StaffId)
+            ).ToList();
+
+            return availableDoctors;
+        }
         #endregion
 
         #region Select doctor Method
