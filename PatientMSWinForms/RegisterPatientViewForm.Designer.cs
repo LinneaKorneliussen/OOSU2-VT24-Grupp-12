@@ -42,6 +42,8 @@
             txtSSN = new System.Windows.Forms.TextBox();
             txtAddress = new System.Windows.Forms.TextBox();
             txtPhone = new System.Windows.Forms.TextBox();
+            panel1 = new System.Windows.Forms.Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblHeadline
@@ -49,7 +51,7 @@
             lblHeadline.AutoSize = true;
             lblHeadline.BackColor = System.Drawing.Color.Transparent;
             lblHeadline.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblHeadline.Location = new System.Drawing.Point(308, 54);
+            lblHeadline.Location = new System.Drawing.Point(296, 24);
             lblHeadline.Name = "lblHeadline";
             lblHeadline.Size = new System.Drawing.Size(230, 25);
             lblHeadline.TabIndex = 1;
@@ -66,7 +68,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label2.Location = new System.Drawing.Point(131, 125);
+            label2.Location = new System.Drawing.Point(131, 130);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(111, 20);
             label2.TabIndex = 8;
@@ -76,7 +78,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label3.Location = new System.Drawing.Point(451, 125);
+            label3.Location = new System.Drawing.Point(451, 130);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(188, 20);
             label3.TabIndex = 9;
@@ -114,51 +116,56 @@
             // 
             // btnRegister
             // 
+            btnRegister.BackColor = System.Drawing.Color.White;
             btnRegister.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnRegister.Location = new System.Drawing.Point(670, 436);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new System.Drawing.Size(128, 33);
             btnRegister.TabIndex = 13;
             btnRegister.Text = "Register";
-            btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
             // 
             // btnClose
             // 
+            btnClose.BackColor = System.Drawing.Color.White;
             btnClose.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnClose.Location = new System.Drawing.Point(37, 436);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(128, 33);
             btnClose.TabIndex = 14;
             btnClose.Text = "Close";
-            btnClose.UseVisualStyleBackColor = true;
+            btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 
             // btnClear
             // 
+            btnClear.BackColor = System.Drawing.Color.White;
             btnClear.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnClear.Location = new System.Drawing.Point(354, 436);
             btnClear.Name = "btnClear";
             btnClear.Size = new System.Drawing.Size(128, 33);
             btnClear.TabIndex = 15;
             btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
+            btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += btnClear_Click;
             // 
             // txtName
             // 
-            txtName.Location = new System.Drawing.Point(136, 148);
+            txtName.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtName.Location = new System.Drawing.Point(136, 153);
             txtName.Name = "txtName";
             txtName.PlaceholderText = "First Name and Last Name";
-            txtName.Size = new System.Drawing.Size(271, 31);
+            txtName.Size = new System.Drawing.Size(271, 30);
             txtName.TabIndex = 16;
             // 
             // txtSSN
             // 
-            txtSSN.Location = new System.Drawing.Point(451, 148);
+            txtSSN.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtSSN.Location = new System.Drawing.Point(451, 153);
             txtSSN.Name = "txtSSN";
             txtSSN.PlaceholderText = "yyyy-mm-dd-xxxx";
-            txtSSN.Size = new System.Drawing.Size(257, 31);
+            txtSSN.Size = new System.Drawing.Size(257, 30);
             txtSSN.TabIndex = 17;
             // 
             // txtAddress
@@ -175,11 +182,22 @@
             txtPhone.Size = new System.Drawing.Size(257, 31);
             txtPhone.TabIndex = 19;
             // 
+            // panel1
+            // 
+            panel1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            panel1.Controls.Add(lblHeadline);
+            panel1.Location = new System.Drawing.Point(-1, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(837, 69);
+            panel1.TabIndex = 20;
+            // 
             // RegisterPatientViewForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.Ivory;
             ClientSize = new System.Drawing.Size(836, 511);
+            Controls.Add(panel1);
             Controls.Add(txtPhone);
             Controls.Add(txtAddress);
             Controls.Add(txtSSN);
@@ -193,9 +211,10 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(txtMail);
-            Controls.Add(lblHeadline);
             Name = "RegisterPatientViewForm";
             Text = "Registrer new patient";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -220,5 +239,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtSSN;
         private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Panel panel1;
     }
 }
