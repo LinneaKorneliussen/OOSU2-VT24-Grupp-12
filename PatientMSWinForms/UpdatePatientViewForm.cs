@@ -63,7 +63,7 @@ namespace PatientMSWinForms
             }
             else
             {
-                MessageBox.Show("Please select a patient from the list before updating.");
+                MessageBox.Show("Please select an option from the list before updating.");
             }
 
         }

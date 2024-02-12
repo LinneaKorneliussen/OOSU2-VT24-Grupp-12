@@ -7,10 +7,13 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace PatientMSWinForms
 {
@@ -76,13 +79,18 @@ namespace PatientMSWinForms
         }
         private void btnBookAppointment_Click(object sender, EventArgs e)
         {
+            string reasonForVisit = txtReason.Text;
             if (listBox_Doctor.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a doctor from the list.");
                 return;
             }
+            if (string.IsNullOrWhiteSpace(reasonForVisit))
+            {
+                MessageBox.Show("Please make sure all fields contain information before proceeding", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             Staff selectedDoctor = allDoctors[listBox_Doctor.SelectedIndex];
-            string reasonForVisit = txtReason.Text;
 
             appointmentController.BookAppointment(patient, appointmentDateTime, reasonForVisit, selectedDoctor);
             MessageBox.Show("Appointment successfully booked.");
@@ -105,18 +113,9 @@ namespace PatientMSWinForms
         {
             listBox_Doctor.Items.Clear();
 
-            //for (int i = 0; i < availableDoctors.Count; i++)
-            //{
-            //    string doctorInfo = $"{i + 1,-40} {availableDoctors[i].OccupationalRole,-40}" +
-            //                        $" {availableDoctors[i].StaffName,-40} {availableDoctors[i].Specialization,-40}";
-            //    listBox_Doctor.Items.Add(doctorInfo);
-            //}
-
-            listBox_Doctor.Items.Clear();
-
             for (int i = 0; i < availableDoctors.Count; i++)
             {
-                string appointmentInfo = $"Staffnumber: {availableDoctors[i].StaffId,-10} Occupational Role: {availableDoctors[i].OccupationalRole,-15}  Name: {availableDoctors[i].StaffName,-20}  Specialization: {availableDoctors[i].Specialization}";
+                string appointmentInfo = $"Staffnumber: {availableDoctors[i].StaffId,-10} Occupational Role: {availableDoctors[i].OccupationalRole,-25} Name: {availableDoctors[i].StaffName,-35} Specialization: {availableDoctors[i].Specialization,-10}";
                 listBox_Doctor.Items.Add(appointmentInfo);
             }
 
