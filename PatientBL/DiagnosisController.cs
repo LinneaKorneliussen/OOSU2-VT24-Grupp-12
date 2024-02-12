@@ -22,7 +22,6 @@ namespace PatientBL
             Diagnosis newdiagnosis = new Diagnosis(p, diagnosis, treatmentplan);
             unitOfWork.DiagnosisRepository.Add(newdiagnosis);
             unitOfWork.Save();
-            Console.WriteLine($"Diagnosis added successfully for {p.Name}");
         }
         #endregion
     }

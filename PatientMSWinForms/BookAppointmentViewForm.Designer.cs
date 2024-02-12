@@ -52,7 +52,7 @@
             lblBookappointment.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lblBookappointment.Location = new System.Drawing.Point(23, 18);
             lblBookappointment.Name = "lblBookappointment";
-            lblBookappointment.Size = new System.Drawing.Size(248, 36);
+            lblBookappointment.Size = new System.Drawing.Size(217, 31);
             lblBookappointment.TabIndex = 0;
             lblBookappointment.Text = "Book appointment";
             // 
@@ -62,7 +62,7 @@
             lblFindPatient.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lblFindPatient.Location = new System.Drawing.Point(61, 82);
             lblFindPatient.Name = "lblFindPatient";
-            lblFindPatient.Size = new System.Drawing.Size(235, 20);
+            lblFindPatient.Size = new System.Drawing.Size(191, 17);
             lblFindPatient.TabIndex = 1;
             lblFindPatient.Text = "Enter patient personalnumber:  ";
             // 
@@ -72,7 +72,7 @@
             txtPersonalnumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             txtPersonalnumber.Name = "txtPersonalnumber";
             txtPersonalnumber.PlaceholderText = "yyyy-mm-dd-xxxx";
-            txtPersonalnumber.Size = new System.Drawing.Size(369, 28);
+            txtPersonalnumber.Size = new System.Drawing.Size(369, 25);
             txtPersonalnumber.TabIndex = 2;
             // 
             // btnSearch
@@ -93,7 +93,7 @@
             lblSearchInfo.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lblSearchInfo.Location = new System.Drawing.Point(61, 122);
             lblSearchInfo.Name = "lblSearchInfo";
-            lblSearchInfo.Size = new System.Drawing.Size(0, 20);
+            lblSearchInfo.Size = new System.Drawing.Size(0, 17);
             lblSearchInfo.TabIndex = 4;
             // 
             // lblDateTime
@@ -101,7 +101,7 @@
             lblDateTime.AutoSize = true;
             lblDateTime.Location = new System.Drawing.Point(61, 172);
             lblDateTime.Name = "lblDateTime";
-            lblDateTime.Size = new System.Drawing.Size(181, 20);
+            lblDateTime.Size = new System.Drawing.Size(147, 17);
             lblDateTime.TabIndex = 6;
             lblDateTime.Text = "Enter appointment date:";
             // 
@@ -110,7 +110,7 @@
             label1.AutoSize = true;
             label1.Location = new System.Drawing.Point(58, 437);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(164, 20);
+            label1.Size = new System.Drawing.Size(134, 17);
             label1.TabIndex = 7;
             label1.Text = "Enter reason for visit:";
             // 
@@ -119,14 +119,14 @@
             txtDateTime.Location = new System.Drawing.Point(302, 164);
             txtDateTime.Name = "txtDateTime";
             txtDateTime.PlaceholderText = "yyyy-mm-dd 00:00";
-            txtDateTime.Size = new System.Drawing.Size(369, 28);
+            txtDateTime.Size = new System.Drawing.Size(369, 25);
             txtDateTime.TabIndex = 8;
             // 
             // txtReason
             // 
             txtReason.Location = new System.Drawing.Point(429, 429);
             txtReason.Name = "txtReason";
-            txtReason.Size = new System.Drawing.Size(397, 28);
+            txtReason.Size = new System.Drawing.Size(397, 25);
             txtReason.TabIndex = 9;
             // 
             // btnFindDoctor
@@ -142,10 +142,10 @@
             // listBox_Doctor
             // 
             listBox_Doctor.FormattingEnabled = true;
-            listBox_Doctor.ItemHeight = 20;
+            listBox_Doctor.ItemHeight = 17;
             listBox_Doctor.Location = new System.Drawing.Point(58, 256);
             listBox_Doctor.Name = "listBox_Doctor";
-            listBox_Doctor.Size = new System.Drawing.Size(770, 124);
+            listBox_Doctor.Size = new System.Drawing.Size(770, 123);
             listBox_Doctor.TabIndex = 11;
             // 
             // label2
@@ -153,7 +153,7 @@
             label2.AutoSize = true;
             label2.Location = new System.Drawing.Point(58, 224);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(140, 20);
+            label2.Size = new System.Drawing.Size(116, 17);
             label2.TabIndex = 12;
             label2.Text = "Available Doctors:";
             // 
@@ -162,7 +162,7 @@
             lblDoctorNumber.AutoSize = true;
             lblDoctorNumber.Location = new System.Drawing.Point(58, 383);
             lblDoctorNumber.Name = "lblDoctorNumber";
-            lblDoctorNumber.Size = new System.Drawing.Size(150, 20);
+            lblDoctorNumber.Size = new System.Drawing.Size(122, 17);
             lblDoctorNumber.TabIndex = 13;
             lblDoctorNumber.Text = "Number of doctors:";
             // 
@@ -198,8 +198,9 @@
             // 
             // BookAppointmentViewForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.Ivory;
             ClientSize = new System.Drawing.Size(903, 596);
             Controls.Add(btnClear);
             Controls.Add(btnBack);
