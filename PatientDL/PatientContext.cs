@@ -61,25 +61,25 @@ namespace PatientDL
             Diagnosis d = new Diagnosis(p, "Allergy", "Steroid medication");
             Diagnoses.Add(d);
 
-            Diagnosis d2 = new Diagnosis(p, "Cold", "Nosespray and paracetamol");
+            Diagnosis d2 = new Diagnosis(p6, "Cold", "Nosespray and paracetamol");
             Diagnoses.Add(d2);
 
-            Diagnosis d3 = new Diagnosis(p, "Atopic Eczema", "Avoid triggers");
+            Diagnosis d3 = new Diagnosis(p2, "Atopic Eczema", "Avoid triggers");
             Diagnoses.Add(d3);
 
-            Diagnosis d4 = new Diagnosis(p, "Diabetes type 2", "Insulin treatment");
+            Diagnosis d4 = new Diagnosis(p3, "Diabetes type 2", "Insulin treatment");
             Diagnoses.Add(d4);
 
-            Prescription prescription = new Prescription(p, "Nasaleze Allergy Shield", "800 mg", new DateTime(2024, 2, 6, 10, 30, 0));
+            Prescription prescription = new Prescription(p, "Nasaleze Allergy Shield", "800 mg", new DateTime(2024, 4, 6, 10, 30, 0));
             Prescriptions.Add(prescription);
 
-            Prescription prescription2 = new Prescription(p, "Locobase Eczema Cream", "30 mg", new DateTime(2024, 2, 6, 50, 30, 0));
+            Prescription prescription2 = new Prescription(p2, "Locobase Eczema Cream", "30 mg", new DateTime(2024, 5, 6, 5, 30, 0));
             Prescriptions.Add(prescription2);
 
-            Prescription prescription3 = new Prescription(p, "Locobase Eczema Cream", "30 mg", new DateTime(2024, 2, 6, 12, 00, 0));
+            Prescription prescription3 = new Prescription(p3, "Locobase Eczema Cream", "30 mg", new DateTime(2024, 7, 6, 12, 00, 0));
             Prescriptions.Add(prescription3);
 
-            Prescription prescription4 = new Prescription(p, "Pioglitazone", "100 mg", new DateTime(2024, 2, 6, 09, 30, 0));
+            Prescription prescription4 = new Prescription(p4, "Pioglitazone", "100 mg", new DateTime(2024, 8, 6, 9, 30, 0));
             Prescriptions.Add(prescription4);
 
             Staff s = new Staff("Derek Shepherd", "Doctor", "Iamderek", "Neurologist");
@@ -104,13 +104,16 @@ namespace PatientDL
             Appointment a = new Appointment(p2, new DateTime(2024, 2, 9, 10, 30, 0), "Feeling ill, sore throat", s);
             Appointments.Add(a);
 
-            Appointment a2 = new Appointment(p, new DateTime(2024, 2, 17, 10, 30, 0), "Stomach ache, tired", s);
+            Appointment a2 = new Appointment(p3, new DateTime(2024, 2, 17, 10, 30, 0), "Stomach ache, tired", s2);
             Appointments.Add(a2);
 
-            Appointment a3 = new Appointment(p, new DateTime(2024, 2, 17, 10, 30, 0), "Blurred vision, cuts or wounds that heal slowly", s);
+            Appointment a3 = new Appointment(p, new DateTime(2024, 2, 17, 10, 30, 0), "Blurred vision, wounds", s5);
             Appointments.Add(a3);
 
-            Appointment a4 = new Appointment(p, new DateTime(2024, 2, 17, 10, 30, 0), "Headache, a dry chesty cough", s);
+            Appointment a4 = new Appointment(p6, new DateTime(2024, 2, 17, 10, 30, 0), "Headache, a chesty cough", s4);
+            Appointments.Add(a4);
+
+            Appointment a5 = new Appointment(p4, new DateTime(2024, 2, 17, 10, 30, 0), "Chills or shivering attacks", s4);
             Appointments.Add(a4);
 
             SaveChanges();
