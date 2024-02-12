@@ -72,17 +72,17 @@
             txtPersonalnumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             txtPersonalnumber.Name = "txtPersonalnumber";
             txtPersonalnumber.PlaceholderText = "yyyy-mm-dd-xxxx";
-            txtPersonalnumber.Size = new System.Drawing.Size(369, 28);
+            txtPersonalnumber.Size = new System.Drawing.Size(470, 28);
             txtPersonalnumber.TabIndex = 2;
             // 
             // btnSearch
             // 
             btnSearch.BackColor = System.Drawing.Color.White;
             btnSearch.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnSearch.Location = new System.Drawing.Point(702, 74);
+            btnSearch.Location = new System.Drawing.Point(787, 74);
             btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new System.Drawing.Size(126, 29);
+            btnSearch.Size = new System.Drawing.Size(142, 29);
             btnSearch.TabIndex = 3;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
@@ -120,22 +120,22 @@
             txtDateTime.Location = new System.Drawing.Point(302, 164);
             txtDateTime.Name = "txtDateTime";
             txtDateTime.PlaceholderText = "yyyy-mm-dd 00:00";
-            txtDateTime.Size = new System.Drawing.Size(369, 28);
+            txtDateTime.Size = new System.Drawing.Size(470, 28);
             txtDateTime.TabIndex = 8;
             // 
             // txtReason
             // 
             txtReason.Location = new System.Drawing.Point(429, 429);
             txtReason.Name = "txtReason";
-            txtReason.Size = new System.Drawing.Size(397, 28);
+            txtReason.Size = new System.Drawing.Size(498, 28);
             txtReason.TabIndex = 9;
             // 
             // btnFindDoctor
             // 
             btnFindDoctor.BackColor = System.Drawing.Color.White;
-            btnFindDoctor.Location = new System.Drawing.Point(702, 160);
+            btnFindDoctor.Location = new System.Drawing.Point(787, 160);
             btnFindDoctor.Name = "btnFindDoctor";
-            btnFindDoctor.Size = new System.Drawing.Size(126, 35);
+            btnFindDoctor.Size = new System.Drawing.Size(142, 35);
             btnFindDoctor.TabIndex = 10;
             btnFindDoctor.Text = "Find doctor";
             btnFindDoctor.UseVisualStyleBackColor = false;
@@ -147,7 +147,7 @@
             listBox_Doctor.ItemHeight = 20;
             listBox_Doctor.Location = new System.Drawing.Point(58, 256);
             listBox_Doctor.Name = "listBox_Doctor";
-            listBox_Doctor.Size = new System.Drawing.Size(770, 104);
+            listBox_Doctor.Size = new System.Drawing.Size(871, 104);
             listBox_Doctor.TabIndex = 11;
             // 
             // label2
@@ -173,7 +173,7 @@
             btnBookAppointment.BackColor = System.Drawing.Color.White;
             btnBookAppointment.Location = new System.Drawing.Point(650, 518);
             btnBookAppointment.Name = "btnBookAppointment";
-            btnBookAppointment.Size = new System.Drawing.Size(178, 52);
+            btnBookAppointment.Size = new System.Drawing.Size(279, 52);
             btnBookAppointment.TabIndex = 14;
             btnBookAppointment.Text = "Book appointment";
             btnBookAppointment.UseVisualStyleBackColor = false;
@@ -193,9 +193,9 @@
             // btnClear
             // 
             btnClear.BackColor = System.Drawing.Color.WhiteSmoke;
-            btnClear.Location = new System.Drawing.Point(242, 531);
+            btnClear.Location = new System.Drawing.Point(242, 534);
             btnClear.Name = "btnClear";
-            btnClear.Size = new System.Drawing.Size(150, 39);
+            btnClear.Size = new System.Drawing.Size(148, 36);
             btnClear.TabIndex = 16;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
@@ -206,7 +206,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.Ivory;
-            ClientSize = new System.Drawing.Size(903, 596);
+            ClientSize = new System.Drawing.Size(1038, 596);
             Controls.Add(btnClear);
             Controls.Add(btnBack);
             Controls.Add(btnBookAppointment);

@@ -37,6 +37,11 @@ namespace PatientMSWinForms
             string personalNumber = txtGetPersonalNumber.Text;
             patient = patientController.GetPatient(personalNumber);
 
+            if (!Regex.IsMatch(personalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
+            {
+                MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
+                return;
+            }
             if (patient != null)
             {
                 listbox_Appointments.Items.Clear();
@@ -44,11 +49,9 @@ namespace PatientMSWinForms
                 appointment = appointmentController.GetAppointmentListPersonalNumber(personalNumber);
                 DisplayAppointmentInfo(appointment);
             }
-            if (!Regex.IsMatch(personalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
+            else
             {
-                MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
                 lblPatientFound.Text = $"Patient with personal number {personalNumber} not found.";
-                return;
             }
 
         }

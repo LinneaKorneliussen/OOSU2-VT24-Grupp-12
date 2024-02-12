@@ -42,11 +42,14 @@ namespace PatientMSWinForms
                 listbox_Patient.Items.Add($"Personal Number:{patient.PersonalNumber}");
                 DisplayPatientInfo(patient);
             }
-            else if (!Regex.IsMatch(patientPersonalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
+            if (!Regex.IsMatch(patientPersonalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
                 MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
-                lblPatientInfo.Text = $"Patient with personal number {patientPersonalNumber} not found.";
                 return;
+            }
+            else
+            {
+                lblPatientInfo.Text = $"Patient with personal number {patientPersonalNumber} not found.";
             }
         }
 

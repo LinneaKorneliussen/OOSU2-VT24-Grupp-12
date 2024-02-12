@@ -38,15 +38,18 @@ namespace PatientMSWinForms
 
             patient = patientController.GetPatient(patientPersonalNumber);
 
+            if (!Regex.IsMatch(patientPersonalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
+            {
+                MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
+                return;
+            }
             if (patient != null)
             {
                 lblSearchInfo.Text = $"Patient found: {patient.Name}";
             }
-            if (!Regex.IsMatch(patientPersonalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
+            else
             {
-                MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
                 lblSearchInfo.Text = $"Patient with personal number {patientPersonalNumber} not found.";
-                return;
             }
         }
         private void btnFindDoctor_Click(object sender, EventArgs e)
@@ -102,11 +105,19 @@ namespace PatientMSWinForms
         {
             listBox_Doctor.Items.Clear();
 
+            //for (int i = 0; i < availableDoctors.Count; i++)
+            //{
+            //    string doctorInfo = $"{i + 1,-40} {availableDoctors[i].OccupationalRole,-40}" +
+            //                        $" {availableDoctors[i].StaffName,-40} {availableDoctors[i].Specialization,-40}";
+            //    listBox_Doctor.Items.Add(doctorInfo);
+            //}
+
+            listBox_Doctor.Items.Clear();
+
             for (int i = 0; i < availableDoctors.Count; i++)
             {
-                string doctorInfo = $"{i + 1,-40} {availableDoctors[i].OccupationalRole,-40}" +
-                                    $" {availableDoctors[i].StaffName,-40} {availableDoctors[i].Specialization,-40}";
-                listBox_Doctor.Items.Add(doctorInfo);
+                string appointmentInfo = $"Staffnumber: {availableDoctors[i].StaffId,-10} Occupational Role: {availableDoctors[i].OccupationalRole,-15}  Name: {availableDoctors[i].StaffName,-20}  Specialization: {availableDoctors[i].Specialization}";
+                listBox_Doctor.Items.Add(appointmentInfo);
             }
 
         }
