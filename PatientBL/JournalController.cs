@@ -17,10 +17,17 @@ namespace PatientBL
         }
 
         #region Get appointment List Method
-        public IList<Appointment> GetAppointmentList()
+        public IQueryable<Appointment> GetAppointmentList(Patient patient)
         {
-            return unitOfWork.AppointmentRepository.GetAll().ToList();
+            IQueryable<Appointment> appointments = unitOfWork.AppointmentRepository.Query();
+
+            var result = from x in appointments
+                         where x.Patient.PersonalNumber.Equals(patient.PersonalNumber)
+                         orderby x.DateAndTime ascending
+                         select x;
+            return result;
         }
+
         #endregion
     }
 
