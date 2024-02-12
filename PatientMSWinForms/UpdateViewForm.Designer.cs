@@ -37,66 +37,74 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new System.Drawing.Point(275, 82);
+            textBox1.Location = new System.Drawing.Point(344, 102);
+            textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new System.Drawing.Size(259, 27);
+            textBox1.Size = new System.Drawing.Size(323, 31);
             textBox1.TabIndex = 0;
             // 
             // name_label
             // 
             name_label.AutoSize = true;
             name_label.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            name_label.Location = new System.Drawing.Point(185, 86);
+            name_label.Location = new System.Drawing.Point(231, 108);
+            name_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             name_label.Name = "name_label";
-            name_label.Size = new System.Drawing.Size(84, 19);
+            name_label.Size = new System.Drawing.Size(105, 23);
             name_label.TabIndex = 4;
             name_label.Text = "New value:";
             // 
             // btnUpdatePatient
             // 
+            btnUpdatePatient.BackColor = System.Drawing.Color.White;
             btnUpdatePatient.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnUpdatePatient.Location = new System.Drawing.Point(506, 351);
+            btnUpdatePatient.Location = new System.Drawing.Point(632, 439);
+            btnUpdatePatient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             btnUpdatePatient.Name = "btnUpdatePatient";
-            btnUpdatePatient.Size = new System.Drawing.Size(157, 50);
+            btnUpdatePatient.Size = new System.Drawing.Size(196, 62);
             btnUpdatePatient.TabIndex = 8;
             btnUpdatePatient.Text = "Update patient";
-            btnUpdatePatient.UseVisualStyleBackColor = true;
+            btnUpdatePatient.UseVisualStyleBackColor = false;
             btnUpdatePatient.Click += btnUpdatePatient_Click;
             // 
             // btnBack
             // 
+            btnBack.BackColor = System.Drawing.Color.White;
             btnBack.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnBack.Location = new System.Drawing.Point(156, 351);
+            btnBack.Location = new System.Drawing.Point(195, 439);
+            btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             btnBack.Name = "btnBack";
-            btnBack.Size = new System.Drawing.Size(157, 50);
+            btnBack.Size = new System.Drawing.Size(196, 62);
             btnBack.TabIndex = 9;
             btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(275, 32);
+            label1.Location = new System.Drawing.Point(344, 40);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(246, 26);
+            label1.Size = new System.Drawing.Size(289, 33);
             label1.TabIndex = 10;
             label1.Text = "Provide new information";
             // 
             // UpdateViewForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.Ivory;
-            ClientSize = new System.Drawing.Size(800, 450);
+            ClientSize = new System.Drawing.Size(1000, 562);
             Controls.Add(label1);
             Controls.Add(btnBack);
             Controls.Add(btnUpdatePatient);
             Controls.Add(name_label);
             Controls.Add(textBox1);
+            Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             Name = "UpdateViewForm";
-            Text = "UpdateViewForm";
+            Text = "Enter new information";
             ResumeLayout(false);
             PerformLayout();
         }

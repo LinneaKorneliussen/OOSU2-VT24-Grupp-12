@@ -39,37 +39,42 @@
             // 
             // txtStaffID
             // 
-            txtStaffID.Location = new System.Drawing.Point(371, 149);
+            txtStaffID.Location = new System.Drawing.Point(464, 186);
+            txtStaffID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             txtStaffID.Name = "txtStaffID";
-            txtStaffID.Size = new System.Drawing.Size(191, 27);
+            txtStaffID.Size = new System.Drawing.Size(238, 31);
             txtStaffID.TabIndex = 0;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new System.Drawing.Point(371, 223);
+            txtPassword.Location = new System.Drawing.Point(464, 279);
+            txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new System.Drawing.Size(191, 27);
+            txtPassword.Size = new System.Drawing.Size(238, 31);
             txtPassword.TabIndex = 1;
             // 
             // btnLogIn
             // 
+            btnLogIn.BackColor = System.Drawing.Color.White;
             btnLogIn.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnLogIn.Location = new System.Drawing.Point(442, 319);
+            btnLogIn.Location = new System.Drawing.Point(552, 399);
+            btnLogIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             btnLogIn.Name = "btnLogIn";
-            btnLogIn.Size = new System.Drawing.Size(131, 39);
+            btnLogIn.Size = new System.Drawing.Size(164, 49);
             btnLogIn.TabIndex = 2;
             btnLogIn.Text = "Log in";
-            btnLogIn.UseVisualStyleBackColor = true;
+            btnLogIn.UseVisualStyleBackColor = false;
             btnLogIn.Click += btnLogIn_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(228, 159);
+            label1.Location = new System.Drawing.Point(285, 199);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(56, 17);
+            label1.Size = new System.Drawing.Size(67, 20);
             label1.TabIndex = 3;
             label1.Text = "StaffID:";
             // 
@@ -77,9 +82,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label2.Location = new System.Drawing.Point(228, 229);
+            label2.Location = new System.Drawing.Point(285, 286);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(69, 17);
+            label2.Size = new System.Drawing.Size(83, 20);
             label2.TabIndex = 4;
             label2.Text = "Password:";
             // 
@@ -87,29 +93,32 @@
             // 
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label3.Location = new System.Drawing.Point(228, 62);
+            label3.Location = new System.Drawing.Point(285, 78);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(316, 34);
+            label3.Size = new System.Drawing.Size(378, 41);
             label3.TabIndex = 5;
             label3.Text = "Patient Managing System";
             // 
             // btnClear
             // 
+            btnClear.BackColor = System.Drawing.Color.White;
             btnClear.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnClear.Location = new System.Drawing.Point(209, 319);
+            btnClear.Location = new System.Drawing.Point(261, 399);
+            btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             btnClear.Name = "btnClear";
-            btnClear.Size = new System.Drawing.Size(123, 39);
+            btnClear.Size = new System.Drawing.Size(154, 49);
             btnClear.TabIndex = 6;
             btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
+            btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += btnClear_Click;
             // 
             // LogInForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.SystemColors.ButtonFace;
-            ClientSize = new System.Drawing.Size(800, 450);
+            BackColor = System.Drawing.Color.MistyRose;
+            ClientSize = new System.Drawing.Size(1000, 562);
             Controls.Add(btnClear);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -117,8 +126,9 @@
             Controls.Add(btnLogIn);
             Controls.Add(txtPassword);
             Controls.Add(txtStaffID);
+            Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             Name = "LogInForm";
-            Text = "LogInForm";
+            Text = "Log in";
             ResumeLayout(false);
             PerformLayout();
         }

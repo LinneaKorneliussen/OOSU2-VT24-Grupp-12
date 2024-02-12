@@ -42,39 +42,45 @@
             // 
             // btnBack
             // 
+            btnBack.BackColor = System.Drawing.Color.White;
             btnBack.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnBack.Location = new System.Drawing.Point(155, 401);
+            btnBack.Location = new System.Drawing.Point(194, 501);
+            btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             btnBack.Name = "btnBack";
-            btnBack.Size = new System.Drawing.Size(110, 37);
+            btnBack.Size = new System.Drawing.Size(138, 46);
             btnBack.TabIndex = 0;
             btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
             // btnSearch
             // 
+            btnSearch.BackColor = System.Drawing.Color.White;
             btnSearch.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnSearch.Location = new System.Drawing.Point(486, 96);
+            btnSearch.Location = new System.Drawing.Point(608, 120);
+            btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new System.Drawing.Size(97, 27);
+            btnSearch.Size = new System.Drawing.Size(121, 34);
             btnSearch.TabIndex = 1;
             btnSearch.Text = "Search";
-            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSelect_Click;
             // 
             // textPersonalnumber
             // 
-            textPersonalnumber.Location = new System.Drawing.Point(311, 96);
+            textPersonalnumber.Location = new System.Drawing.Point(389, 120);
+            textPersonalnumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             textPersonalnumber.Name = "textPersonalnumber";
-            textPersonalnumber.Size = new System.Drawing.Size(169, 27);
+            textPersonalnumber.Size = new System.Drawing.Size(210, 31);
             textPersonalnumber.TabIndex = 3;
             // 
             // Personalnumber
             // 
             Personalnumber.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            Personalnumber.Location = new System.Drawing.Point(187, 99);
+            Personalnumber.Location = new System.Drawing.Point(234, 124);
+            Personalnumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Personalnumber.Name = "Personalnumber";
-            Personalnumber.Size = new System.Drawing.Size(114, 23);
+            Personalnumber.Size = new System.Drawing.Size(142, 29);
             Personalnumber.TabIndex = 0;
             Personalnumber.Text = "Personalnumber:";
             // 
@@ -83,64 +89,71 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label1.ForeColor = System.Drawing.Color.Black;
-            label1.Location = new System.Drawing.Point(176, 50);
+            label1.Location = new System.Drawing.Point(220, 62);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(384, 26);
+            label1.Size = new System.Drawing.Size(460, 33);
             label1.TabIndex = 4;
             label1.Text = "Select personalnumber to update patient";
             // 
             // btnUpdate
             // 
+            btnUpdate.BackColor = System.Drawing.Color.White;
             btnUpdate.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnUpdate.Location = new System.Drawing.Point(467, 401);
+            btnUpdate.Location = new System.Drawing.Point(584, 501);
+            btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new System.Drawing.Size(189, 37);
+            btnUpdate.Size = new System.Drawing.Size(236, 46);
             btnUpdate.TabIndex = 5;
             btnUpdate.Text = "Select option to update";
-            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
             // 
             // lblPatientInfo
             // 
             lblPatientInfo.AutoSize = true;
-            lblPatientInfo.Location = new System.Drawing.Point(265, 152);
+            lblPatientInfo.Location = new System.Drawing.Point(331, 190);
+            lblPatientInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblPatientInfo.Name = "lblPatientInfo";
-            lblPatientInfo.Size = new System.Drawing.Size(0, 20);
+            lblPatientInfo.Size = new System.Drawing.Size(0, 25);
             lblPatientInfo.TabIndex = 6;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(216, 152);
+            label3.Location = new System.Drawing.Point(270, 190);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(0, 20);
+            label3.Size = new System.Drawing.Size(0, 25);
             label3.TabIndex = 7;
             // 
             // listbox_Patient
             // 
             listbox_Patient.FormattingEnabled = true;
-            listbox_Patient.ItemHeight = 20;
-            listbox_Patient.Location = new System.Drawing.Point(156, 236);
+            listbox_Patient.ItemHeight = 25;
+            listbox_Patient.Location = new System.Drawing.Point(195, 295);
+            listbox_Patient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             listbox_Patient.Name = "listbox_Patient";
-            listbox_Patient.Size = new System.Drawing.Size(500, 144);
+            listbox_Patient.Size = new System.Drawing.Size(624, 179);
             listbox_Patient.TabIndex = 8;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label2.Location = new System.Drawing.Point(156, 200);
+            label2.Location = new System.Drawing.Point(195, 250);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(205, 20);
+            label2.Size = new System.Drawing.Size(249, 25);
             label2.TabIndex = 9;
             label2.Text = "Current patient information";
             // 
             // UpdatePatientViewForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.Ivory;
-            ClientSize = new System.Drawing.Size(800, 450);
+            ClientSize = new System.Drawing.Size(1000, 562);
             Controls.Add(label2);
             Controls.Add(listbox_Patient);
             Controls.Add(label3);
@@ -151,8 +164,9 @@
             Controls.Add(textPersonalnumber);
             Controls.Add(btnSearch);
             Controls.Add(btnBack);
+            Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             Name = "UpdatePatientViewForm";
-            Text = "UpdatePatientViewForm";
+            Text = "Update patient information";
             ResumeLayout(false);
             PerformLayout();
         }
