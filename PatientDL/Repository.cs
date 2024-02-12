@@ -92,5 +92,10 @@ namespace PatientDL
             return dbSet;
         }
 
+        public IQueryable<T> Query() 
+        {
+            return dbSet;
+        }
+
     }
 }
