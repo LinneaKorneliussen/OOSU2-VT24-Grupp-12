@@ -38,15 +38,19 @@ namespace PatientMSWinForms
             }
 
             patient = patientController.GetPatient(ssn);
+            if (!Regex.IsMatch(ssn, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
+            {
+                MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
+                return;
+            }
             if (patient != null)
             {
                 lbl_DisplayPInfo.Text = $"Patient found: {patient.Name} with personal number {ssn}";
             }
-            else if (!Regex.IsMatch(ssn, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
+            else
             {
                 MessageBox.Show($"Patient with personal number {ssn} not found.\nTry again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 lbl_DisplayPInfo.Text = $"Patient with personal number {ssn} not found.";
-                return;
             }
         }
 
