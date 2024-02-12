@@ -43,6 +43,7 @@
             txtAddress = new System.Windows.Forms.TextBox();
             txtPhone = new System.Windows.Forms.TextBox();
             panel1 = new System.Windows.Forms.Panel();
+            label7 = new System.Windows.Forms.Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -70,9 +71,9 @@
             label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label2.Location = new System.Drawing.Point(131, 130);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(111, 20);
+            label2.Size = new System.Drawing.Size(120, 20);
             label2.TabIndex = 8;
-            label2.Text = "Patient Name:";
+            label2.Text = "Patient Name:*";
             // 
             // label3
             // 
@@ -80,9 +81,9 @@
             label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label3.Location = new System.Drawing.Point(451, 130);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(188, 20);
+            label3.Size = new System.Drawing.Size(197, 20);
             label3.TabIndex = 9;
-            label3.Text = "Patient personal number:";
+            label3.Text = "Patient personal number:*";
             // 
             // label4
             // 
@@ -90,9 +91,9 @@
             label4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label4.Location = new System.Drawing.Point(131, 207);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(125, 20);
+            label4.Size = new System.Drawing.Size(134, 20);
             label4.TabIndex = 10;
-            label4.Text = "Patient Address:";
+            label4.Text = "Patient Address:*";
             // 
             // label5
             // 
@@ -100,9 +101,9 @@
             label5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label5.Location = new System.Drawing.Point(451, 207);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(167, 20);
+            label5.Size = new System.Drawing.Size(176, 20);
             label5.TabIndex = 11;
-            label5.Text = "Patient phonenumber:";
+            label5.Text = "Patient phonenumber:*";
             // 
             // label6
             // 
@@ -110,9 +111,9 @@
             label6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label6.Location = new System.Drawing.Point(131, 283);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(160, 20);
+            label6.Size = new System.Drawing.Size(169, 20);
             label6.TabIndex = 12;
-            label6.Text = "Patient emailaddress:";
+            label6.Text = "Patient emailaddress:*";
             // 
             // btnRegister
             // 
@@ -191,12 +192,23 @@
             panel1.Size = new System.Drawing.Size(837, 69);
             panel1.TabIndex = 20;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label7.Location = new System.Drawing.Point(136, 367);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(117, 19);
+            label7.TabIndex = 21;
+            label7.Text = "* Mandatory field";
+            // 
             // RegisterPatientViewForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.Ivory;
             ClientSize = new System.Drawing.Size(836, 511);
+            Controls.Add(label7);
             Controls.Add(panel1);
             Controls.Add(txtPhone);
             Controls.Add(txtAddress);
@@ -240,5 +252,6 @@
         private System.Windows.Forms.TextBox txtSSN;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label7;
     }
 }
