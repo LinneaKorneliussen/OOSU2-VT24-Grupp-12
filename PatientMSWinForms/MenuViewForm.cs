@@ -12,6 +12,9 @@ namespace PatientMSWinForms
 {
     public partial class MenuViewForm : Form
     {
+
+        bool sidebarExpand;
+
         public MenuViewForm()
         {
             InitializeComponent();
@@ -62,9 +65,56 @@ namespace PatientMSWinForms
 
         private void btnLogOff_Click(object sender, EventArgs e)
         {
+
+            int shakeDistance = 10;
+            for (int i = 0; i < 5; i++)
+            {
+                this.Left += shakeDistance;
+                System.Threading.Thread.Sleep(20);
+                this.Left -= shakeDistance;
+                System.Threading.Thread.Sleep(20);
+            }
+
             Environment.Exit(0);
         }
         #endregion
 
+        private void sidebarTimer_Tick(object sender, EventArgs e)
+        {
+            {
+                if (sidebarExpand)
+                {
+                    sidebar.Width -= 10;
+                    if (sidebar.Width == sidebar.MinimumSize.Width)
+                    {
+                        sidebarExpand = false;
+                        sidebarTimer.Stop();
+                    }
+                }
+                else
+                {
+                    sidebar.Width += 10;
+                    if (sidebar.Width == sidebar.MaximumSize.Width)
+                    {
+                        sidebarExpand = true;
+                        sidebarTimer.Stop();
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        private void menu4_Click(object sender, EventArgs e)
+        {
+            sidebarTimer.Start();
+
+        }
     }
 }
+
+
+
+
