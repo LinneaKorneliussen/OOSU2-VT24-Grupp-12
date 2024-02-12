@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PatientDL
 {
@@ -56,37 +54,6 @@ namespace PatientDL
         {
             return dbSet.FirstOrDefault(predicate);
         }
-        /// <summary>
-        /// Is this repository empty?
-        /// </summary>
-        /// <returns>true is it is empty, false otherwise.</returns>
-        public bool IsEmpty()
-        {
-            return !context.Set<T>().Any();
-        }
-
-        /// <summary>
-        /// Count the entities in the Table.
-        /// </summary>
-        /// <returns>the number of entities.</returns>
-        /// 
-
-        public int Count()
-        {
-            return dbSet.Count();
-        }
-
-        //internal Repository()
-        //{
-        //    if (table == null)
-        //    {
-        //        table = new List<T>();
-        //    }
-        //}
-        // This is a bit strange but I don't want multiple lists of the class T.
-        // NOTE: This is very bad if you use multiple threads.
-        private static IList<T> table;
-
         public IEnumerable<T> GetAll()
         {
             return dbSet;

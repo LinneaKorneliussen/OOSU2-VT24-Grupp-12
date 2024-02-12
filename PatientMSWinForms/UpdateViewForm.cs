@@ -16,21 +16,18 @@ namespace PatientMSWinForms
     public partial class UpdateViewForm : Form
     {
         private PatientController patientController; 
+        private Patient patient;
+        private int select;
 
-        private Patient p;
-
-        private int s;
-
-        public UpdateViewForm(Patient pat, int selectedItem)
+        public UpdateViewForm(Patient p, int selectedItem)
         {
-
             InitializeComponent();
             patientController = new PatientController();
-
-            p = pat;
-            s = selectedItem;
+            patient = p;
+            select = selectedItem;
 
         }
+        #region Update Patient Clicks
         private void btnBack_Click(object sender, EventArgs e)
         {
             int shakeDistance = 10;
@@ -43,20 +40,14 @@ namespace PatientMSWinForms
             }
 
             this.Close();
-
         }
-
         private void btnUpdatePatient_Click(object sender, EventArgs e)
         {
             string newName = textBox1.Text;
-           
-            patientController.UpdatePatientInfo(p, s, newName);
-
-
+            patientController.UpdatePatientInfo(patient, select, newName);
             MessageBox.Show("Patient information updated successfully!\n\n" + $"New value: {newName}\n");                        
-            
             this.Close();
-        
         }
+        #endregion
     }
 }

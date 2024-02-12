@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -16,15 +17,15 @@ namespace PatientMSWinForms
 {
     public partial class RegisterPrescriptionViewForm : Form
     {
-        private AppointmentController appointmentController;
         private Patient patient;
         private PrescriptionController prescriptionController;
+        private PatientController patientController;
 
         public RegisterPrescriptionViewForm()
         {
             InitializeComponent();
             prescriptionController = new PrescriptionController();
-            appointmentController = new AppointmentController();
+            patientController = new PatientController();
             txtPersonalNumber.ForeColor = Color.Gray;
             txtMedicineName.ForeColor = Color.Gray;
             txtDose.ForeColor = Color.Gray;
@@ -36,17 +37,19 @@ namespace PatientMSWinForms
         {
             string patientPersonalNumber = txtPersonalNumber.Text;
 
-            patient = appointmentController.GetPatient(patientPersonalNumber);
+            patient = patientController.GetPatient(patientPersonalNumber);
 
             if (patient != null)
             {
                 lblPatientFound.Text = $"Patient found: {patient.Name}";
             }
-            else
+            else if (!Regex.IsMatch(patientPersonalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
-                MessageBox.Show($"Patient with personal number {patientPersonalNumber} not found.\nPlease try again!");
-                lblPatientFound.Text = $"Patient with personal number {patientPersonalNumber} not found.";
+                MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
+                lblPersonalNumber.Text = $"Patient with personal number {patientPersonalNumber} not found.";
+                return;
             }
+
         }
         
 

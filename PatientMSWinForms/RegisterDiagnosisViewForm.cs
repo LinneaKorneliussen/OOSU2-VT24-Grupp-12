@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,7 +33,7 @@ namespace PatientMSWinForms
             string ssn = txtSSN.Text;
             if (string.IsNullOrEmpty(ssn))
             {
-                MessageBox.Show("Please enter the patient's personal number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter the patient'select personal number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -41,16 +42,16 @@ namespace PatientMSWinForms
             {
                 lbl_DisplayPInfo.Text = $"Patient found: {patient.Name} with personal number {ssn}";
             }
-            else
+            else if (!Regex.IsMatch(ssn, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
                 MessageBox.Show($"Patient with personal number {ssn} not found.\nTry again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 lbl_DisplayPInfo.Text = $"Patient with personal number {ssn} not found.";
+                return;
             }
         }
 
         private void btnAddDiagnosis_Click(object sender, EventArgs e)
         {
-            // Kontrollera om personnumret har fyllts i
             if (patient == null)
             {
                 MessageBox.Show("Please find the patient before adding a diagnosis.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -60,7 +61,6 @@ namespace PatientMSWinForms
             string description = txtDescription.Text;
             string treatment = txtTreatmentplan.Text;
 
-            // Kontrollera om behandlingsplanen har fyllts i
             if (string.IsNullOrEmpty(treatment) || string.IsNullOrEmpty(description))
             {
                 MessageBox.Show("Please enter the treatment plan before adding a diagnosis.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

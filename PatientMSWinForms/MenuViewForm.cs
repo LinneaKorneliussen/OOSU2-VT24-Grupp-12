@@ -19,12 +19,12 @@ namespace PatientMSWinForms
         {
             InitializeComponent();
         }
+
         #region Menu view clicks
         private void btnRegisterNewPatient_Click(object sender, EventArgs e)
         {
             RegisterPatientViewForm rp = new RegisterPatientViewForm();
             rp.Show();
-
         }
 
         private void btnUpdatePatientInformation_Click(object sender, EventArgs e)
@@ -62,7 +62,9 @@ namespace PatientMSWinForms
             DisplayAppointmentViewForm da = new DisplayAppointmentViewForm();
             da.Show();
         }
+        #endregion
 
+        #region Menu effects 
         private void btnLogOff_Click(object sender, EventArgs e)
         {
 
@@ -77,29 +79,24 @@ namespace PatientMSWinForms
 
             Environment.Exit(0);
         }
-        #endregion
-
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
+            if (sidebarExpand)
             {
-                if (sidebarExpand)
+                sidebar.Width -= 10;
+                if (sidebar.Width == sidebar.MinimumSize.Width)
                 {
-                    sidebar.Width -= 10;
-                    if (sidebar.Width == sidebar.MinimumSize.Width)
-                    {
-                        sidebarExpand = false;
-                        sidebarTimer.Stop();
-                    }
+                    sidebarExpand = false;
+                    sidebarTimer.Stop();
                 }
-                else
+            }
+            else
+            {
+                sidebar.Width += 10;
+                if (sidebar.Width == sidebar.MaximumSize.Width)
                 {
-                    sidebar.Width += 10;
-                    if (sidebar.Width == sidebar.MaximumSize.Width)
-                    {
-                        sidebarExpand = true;
-                        sidebarTimer.Stop();
-
-                    }
+                    sidebarExpand = true;
+                    sidebarTimer.Stop();
 
                 }
 
@@ -107,11 +104,12 @@ namespace PatientMSWinForms
 
         }
 
-        private void menu4_Click(object sender, EventArgs e)
+        private void menuSlide_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
 
         }
+        #endregion
     }
 }
 

@@ -15,11 +15,6 @@ namespace PatientDL
         public Repository<Prescription> PrescriptionRepository { get; private set; }
         public Repository<Staff> StaffRepository { get; private set; }
 
-        private UnitOfWork()
-        {
-            // Användning av "lazy initialization" för PatientContext
-        }
-
         public static UnitOfWork GetInstance()
         {
             if (instance == null)
@@ -33,6 +28,10 @@ namespace PatientDL
                 instance.StaffRepository = new Repository<Staff>(instance.context);
             }
             return instance;
+        }
+        private UnitOfWork()
+        {
+
         }
 
         public void Save()

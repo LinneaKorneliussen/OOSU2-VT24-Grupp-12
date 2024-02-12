@@ -17,7 +17,7 @@ namespace PatientBL
             unitOfWork = UnitOfWork.GetInstance();
         }
 
-        #region Get patient method
+        #region Get patient Method
         public Patient GetPatient(string patientPersonalNumber)
         {
             return unitOfWork.PatientRepository.FirstOrDefault(p => p.PersonalNumber == patientPersonalNumber);

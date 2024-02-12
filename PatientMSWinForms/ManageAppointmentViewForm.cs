@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,7 @@ namespace PatientMSWinForms
     public partial class ManageAppointmentViewForm : Form
     {
         private AppointmentController appointmentController;
+        private PatientController patientController;
         private List<Appointment> appointment;
         private Patient patient;
 
@@ -23,6 +25,7 @@ namespace PatientMSWinForms
         {
             InitializeComponent();
             appointmentController = new AppointmentController();
+            patientController = new PatientController();
             txtGetPersonalNumber.ForeColor = Color.Gray;
         }
 
@@ -32,17 +35,20 @@ namespace PatientMSWinForms
             listbox_Appointments.Items.Clear();
 
             string personalNumber = txtGetPersonalNumber.Text;
-            appointment = appointmentController.GetAppointmentListPersonalNumber(personalNumber);
+            patient = patientController.GetPatient(personalNumber);
 
-            if (appointment != null)
+            if (patient != null)
             {
                 listbox_Appointments.Items.Clear();
+                lblPatientFound.Text = $"Patient found: {patient.PersonalNumber}";
+                appointment = appointmentController.GetAppointmentListPersonalNumber(personalNumber);
                 DisplayAppointmentInfo(appointment);
-                DisplayPatient(patient);
             }
-            else
+            if (!Regex.IsMatch(personalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
-                MessageBox.Show($"Patient with personal number {personalNumber} not found.\nPlease try again!");
+                MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
+                lblPatientFound.Text = $"Patient with personal number {personalNumber} not found.";
+                return;
             }
 
         }
@@ -94,23 +100,23 @@ namespace PatientMSWinForms
             }
         }
 
-        public void DisplayPatient(Patient patient)
-        {
-            string patientPersonalNumber = txtGetPersonalNumber.Text;
+        //public void DisplayPatient(Patient patient)
+        //{
+        //    string patientPersonalNumber = txtGetPersonalNumber.Text;
 
-            patient = appointmentController.GetPatient(patientPersonalNumber);
+        //    patient = patientController.GetPatient(patientPersonalNumber);
 
-            if (patient != null)
-            {
-                lblPatientFound.Text = $"Patient found: {patient.Name}";
-            }
-            else
-            {
-                MessageBox.Show($"Patient with personal number {patientPersonalNumber} not found.\nPlease try again!");
-                lblPatientFound.Text = $"Patient with personal number {patientPersonalNumber} not found.";
+        //    if (patient != null)
+        //    {
+        //        lblPatientFound.Text = $"Patient found: {patient.Name}";
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show($"Patient with personal number {patientPersonalNumber} not found.\nPlease try again!");
+        //        lblPatientFound.Text = $"Patient with personal number {patientPersonalNumber} not found.";
               
-            }
-        }
+        //    }
+        //}
 
         #endregion
     }

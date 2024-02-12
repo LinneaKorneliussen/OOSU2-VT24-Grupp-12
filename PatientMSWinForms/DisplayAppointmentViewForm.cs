@@ -15,19 +15,19 @@ namespace PatientMSWinForms
 {
     public partial class DisplayAppointmentViewForm : Form
     {
-        private AppointmentController appointmentController;
-        private IQueryable<Appointment> appointment;
         private Patient patient;
         private JournalController journalController;
-
+        private PatientController patientController;
+        private IQueryable<Appointment> appointment;
 
         public DisplayAppointmentViewForm()
         {
             InitializeComponent();
-            appointmentController = new AppointmentController();
+            patientController = new PatientController();
             journalController = new JournalController();
             txtPersonalNumber.ForeColor = Color.Gray;
         }
+
         #region Appointment clicks
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -35,22 +35,20 @@ namespace PatientMSWinForms
 
             string patientPersonalNumber = txtPersonalNumber.Text;
 
-            patient = appointmentController.GetPatient(patientPersonalNumber);
+            patient = patientController.GetPatient(patientPersonalNumber);
 
             if (patient != null)
             {
                 lblPatientFound.Text = $"Patient found: {patient.Name}";
                 appointment = journalController.GetAppointmentList(patient);
                 DisplayAppointmentInfo(appointment);
-
             }
-            if (!Regex.IsMatch(patientPersonalNumber, @"^\d{12}$"))
+            else if (!Regex.IsMatch(patientPersonalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
                 MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
                 lblPatientFound.Text = $"Personal number format: (yyyy-mm-dd-xxxx)";
                 return;
             }
-           
         }
 
         private void btnBack_Click(object sender, EventArgs e)

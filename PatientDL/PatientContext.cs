@@ -14,13 +14,9 @@ namespace PatientDL
     public class PatientContext : DbContext
     {
         public DbSet<Patient> Patienter { get; set; }
-
         public DbSet<Diagnosis> Diagnoses { get; set; }
-
         public DbSet<Prescription> Prescriptions { get; set; }  
-
         public DbSet<Staff> Staff { get; set; }
-
         public DbSet<Appointment> Appointments { get; set; }
 
         public PatientContext()

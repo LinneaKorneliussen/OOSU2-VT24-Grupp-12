@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
@@ -25,8 +26,42 @@ namespace PatientMSWinForms
         public UpdatePatientViewForm()
         {
             InitializeComponent();
-
             patientController = new PatientController();
+
+        }
+        #region Update Patient Clicks
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            string patientPersonalNumber = textPersonalnumber.Text;
+
+            patient = patientController.GetPatient(patientPersonalNumber);
+
+            if (patient != null)
+            {
+                listbox_Patient.Items.Clear();
+                listbox_Patient.Items.Add($"Personal Number:{patient.PersonalNumber}");
+                DisplayPatientInfo(patient);
+            }
+            else if (!Regex.IsMatch(patientPersonalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
+            {
+                MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
+                lblPatientInfo.Text = $"Patient with personal number {patientPersonalNumber} not found.";
+                return;
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (listbox_Patient.SelectedItem != null)
+            {
+                int selectedItem = listbox_Patient.SelectedIndex;
+                UpdateViewForm updateForm = new UpdateViewForm(patient, selectedItem);
+                updateForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a patient from the list before updating.");
+            }
 
         }
         private void btnBack_Click(object sender, EventArgs e)
@@ -42,62 +77,22 @@ namespace PatientMSWinForms
 
             this.Close();
         }
+        #endregion
 
-        private void btnSelect_Click(object sender, EventArgs e)
-        {
-            string patientPersonalNumber = textPersonalnumber.Text;
-
-            patient = patientController.GetPatient(patientPersonalNumber);
-
-            if (patient != null)
-            {
-                listbox_Patient.Items.Clear();
-
-                listbox_Patient.Items.Add($"Personal Number:{patient.PersonalNumber}");
-
-                DisplayPatientInfo(patient);
-            }
-            else
-            {
-                MessageBox.Show($"Patient with personal number {patientPersonalNumber} not found.\nPlease try again!");
-                lblPatientInfo.Text = $"Patient with personal number {patientPersonalNumber} not found.";
-            }
-
-        }
+        #region Update Patient Method
         public void DisplayPatientInfo(Patient patientToUpdate)
         {
-            // Rensa ListBoxen först
             listbox_Patient.Items.Clear();
-
-            // Skapa en lista med valen och den nuvarande informationen
             List<string> options = new List<string>
             
             {$"1. Name: {patientToUpdate.Name}", $"2. Address: {patientToUpdate.Address}", $"3. Phone number: {patientToUpdate.Phonenumber}", $"4. Email Address: {patientToUpdate.EmailAddress}"};
 
-            // Lägg till varje val i ListBoxen
             foreach (string option in options)
             {
                 listbox_Patient.Items.Add(option);
             }
         }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (listbox_Patient.SelectedItem != null)
-            {
-                // Hämta det valda objektet från listboxen
-                int selectedItem = listbox_Patient.SelectedIndex;
-
-                // Öppna UpdateViewForm och skicka med den valda patienten
-                UpdateViewForm updateForm = new UpdateViewForm(patient,selectedItem);
-                updateForm.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Please select a patient from the list before updating.");
-            }
-
-        }
+        #endregion
 
     }
 }

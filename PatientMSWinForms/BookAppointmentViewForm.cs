@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,14 +16,16 @@ namespace PatientMSWinForms
 {
     public partial class BookAppointmentViewForm : Form
     {
-        private AppointmentController appointmentController;
         private Patient patient;
         private List<Staff> allDoctors;
         private DateTime appointmentDateTime;
+        private AppointmentController appointmentController;
+        private PatientController patientController;
         public BookAppointmentViewForm()
         {
             InitializeComponent();
             appointmentController  = new AppointmentController();
+            patientController = new PatientController();    
             txtPersonalnumber.ForeColor = Color.Gray;
             txtDateTime.ForeColor = Color.Gray;
         }
@@ -30,19 +33,20 @@ namespace PatientMSWinForms
         #region Appointment clicks
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            listBox_Doctor.Items.Clear();
             string patientPersonalNumber = txtPersonalnumber.Text;
 
-            patient = appointmentController.GetPatient(patientPersonalNumber);
+            patient = patientController.GetPatient(patientPersonalNumber);
 
             if (patient != null)
             {
                 lblSearchInfo.Text = $"Patient found: {patient.Name}";
             }
-            else
+            if (!Regex.IsMatch(patientPersonalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
-                MessageBox.Show($"Patient with personal number {patientPersonalNumber} not found.\nPlease try again!");
+                MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
                 lblSearchInfo.Text = $"Patient with personal number {patientPersonalNumber} not found.";
-                listBox_Doctor.Items.Clear();
+                return;
             }
         }
         private void btnFindDoctor_Click(object sender, EventArgs e)

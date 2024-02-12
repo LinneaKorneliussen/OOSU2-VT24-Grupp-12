@@ -31,10 +31,6 @@ namespace PatientBL
         #endregion
 
         #region Get patients and doctors Methods
-        public Patient GetPatient(string patientPersonalNumber)
-        {
-            return unitOfWork.PatientRepository.FirstOrDefault(p => p.PersonalNumber == patientPersonalNumber);
-        }
         public List<Staff> GetAllDoctors()
         {
             return unitOfWork.StaffRepository.Find(s => s.OccupationalRole == "Doctor").ToList();
@@ -63,15 +59,10 @@ namespace PatientBL
         {
             return unitOfWork.AppointmentRepository.GetAll().Where(appointment => appointment.Patient.PersonalNumber == personalnumber).ToList();
         }
-
         public void RemoveAppointment(Appointment appointmentToRemove)
         {
             unitOfWork.AppointmentRepository.Remove(appointmentToRemove);
             unitOfWork.Save();
-        }
-        public Appointment GetAppointmentByVisitNumber(int visitNumber)
-        {
-            return unitOfWork.AppointmentRepository.FirstOrDefault(appointment => appointment.AppointmentId == visitNumber);
         }
         public void UpdateDateTime(DateTime newDateTime, Appointment appointment)
         {

@@ -22,7 +22,6 @@ namespace PatientBL
             Prescription newPrescription = new Prescription(p, medicineName, dose, prescriptionDate);
             unitOfWork.PrescriptionRepository.Add(newPrescription);
             unitOfWork.Save();
-            Console.WriteLine($"Prescription added successfully for {p.Name}");
         }
         #endregion
     }

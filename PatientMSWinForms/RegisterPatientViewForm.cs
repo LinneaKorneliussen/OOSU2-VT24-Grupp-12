@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,6 +31,11 @@ namespace PatientMSWinForms
             string phonenumber = txtPhone.Text;
             string emailAddress = txtMail.Text;
 
+            if (!Regex.IsMatch(personalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
+            {
+                MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
+                return;
+            }
             if (string.IsNullOrWhiteSpace(name) ||
             string.IsNullOrWhiteSpace(personalNumber) ||
             string.IsNullOrWhiteSpace(address) ||
@@ -37,12 +43,6 @@ namespace PatientMSWinForms
             string.IsNullOrWhiteSpace(emailAddress))
             {
                 MessageBox.Show("Please make sure all fields contain information before proceeding", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!Validation.ValidatePersonalNumber(personalNumber)) 
-            {
-                MessageBox.Show("Incorrect format for personalnumber","Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

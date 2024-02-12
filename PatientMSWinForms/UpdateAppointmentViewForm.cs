@@ -16,13 +16,12 @@ namespace PatientMSWinForms
     public partial class UpdateAppointmentViewForm : Form
     {
         private AppointmentController appointmentController;
-        private Appointment a;
-        ManageAppointmentViewForm manageAppointmentViewForm = new ManageAppointmentViewForm();
+        private Appointment appointment;
 
         public UpdateAppointmentViewForm(Appointment at, AppointmentController ac)
         {
             InitializeComponent();
-            a = at;
+            appointment = at;
             appointmentController = ac;
             txtDateTimeInfo.ForeColor = Color.Gray;
 
@@ -39,7 +38,7 @@ namespace PatientMSWinForms
                 MessageBox.Show("Invalid date and time format. \nPlease enter the date and time in the format yyyy-mm-dd hh:mm.");
                 return;
             }
-            appointmentController.UpdateDateTime(appointmentDateTime, a);
+            appointmentController.UpdateDateTime(appointmentDateTime, appointment);
 
             MessageBox.Show($"Datetime updated: {appointmentDateTime}");
             this.Close();
@@ -49,7 +48,8 @@ namespace PatientMSWinForms
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            manageAppointmentViewForm.ShowDialog();
+            ManageAppointmentViewForm manageAppointmentViewForm = new ManageAppointmentViewForm();
+            manageAppointmentViewForm.Show();
         }
         #endregion
     }

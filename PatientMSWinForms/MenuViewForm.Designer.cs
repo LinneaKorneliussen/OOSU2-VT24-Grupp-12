@@ -214,7 +214,7 @@
             menu4.Size = new System.Drawing.Size(80, 78);
             menu4.TabIndex = 9;
             menu4.TabStop = false;
-            menu4.Click += menu4_Click;
+            menu4.Click += menuSlide_Click;
             // 
             // sqlCommand1
             // 
