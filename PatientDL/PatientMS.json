@@ -1,0 +1,7 @@
+{
+  "ConnectionStrings": {
+    "PatientMS": "Server=(localdb)\\mssqllocaldb;Database=PatientMS;Trusted_Connection=True;"
+  }
+
+
+}
