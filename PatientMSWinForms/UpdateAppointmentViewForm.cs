@@ -17,16 +17,18 @@ namespace PatientMSWinForms
     {
         private AppointmentController appointmentController;
         private Appointment a;
+        ManageAppointmentViewForm manageAppointmentViewForm = new ManageAppointmentViewForm();
 
         public UpdateAppointmentViewForm(Appointment at, AppointmentController ac)
         {
             InitializeComponent();
             a = at;
             appointmentController = ac;
+            txtDateTimeInfo.ForeColor = Color.Gray;
 
         }
 
-        #region Clicks Appointment
+        #region Update Appointments clicks
         private void btnUpdateAppointment_Click(object sender, EventArgs e)
         {
             string inputDateTime = txtDateTimeInfo.Text;
@@ -39,7 +41,7 @@ namespace PatientMSWinForms
             }
             appointmentController.UpdateDateTime(appointmentDateTime, a);
 
-            MessageBox.Show($"Datetime change: {appointmentDateTime}");
+            MessageBox.Show($"Datetime updated: {appointmentDateTime}");
             this.Close();
 
         }
@@ -47,6 +49,7 @@ namespace PatientMSWinForms
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+            manageAppointmentViewForm.ShowDialog();
         }
         #endregion
     }
