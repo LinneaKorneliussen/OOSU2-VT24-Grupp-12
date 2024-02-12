@@ -30,6 +30,16 @@ namespace PatientMSWinForms
             string phonenumber = txtPhone.Text;
             string emailAddress = txtMail.Text;
 
+            if (string.IsNullOrWhiteSpace(name) ||
+            string.IsNullOrWhiteSpace(personalNumber) ||
+            string.IsNullOrWhiteSpace(address) ||
+            string.IsNullOrWhiteSpace(phonenumber) ||
+            string.IsNullOrWhiteSpace(emailAddress))
+            {
+                MessageBox.Show("Please make sure all fields contain information before proceeding", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (!Validation.ValidatePersonalNumber(personalNumber)) 
             {
                 MessageBox.Show("Incorrect format for personalnumber","Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
