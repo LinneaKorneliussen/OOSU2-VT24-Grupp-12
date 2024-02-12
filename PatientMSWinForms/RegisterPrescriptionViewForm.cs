@@ -7,6 +7,8 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -63,6 +65,11 @@ namespace PatientMSWinForms
             if (!DateTime.TryParseExact(inputDateTime, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out prescriptionDate))
             {
                 MessageBox.Show("Invalid date and time format. \nPlease enter the date and time in the format yyyy-mm-dd hh:mm.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(medicineName) ||string.IsNullOrWhiteSpace(dose)) 
+            {
+                MessageBox.Show("Please make sure all fields contain information before proceeding", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

@@ -63,7 +63,7 @@ namespace PatientMSWinForms
 
             if (string.IsNullOrEmpty(treatment) || string.IsNullOrEmpty(description))
             {
-                MessageBox.Show("Please enter the treatment plan before adding a diagnosis.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please make sure all fields contain information before proceeding", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

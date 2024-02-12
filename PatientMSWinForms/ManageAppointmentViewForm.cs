@@ -99,25 +99,6 @@ namespace PatientMSWinForms
                 listbox_Appointments.Items.Add(appointmentInfo);
             }
         }
-
-        //public void DisplayPatient(Patient patient)
-        //{
-        //    string patientPersonalNumber = txtGetPersonalNumber.Text;
-
-        //    patient = patientController.GetPatient(patientPersonalNumber);
-
-        //    if (patient != null)
-        //    {
-        //        lblPatientFound.Text = $"Patient found: {patient.Name}";
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show($"Patient with personal number {patientPersonalNumber} not found.\nPlease try again!");
-        //        lblPatientFound.Text = $"Patient with personal number {patientPersonalNumber} not found.";
-              
-        //    }
-        //}
-
         #endregion
     }
 }
