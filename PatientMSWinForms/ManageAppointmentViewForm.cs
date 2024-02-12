@@ -17,40 +17,44 @@ namespace PatientMSWinForms
     {
         private AppointmentController appointmentController;
         private List<Appointment> appointment;
+        private Patient patient;
 
         public ManageAppointmentViewForm()
         {
             InitializeComponent();
             appointmentController = new AppointmentController();
+            txtGetPersonalNumber.ForeColor = Color.Gray;
         }
 
-        #region Click appointments
+        #region Appointments clicks
         private void btnShowAppointments_Click(object sender, EventArgs e)
         {
-            lbxAppointments.Items.Clear();
+            listbox_Appointments.Items.Clear();
 
             string personalNumber = txtGetPersonalNumber.Text;
             appointment = appointmentController.GetAppointmentListPersonalNumber(personalNumber);
 
             if (appointment != null)
             {
-                lbxAppointments.Items.Clear();
+                listbox_Appointments.Items.Clear();
                 DisplayAppointmentInfo(appointment);
+                DisplayPatient(patient);
             }
             else
             {
-                MessageBox.Show($"Appointment with personal number {personalNumber} not found.\nPlease try again!");
+                MessageBox.Show($"Patient with personal number {personalNumber} not found.\nPlease try again!");
             }
+
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnSelectAppointment_Click(object sender, EventArgs e)
         {
-            if (lbxAppointments.SelectedIndex == -1)
+            if (listbox_Appointments.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select an appointment.");
                 return;
             }
-            Appointment selectedItem = appointment[lbxAppointments.SelectedIndex];
+            Appointment selectedItem = appointment[listbox_Appointments.SelectedIndex];
             UpdateAppointmentViewForm updateAppointment = new UpdateAppointmentViewForm(selectedItem, appointmentController);
             updateAppointment.Show();
             this.Close();
@@ -58,12 +62,12 @@ namespace PatientMSWinForms
 
         private void btnRemoveAppointment_Click(object sender, EventArgs e)
         {
-            if (lbxAppointments.SelectedIndex == -1)
+            if (listbox_Appointments.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select an appointment.");
                 return;
             }
-            Appointment selectedItem = appointment[lbxAppointments.SelectedIndex];
+            Appointment selectedItem = appointment[listbox_Appointments.SelectedIndex];
             appointmentController.RemoveAppointment(selectedItem);
             MessageBox.Show($"Appointment removed for patient: {selectedItem.Patient.Name}");
             this.Close();
@@ -79,17 +83,35 @@ namespace PatientMSWinForms
         #region Display Appointments Method
         public void DisplayAppointmentInfo(IList<Appointment> appointments)
         {
-            lbxAppointments.Items.Clear();
+            listbox_Appointments.Items.Clear();
 
             for (int i = 0; i < appointments.Count; i++)
             {
-                string appointmentInfo = $"{i + 1,-40} {appointments[i].AppointmentId,-40}" +
-                                    $" {appointments[i].DateAndTime,-40} {appointments[i].ReasonForVisit,-40}";
-                lbxAppointments.Items.Add(appointmentInfo);
+                string appointmentInfo = $"AppointmentID: {appointments[i].AppointmentId,-10}" +
+                                    $"Date and time: {appointments[i].DateAndTime,-20}" +
+                                    $"Reason: {appointments[i].ReasonForVisit,-20}";
+                listbox_Appointments.Items.Add(appointmentInfo);
             }
         }
+
+        public void DisplayPatient(Patient patient)
+        {
+            string patientPersonalNumber = txtGetPersonalNumber.Text;
+
+            patient = appointmentController.GetPatient(patientPersonalNumber);
+
+            if (patient != null)
+            {
+                lblPatientFound.Text = $"Patient found: {patient.Name}";
+            }
+            else
+            {
+                MessageBox.Show($"Patient with personal number {patientPersonalNumber} not found.\nPlease try again!");
+                lblPatientFound.Text = $"Patient with personal number {patientPersonalNumber} not found.";
+              
+            }
+        }
+
         #endregion
-
-
     }
 }

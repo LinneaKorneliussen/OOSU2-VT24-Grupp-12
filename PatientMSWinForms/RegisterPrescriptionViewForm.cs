@@ -1,20 +1,85 @@
-﻿using System;
+﻿using PatientBL;
+using PatientEntities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace PatientMSWinForms
 {
     public partial class RegisterPrescriptionViewForm : Form
     {
+        private AppointmentController appointmentController;
+        private Patient patient;
+        private PrescriptionController prescriptionController;
+
         public RegisterPrescriptionViewForm()
         {
             InitializeComponent();
+            prescriptionController = new PrescriptionController();
+            appointmentController = new AppointmentController();
+            txtPersonalNumber.ForeColor = Color.Gray;
+            txtMedicineName.ForeColor = Color.Gray;
+            txtDose.ForeColor = Color.Gray;
+            txtPrescriptionDate.ForeColor = Color.Gray;
         }
+
+        #region Prescription clicks
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            string patientPersonalNumber = txtPersonalNumber.Text;
+
+            patient = appointmentController.GetPatient(patientPersonalNumber);
+
+            if (patient != null)
+            {
+                lblPatientFound.Text = $"Patient found: {patient.Name}";
+            }
+            else
+            {
+                MessageBox.Show($"Patient with personal number {patientPersonalNumber} not found.\nPlease try again!");
+                lblPatientFound.Text = $"Patient with personal number {patientPersonalNumber} not found.";
+            }
+        }
+        
+
+        private void btnAddPrescription_Click(object sender, EventArgs e)
+        {
+            string medicineName = txtMedicineName.Text;
+            string dose = txtDose.Text;
+            string inputDateTime = txtPrescriptionDate.Text;
+            DateTime prescriptionDate;
+
+            if (!DateTime.TryParseExact(inputDateTime, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out prescriptionDate))
+            {
+                MessageBox.Show("Invalid date and time format. \nPlease enter the date and time in the format yyyy-mm-dd hh:mm.");
+                return;
+            }
+
+            prescriptionController.AddPrescription(patient, medicineName, dose, prescriptionDate);
+            MessageBox.Show($"Prescription registered successfully. See details below:\n Medicine name: {medicineName}\n Dose: {dose}\n Prescription date: {prescriptionDate}");
+            this.Hide();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtMedicineName.Clear();
+            txtDose.Clear();
+            txtPrescriptionDate.Clear();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        #endregion
+
     }
 }
