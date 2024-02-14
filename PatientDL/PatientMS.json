@@ -1,7 +1,7 @@
 {
   "ConnectionStrings": {
-    "PatientMS": "Server=(localdb)\\mssqllocaldb;Database=PatientMS;Trusted_Connection=True;"
+    "PatientMS": "Server=(localdb)\\mssqllocaldb;Database=PatientMS;Trusted_Connection=True;" 
+      // , Lägga till andra connection direkt här till servern; 
   }
-
 
 }
