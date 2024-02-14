@@ -22,6 +22,7 @@ namespace PatientBL
         {
             return loginRepository.AuthorizeUser(staffId, password);
         }
+
         #endregion
     }
 }
