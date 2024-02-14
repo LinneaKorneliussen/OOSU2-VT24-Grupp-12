@@ -17,14 +17,12 @@ namespace PatientMSWinForms
     public partial class ManageAppointmentViewForm : Form
     {
         private AppointmentController appointmentController;
-        private PatientController patientController;
         private List<Appointment> appointment;
 
         public ManageAppointmentViewForm()
         {
             InitializeComponent();
             appointmentController = new AppointmentController();
-            patientController = new PatientController();
             txtGetPersonalNumber.ForeColor = Color.Gray;
         }
 
@@ -34,7 +32,7 @@ namespace PatientMSWinForms
             listbox_Appointments.Items.Clear();
 
             string personalNumber = txtGetPersonalNumber.Text;
-            Patient patient = patientController.GetPatient(personalNumber);
+            Patient patient = appointmentController.GetPatient(personalNumber);
 
             if (!Regex.IsMatch(personalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {

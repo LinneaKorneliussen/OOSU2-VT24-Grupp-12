@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PatientMSWinForms.BookAppointmentViewForm" Collapsed="true">
+    <Position X="21.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAIACACAAAAAACAKACoACAEAAIJBgAAEBAhABIAI=</HashCode>
+      <FileName>BookAppointmentViewForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="allDoctors" />
+      <Field Name="appointmentController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientMSWinForms.DisplayAppointmentViewForm" Collapsed="true">
+    <Position X="4.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAAAQAEAACAAIACgACAAABgAAQAAAAAAAI=</HashCode>
+      <FileName>DisplayAppointmentViewForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="journalController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientMSWinForms.LogInForm" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEhQgAAAACAAAAAAAACAAAAKIACAIAAAAgADAAAAAAA=</HashCode>
+      <FileName>LogInForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="loginController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientMSWinForms.ManageAppointmentViewForm" Collapsed="true">
+    <Position X="21.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAECACARACAADACIAGgAAAAgFABAAAAAAgAAE=</HashCode>
+      <FileName>ManageAppointmentViewForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="appointment" />
+      <Field Name="appointmentController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientMSWinForms.MenuViewForm" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gADkIAAgQCQAAAEAAACDAAACAEEAAAAAgEBCA5QgKAA=</HashCode>
+      <FileName>MenuViewForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientMSWinForms.RegisterDiagnosisViewForm" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <AssociationLine Name="patient" Type="PatientEntities.Patient" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="6.062" />
+        <Point X="12.25" Y="6.062" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAAIAIABACAIAAAyABSAAAAGAAAAQABAAKEAAQAAAAA=</HashCode>
+      <FileName>RegisterDiagnosisViewForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="diagnosisController" />
+      <Field Name="patient" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientMSWinForms.RegisterPatientViewForm" Collapsed="true">
+    <Position X="9" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASACAAAAASACCBAAAACAAABSAAAYYAAgBIEBAQggAEQ=</HashCode>
+      <FileName>RegisterPatientViewForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="patientController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientMSWinForms.RegisterPrescriptionViewForm" Collapsed="true">
+    <Position X="9.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAKAgABACAAhQABAACAAAACAIQAYAEAALABAAAAAAI=</HashCode>
+      <FileName>RegisterPrescriptionViewForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="patient" />
+      <Field Name="prescriptionController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientMSWinForms.UpdateAppointmentViewForm" Collapsed="true">
+    <Position X="15" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACACAAAAAADACIACAQAAAAFAAAAAAABAAAA=</HashCode>
+      <FileName>UpdateAppointmentViewForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="appointment" />
+      <Field Name="appointmentController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientMSWinForms.UpdatePatientViewForm" Collapsed="true">
+    <Position X="12.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAKEAAABCBgIBAQAACAAIASAAAAAQBAAgAAAAAAAAI=</HashCode>
+      <FileName>UpdatePatientViewForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="patientController" />
+      <Field Name="patient" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientMSWinForms.UpdateViewForm" Collapsed="true">
+    <Position X="9.25" Y="4.25" Width="1.5" />
+    <AssociationLine Name="patient" Type="PatientEntities.Patient" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="4.812" />
+        <Point X="11.25" Y="4.812" />
+        <Point X="11.25" Y="5.781" />
+        <Point X="12.25" Y="5.781" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.11" Y="-0.225" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="patientController" Type="PatientBL.PatientController" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="4.5" />
+        <Point X="11.096" Y="4.5" />
+        <Point X="11.096" Y="3.533" />
+        <Point X="12.25" Y="3.533" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAIQQAACCAAABAAAACAAIASAAAAAABAEAAAAAAAAAA=</HashCode>
+      <FileName>UpdateViewForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="patient" />
+      <Field Name="patientController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientBL.LoginController" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PatientBL.PatientController" Collapsed="true">
+    <Position X="12.25" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PatientEntities.Patient" Collapsed="true">
+    <Position X="12.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PatientEntities.Appointment" Collapsed="true">
+    <Position X="19" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PatientBL.AppointmentController" Collapsed="true">
+    <Position X="19" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PatientBL.DiagnosisController" Collapsed="true">
+    <Position X="6.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Collections.Generic.List&lt;T&gt;" Collapsed="true">
+    <Position X="24.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PatientBL.JournalController" Collapsed="true">
+    <Position X="7.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PatientBL.PrescriptionController" Collapsed="true">
+    <Position X="6.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
