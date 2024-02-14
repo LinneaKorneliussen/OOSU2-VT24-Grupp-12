@@ -16,14 +16,12 @@ namespace PatientMSWinForms
     public partial class RegisterDiagnosisViewForm : Form
     {
        
-    private DiagnosisController diagnosisController;
-        private PatientController patientController;
+        private DiagnosisController diagnosisController;
         private Patient patient;
 
         public RegisterDiagnosisViewForm()
         {
             InitializeComponent();
-            patientController = new PatientController();
             diagnosisController = new DiagnosisController();
         }
 
@@ -37,7 +35,7 @@ namespace PatientMSWinForms
                 return;
             }
 
-            patient = patientController.GetPatient(ssn);
+            patient = diagnosisController.GetPatient(ssn);
             if (!Regex.IsMatch(ssn, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
                 MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");

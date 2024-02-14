@@ -11,63 +11,53 @@ namespace PatientBL
 {
     public class AppointmentController
     {
-        private UnitOfWork unitOfWork;
+        private AppointmentRepository appointmentRepository;
         public AppointmentController()
         {
-            unitOfWork = UnitOfWork.GetInstance();
+            appointmentRepository = new AppointmentRepository();
         }
+
+        #region Get patient Method
+        public Patient GetPatient(string patientPersonalNumber)
+        {
+            return appointmentRepository.GetPatient(patientPersonalNumber); 
+        }
+        #endregion
 
         #region Book appointment Methods
         public void BookAppointment(Patient patient, DateTime dateAndTime, string reasonForVisit, Staff selectedDoctor)
         {
-            if (selectedDoctor != null)
-            {
-                Appointment appointment = new Appointment(patient, dateAndTime, reasonForVisit, selectedDoctor);
-
-                unitOfWork.AppointmentRepository.Add(appointment);
-                unitOfWork.Save();
-            }
+           appointmentRepository.BookAppointment(patient, dateAndTime, reasonForVisit, selectedDoctor);
         }
         #endregion
 
         #region Get patients and doctors Methods
         public List<Staff> GetAllDoctors()
         {
-            return unitOfWork.StaffRepository.Find(s => s.OccupationalRole == "Doctor").ToList();
+            return appointmentRepository.GetAllDoctors();
         }
         public List<Appointment> GetAppointmentsForDateTime(DateTime appointmentDateTime)
         {
-            List<Appointment> appointments = unitOfWork.AppointmentRepository.Find(a => (a.DateAndTime <= appointmentDateTime && appointmentDateTime < a.EndDateTime) || 
-            (a.DateAndTime < appointmentDateTime && a.EndDateTime >= appointmentDateTime)).ToList();
-
-            return appointments;
+            return appointmentRepository.GetAppointmentsForDateTime(appointmentDateTime);
         }
         public List<Staff> GetAllAvailableDoctors(DateTime appointmentDateTime)
         {
-            List<Staff> allDoctors = GetAllDoctors();
-            List<Appointment> appointments = GetAppointmentsForDateTime(appointmentDateTime);
-
-            List<Staff> availableDoctors = allDoctors.Where(doctor =>
-                !appointments.Any(appointment => appointment.Doctor.StaffId == doctor.StaffId)).ToList();
-
-            return availableDoctors;
+            return appointmentRepository.GetAllAvailableDoctors(appointmentDateTime);
         }
         #endregion
 
         #region Manage existing appointment Methods
         public List<Appointment> GetAppointmentListPersonalNumber(Patient patient)
         {
-            return unitOfWork.AppointmentRepository.GetAll().Where(appointment => appointment.Patient.PersonalNumber == patient.PersonalNumber).ToList();
+            return appointmentRepository.GetAppointmentListPersonalNumber(patient);  
         }
         public void RemoveAppointment(Appointment appointmentToRemove)
         {
-            unitOfWork.AppointmentRepository.Remove(appointmentToRemove);
-            unitOfWork.Save();
+            appointmentRepository.RemoveAppointment(appointmentToRemove);   
         }
         public void UpdateDateTime(DateTime newDateTime, Appointment appointment)
         {
-            appointment.DateAndTime = newDateTime;
-            unitOfWork.Save();
+            appointmentRepository.UpdateDateTime(newDateTime, appointment); 
         }
         #endregion
     }

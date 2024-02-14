@@ -10,18 +10,23 @@ namespace PatientBL
 {
     public class DiagnosisController
     {
-        private UnitOfWork unitOfWork;
+        private DiagnosisRepository diagnosisRepository;
         public DiagnosisController()
         {
-            unitOfWork = UnitOfWork.GetInstance();
+            diagnosisRepository = new DiagnosisRepository();
         }
+
+        #region Get patient Method
+        public Patient GetPatient(string patientPersonalNumber)
+        {
+            return diagnosisRepository.GetPatient(patientPersonalNumber);
+        }
+        #endregion
 
         #region Add diagnosis Method
         public void AddDiagnosis(Patient p, string diagnosis, string treatmentplan)
         {
-            Diagnosis newdiagnosis = new Diagnosis(p, diagnosis, treatmentplan);
-            unitOfWork.DiagnosisRepository.Add(newdiagnosis);
-            unitOfWork.Save();
+            diagnosisRepository.AddDiagnosis(p, diagnosis, treatmentplan);
         }
         #endregion
     }

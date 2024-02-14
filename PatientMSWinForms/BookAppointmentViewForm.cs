@@ -20,7 +20,6 @@ namespace PatientMSWinForms
     public partial class BookAppointmentViewForm : Form
     {
         private AppointmentController appointmentController;
-        private PatientController patientController;
         private Patient patient;
         private List<Staff> allDoctors;
         private DateTime appointmentDateTime;
@@ -29,7 +28,6 @@ namespace PatientMSWinForms
         {
             InitializeComponent();
             appointmentController  = new AppointmentController();
-            patientController = new PatientController();    
             txtPersonalnumber.ForeColor = Color.Gray;
             txtDateTime.ForeColor = Color.Gray;
         }
@@ -40,7 +38,7 @@ namespace PatientMSWinForms
             listBox_Doctor.Items.Clear();
             string patientPersonalNumber = txtPersonalnumber.Text;
 
-            patient = patientController.GetPatient(patientPersonalNumber);
+            patient = appointmentController.GetPatient(patientPersonalNumber);
 
             if (!Regex.IsMatch(patientPersonalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
