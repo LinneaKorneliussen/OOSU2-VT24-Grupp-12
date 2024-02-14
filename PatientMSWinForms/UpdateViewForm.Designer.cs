@@ -28,40 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new System.Windows.Forms.TextBox();
-            name_label = new System.Windows.Forms.Label();
+            txtNewvalue = new System.Windows.Forms.TextBox();
+            lblNewvalue = new System.Windows.Forms.Label();
             btnUpdatePatient = new System.Windows.Forms.Button();
             btnBack = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
-            // textBox1
+            // txtNewvalue
             // 
-            textBox1.Location = new System.Drawing.Point(344, 102);
-            textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new System.Drawing.Size(323, 31);
-            textBox1.TabIndex = 0;
+            txtNewvalue.Location = new System.Drawing.Point(275, 82);
+            txtNewvalue.Name = "txtNewvalue";
+            txtNewvalue.Size = new System.Drawing.Size(259, 27);
+            txtNewvalue.TabIndex = 0;
             // 
-            // name_label
+            // lblNewvalue
             // 
-            name_label.AutoSize = true;
-            name_label.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            name_label.Location = new System.Drawing.Point(231, 108);
-            name_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            name_label.Name = "name_label";
-            name_label.Size = new System.Drawing.Size(105, 23);
-            name_label.TabIndex = 4;
-            name_label.Text = "New value:";
+            lblNewvalue.AutoSize = true;
+            lblNewvalue.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblNewvalue.Location = new System.Drawing.Point(185, 86);
+            lblNewvalue.Name = "lblNewvalue";
+            lblNewvalue.Size = new System.Drawing.Size(84, 19);
+            lblNewvalue.TabIndex = 4;
+            lblNewvalue.Text = "New value:";
             // 
             // btnUpdatePatient
             // 
             btnUpdatePatient.BackColor = System.Drawing.Color.White;
             btnUpdatePatient.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnUpdatePatient.Location = new System.Drawing.Point(632, 439);
-            btnUpdatePatient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnUpdatePatient.Location = new System.Drawing.Point(506, 351);
             btnUpdatePatient.Name = "btnUpdatePatient";
-            btnUpdatePatient.Size = new System.Drawing.Size(196, 62);
+            btnUpdatePatient.Size = new System.Drawing.Size(157, 50);
             btnUpdatePatient.TabIndex = 8;
             btnUpdatePatient.Text = "Update patient";
             btnUpdatePatient.UseVisualStyleBackColor = false;
@@ -71,10 +68,9 @@
             // 
             btnBack.BackColor = System.Drawing.Color.White;
             btnBack.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnBack.Location = new System.Drawing.Point(195, 439);
-            btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnBack.Location = new System.Drawing.Point(156, 351);
             btnBack.Name = "btnBack";
-            btnBack.Size = new System.Drawing.Size(196, 62);
+            btnBack.Size = new System.Drawing.Size(157, 50);
             btnBack.TabIndex = 9;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = false;
@@ -84,25 +80,23 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(344, 40);
-            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Location = new System.Drawing.Point(275, 32);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(289, 33);
+            label1.Size = new System.Drawing.Size(186, 26);
             label1.TabIndex = 10;
-            label1.Text = "Provide new information";
+            label1.Text = "lblProvidenewinfo";
             // 
             // UpdateViewForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.Ivory;
-            ClientSize = new System.Drawing.Size(1000, 562);
+            ClientSize = new System.Drawing.Size(800, 450);
             Controls.Add(label1);
             Controls.Add(btnBack);
             Controls.Add(btnUpdatePatient);
-            Controls.Add(name_label);
-            Controls.Add(textBox1);
-            Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            Controls.Add(lblNewvalue);
+            Controls.Add(txtNewvalue);
             Name = "UpdateViewForm";
             Text = "Enter new information";
             ResumeLayout(false);
@@ -111,8 +105,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label name_label;
+        private System.Windows.Forms.TextBox txtNewvalue;
+        private System.Windows.Forms.Label lblNewvalue;
         private System.Windows.Forms.Button btnUpdatePatient;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label1;

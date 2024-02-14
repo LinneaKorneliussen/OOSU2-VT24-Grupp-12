@@ -31,7 +31,7 @@
             lblPersonalNumber = new System.Windows.Forms.Label();
             lblPatientFound = new System.Windows.Forms.Label();
             lblEnterDose = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
+            lblEnterMedicine = new System.Windows.Forms.Label();
             lblEnterPrescriptionDate = new System.Windows.Forms.Label();
             txtPersonalNumber = new System.Windows.Forms.TextBox();
             txtMedicineName = new System.Windows.Forms.TextBox();
@@ -39,7 +39,7 @@
             txtPrescriptionDate = new System.Windows.Forms.TextBox();
             btnSearch = new System.Windows.Forms.Button();
             btnAddPrescription = new System.Windows.Forms.Button();
-            label1 = new System.Windows.Forms.Label();
+            lblRegisterprescription = new System.Windows.Forms.Label();
             btnClose = new System.Windows.Forms.Button();
             btnClear = new System.Windows.Forms.Button();
             SuspendLayout();
@@ -75,15 +75,15 @@
             lblEnterDose.TabIndex = 2;
             lblEnterDose.Text = "Enter dose:";
             // 
-            // label2
+            // lblEnterMedicine
             // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label2.Location = new System.Drawing.Point(162, 239);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(135, 17);
-            label2.TabIndex = 3;
-            label2.Text = "Enter medicine name:";
+            lblEnterMedicine.AutoSize = true;
+            lblEnterMedicine.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblEnterMedicine.Location = new System.Drawing.Point(162, 239);
+            lblEnterMedicine.Name = "lblEnterMedicine";
+            lblEnterMedicine.Size = new System.Drawing.Size(135, 17);
+            lblEnterMedicine.TabIndex = 3;
+            lblEnterMedicine.Text = "Enter medicine name:";
             // 
             // lblEnterPrescriptionDate
             // 
@@ -149,15 +149,15 @@
             btnAddPrescription.UseVisualStyleBackColor = false;
             btnAddPrescription.Click += btnAddPrescription_Click;
             // 
-            // label1
+            // lblRegisterprescription
             // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(223, 47);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(317, 32);
-            label1.TabIndex = 11;
-            label1.Text = "Register new prescription";
+            lblRegisterprescription.AutoSize = true;
+            lblRegisterprescription.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblRegisterprescription.Location = new System.Drawing.Point(223, 47);
+            lblRegisterprescription.Name = "lblRegisterprescription";
+            lblRegisterprescription.Size = new System.Drawing.Size(317, 32);
+            lblRegisterprescription.TabIndex = 11;
+            lblRegisterprescription.Text = "Register new prescription";
             // 
             // btnClose
             // 
@@ -191,7 +191,7 @@
             ClientSize = new System.Drawing.Size(800, 450);
             Controls.Add(btnClear);
             Controls.Add(btnClose);
-            Controls.Add(label1);
+            Controls.Add(lblRegisterprescription);
             Controls.Add(btnAddPrescription);
             Controls.Add(btnSearch);
             Controls.Add(txtPrescriptionDate);
@@ -199,7 +199,7 @@
             Controls.Add(txtMedicineName);
             Controls.Add(txtPersonalNumber);
             Controls.Add(lblEnterPrescriptionDate);
-            Controls.Add(label2);
+            Controls.Add(lblEnterMedicine);
             Controls.Add(lblEnterDose);
             Controls.Add(lblPatientFound);
             Controls.Add(lblPersonalNumber);
@@ -215,7 +215,7 @@
         private System.Windows.Forms.Label lblPersonalNumber;
         private System.Windows.Forms.Label lblPatientFound;
         private System.Windows.Forms.Label lblEnterDose;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblEnterMedicine;
         private System.Windows.Forms.Label lblEnterPrescriptionDate;
         private System.Windows.Forms.TextBox txtPersonalNumber;
         private System.Windows.Forms.TextBox txtMedicineName;
@@ -223,7 +223,7 @@
         private System.Windows.Forms.TextBox txtPrescriptionDate;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnAddPrescription;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRegisterprescription;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnClear;
     }

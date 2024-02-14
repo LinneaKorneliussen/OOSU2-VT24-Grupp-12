@@ -43,7 +43,7 @@ namespace PatientMSWinForms
         }
         private void btnUpdatePatient_Click(object sender, EventArgs e)
         {
-            string newName = textBox1.Text;
+            string newName = txtNewvalue.Text;
             patientController.UpdatePatientInfo(patient, select, newName);
             MessageBox.Show("Patient information updated successfully!\n\n" + $"New value: {newName}\n");                        
             this.Close();

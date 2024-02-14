@@ -30,11 +30,11 @@
         {
             lblHeadline = new System.Windows.Forms.Label();
             txtMail = new System.Windows.Forms.TextBox();
-            label2 = new System.Windows.Forms.Label();
-            label3 = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
-            label6 = new System.Windows.Forms.Label();
+            lblName = new System.Windows.Forms.Label();
+            lblPersonalNumber = new System.Windows.Forms.Label();
+            lblAdress = new System.Windows.Forms.Label();
+            lblPhonenumber = new System.Windows.Forms.Label();
+            lblEmailadress = new System.Windows.Forms.Label();
             btnRegister = new System.Windows.Forms.Button();
             btnClose = new System.Windows.Forms.Button();
             btnClear = new System.Windows.Forms.Button();
@@ -43,7 +43,7 @@
             txtAddress = new System.Windows.Forms.TextBox();
             txtPhone = new System.Windows.Forms.TextBox();
             panel1 = new System.Windows.Forms.Panel();
-            label7 = new System.Windows.Forms.Label();
+            lblMandatoryfield = new System.Windows.Forms.Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,76 +52,84 @@
             lblHeadline.AutoSize = true;
             lblHeadline.BackColor = System.Drawing.Color.Transparent;
             lblHeadline.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblHeadline.Location = new System.Drawing.Point(296, 24);
+            lblHeadline.Location = new System.Drawing.Point(237, 19);
+            lblHeadline.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblHeadline.Name = "lblHeadline";
-            lblHeadline.Size = new System.Drawing.Size(230, 25);
+            lblHeadline.Size = new System.Drawing.Size(193, 21);
             lblHeadline.TabIndex = 1;
             lblHeadline.Text = "New Patient Registration";
             // 
             // txtMail
             // 
-            txtMail.Location = new System.Drawing.Point(136, 306);
+            txtMail.Location = new System.Drawing.Point(109, 245);
+            txtMail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             txtMail.Name = "txtMail";
-            txtMail.Size = new System.Drawing.Size(276, 31);
+            txtMail.Size = new System.Drawing.Size(222, 27);
             txtMail.TabIndex = 7;
             // 
-            // label2
+            // lblName
             // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label2.Location = new System.Drawing.Point(131, 130);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(120, 20);
-            label2.TabIndex = 8;
-            label2.Text = "Patient Name:*";
+            lblName.AutoSize = true;
+            lblName.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblName.Location = new System.Drawing.Point(105, 104);
+            lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            lblName.Name = "lblName";
+            lblName.Size = new System.Drawing.Size(99, 17);
+            lblName.TabIndex = 8;
+            lblName.Text = "Patient Name:*";
             // 
-            // label3
+            // lblPersonalNumber
             // 
-            label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label3.Location = new System.Drawing.Point(451, 130);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(197, 20);
-            label3.TabIndex = 9;
-            label3.Text = "Patient personal number:*";
+            lblPersonalNumber.AutoSize = true;
+            lblPersonalNumber.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblPersonalNumber.Location = new System.Drawing.Point(361, 104);
+            lblPersonalNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            lblPersonalNumber.Name = "lblPersonalNumber";
+            lblPersonalNumber.Size = new System.Drawing.Size(160, 17);
+            lblPersonalNumber.TabIndex = 9;
+            lblPersonalNumber.Text = "Patient personal number:*";
             // 
-            // label4
+            // lblAdress
             // 
-            label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label4.Location = new System.Drawing.Point(131, 207);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(134, 20);
-            label4.TabIndex = 10;
-            label4.Text = "Patient Address:*";
+            lblAdress.AutoSize = true;
+            lblAdress.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblAdress.Location = new System.Drawing.Point(105, 166);
+            lblAdress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            lblAdress.Name = "lblAdress";
+            lblAdress.Size = new System.Drawing.Size(111, 17);
+            lblAdress.TabIndex = 10;
+            lblAdress.Text = "Patient Address:*";
             // 
-            // label5
+            // lblPhonenumber
             // 
-            label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label5.Location = new System.Drawing.Point(451, 207);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(176, 20);
-            label5.TabIndex = 11;
-            label5.Text = "Patient phonenumber:*";
+            lblPhonenumber.AutoSize = true;
+            lblPhonenumber.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblPhonenumber.Location = new System.Drawing.Point(361, 166);
+            lblPhonenumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            lblPhonenumber.Name = "lblPhonenumber";
+            lblPhonenumber.Size = new System.Drawing.Size(142, 17);
+            lblPhonenumber.TabIndex = 11;
+            lblPhonenumber.Text = "Patient phonenumber:*";
             // 
-            // label6
+            // lblEmailadress
             // 
-            label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label6.Location = new System.Drawing.Point(131, 283);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(169, 20);
-            label6.TabIndex = 12;
-            label6.Text = "Patient emailaddress:*";
+            lblEmailadress.AutoSize = true;
+            lblEmailadress.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblEmailadress.Location = new System.Drawing.Point(105, 226);
+            lblEmailadress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            lblEmailadress.Name = "lblEmailadress";
+            lblEmailadress.Size = new System.Drawing.Size(139, 17);
+            lblEmailadress.TabIndex = 12;
+            lblEmailadress.Text = "Patient emailaddress:*";
             // 
             // btnRegister
             // 
             btnRegister.BackColor = System.Drawing.Color.White;
             btnRegister.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnRegister.Location = new System.Drawing.Point(670, 436);
+            btnRegister.Location = new System.Drawing.Point(536, 349);
+            btnRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new System.Drawing.Size(128, 33);
+            btnRegister.Size = new System.Drawing.Size(102, 26);
             btnRegister.TabIndex = 13;
             btnRegister.Text = "Register";
             btnRegister.UseVisualStyleBackColor = false;
@@ -131,9 +139,10 @@
             // 
             btnClose.BackColor = System.Drawing.Color.White;
             btnClose.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnClose.Location = new System.Drawing.Point(37, 436);
+            btnClose.Location = new System.Drawing.Point(30, 349);
+            btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             btnClose.Name = "btnClose";
-            btnClose.Size = new System.Drawing.Size(128, 33);
+            btnClose.Size = new System.Drawing.Size(102, 26);
             btnClose.TabIndex = 14;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = false;
@@ -143,9 +152,10 @@
             // 
             btnClear.BackColor = System.Drawing.Color.White;
             btnClear.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnClear.Location = new System.Drawing.Point(354, 436);
+            btnClear.Location = new System.Drawing.Point(283, 349);
+            btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             btnClear.Name = "btnClear";
-            btnClear.Size = new System.Drawing.Size(128, 33);
+            btnClear.Size = new System.Drawing.Size(102, 26);
             btnClear.TabIndex = 15;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
@@ -154,33 +164,37 @@
             // txtName
             // 
             txtName.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtName.Location = new System.Drawing.Point(136, 153);
+            txtName.Location = new System.Drawing.Point(109, 122);
+            txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             txtName.Name = "txtName";
             txtName.PlaceholderText = "First Name and Last Name";
-            txtName.Size = new System.Drawing.Size(271, 30);
+            txtName.Size = new System.Drawing.Size(218, 27);
             txtName.TabIndex = 16;
             // 
             // txtSSN
             // 
             txtSSN.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtSSN.Location = new System.Drawing.Point(451, 153);
+            txtSSN.Location = new System.Drawing.Point(361, 122);
+            txtSSN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             txtSSN.Name = "txtSSN";
             txtSSN.PlaceholderText = "yyyy-mm-dd-xxxx";
-            txtSSN.Size = new System.Drawing.Size(257, 30);
+            txtSSN.Size = new System.Drawing.Size(206, 27);
             txtSSN.TabIndex = 17;
             // 
             // txtAddress
             // 
-            txtAddress.Location = new System.Drawing.Point(136, 230);
+            txtAddress.Location = new System.Drawing.Point(109, 184);
+            txtAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new System.Drawing.Size(276, 31);
+            txtAddress.Size = new System.Drawing.Size(222, 27);
             txtAddress.TabIndex = 18;
             // 
             // txtPhone
             // 
-            txtPhone.Location = new System.Drawing.Point(451, 230);
+            txtPhone.Location = new System.Drawing.Point(361, 184);
+            txtPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new System.Drawing.Size(257, 31);
+            txtPhone.Size = new System.Drawing.Size(206, 27);
             txtPhone.TabIndex = 19;
             // 
             // panel1
@@ -188,27 +202,29 @@
             panel1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             panel1.Controls.Add(lblHeadline);
             panel1.Location = new System.Drawing.Point(-1, 0);
+            panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(837, 69);
+            panel1.Size = new System.Drawing.Size(670, 55);
             panel1.TabIndex = 20;
             // 
-            // label7
+            // lblMandatoryfield
             // 
-            label7.AutoSize = true;
-            label7.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label7.Location = new System.Drawing.Point(136, 367);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(117, 19);
-            label7.TabIndex = 21;
-            label7.Text = "* Mandatory field";
+            lblMandatoryfield.AutoSize = true;
+            lblMandatoryfield.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblMandatoryfield.Location = new System.Drawing.Point(109, 294);
+            lblMandatoryfield.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            lblMandatoryfield.Name = "lblMandatoryfield";
+            lblMandatoryfield.Size = new System.Drawing.Size(107, 16);
+            lblMandatoryfield.TabIndex = 21;
+            lblMandatoryfield.Text = "* Mandatory field";
             // 
             // RegisterPatientViewForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.Ivory;
-            ClientSize = new System.Drawing.Size(836, 511);
-            Controls.Add(label7);
+            ClientSize = new System.Drawing.Size(669, 409);
+            Controls.Add(lblMandatoryfield);
             Controls.Add(panel1);
             Controls.Add(txtPhone);
             Controls.Add(txtAddress);
@@ -217,12 +233,13 @@
             Controls.Add(btnClear);
             Controls.Add(btnClose);
             Controls.Add(btnRegister);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(lblEmailadress);
+            Controls.Add(lblPhonenumber);
+            Controls.Add(lblAdress);
+            Controls.Add(lblPersonalNumber);
+            Controls.Add(lblName);
             Controls.Add(txtMail);
+            Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Name = "RegisterPatientViewForm";
             Text = "Registrer new patient";
             panel1.ResumeLayout(false);
@@ -240,11 +257,11 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox txtMail;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblPersonalNumber;
+        private System.Windows.Forms.Label lblAdress;
+        private System.Windows.Forms.Label lblPhonenumber;
+        private System.Windows.Forms.Label lblEmailadress;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnClear;
@@ -252,6 +269,6 @@
         private System.Windows.Forms.TextBox txtSSN;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblMandatoryfield;
     }
 }

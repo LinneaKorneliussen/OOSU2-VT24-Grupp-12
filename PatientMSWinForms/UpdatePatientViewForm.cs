@@ -32,7 +32,7 @@ namespace PatientMSWinForms
         #region Update Patient Clicks
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            string patientPersonalNumber = textPersonalnumber.Text;
+            string patientPersonalNumber = txtPersonalnumber.Text;
 
             patient = patientController.GetPatient(patientPersonalNumber);
 

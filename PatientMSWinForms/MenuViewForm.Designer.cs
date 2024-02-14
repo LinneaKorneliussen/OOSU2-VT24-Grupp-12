@@ -38,17 +38,17 @@
             btnDisplayAppointments = new System.Windows.Forms.Button();
             btnRegisterPrescription = new System.Windows.Forms.Button();
             btnLogOff = new System.Windows.Forms.Button();
-            sidebar = new System.Windows.Forms.FlowLayoutPanel();
+            FlowLayoutPanel_menu = new System.Windows.Forms.FlowLayoutPanel();
             panel1 = new System.Windows.Forms.Panel();
             lblMenubar = new System.Windows.Forms.Label();
-            menu4 = new System.Windows.Forms.PictureBox();
+            PictureBox_bar = new System.Windows.Forms.PictureBox();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             sidebarTimer = new System.Windows.Forms.Timer(components);
-            pictureBox1 = new System.Windows.Forms.PictureBox();
-            sidebar.SuspendLayout();
+            PictureBox_logo = new System.Windows.Forms.PictureBox();
+            FlowLayoutPanel_menu.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)menu4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBox_bar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBox_logo).BeginInit();
             SuspendLayout();
             // 
             // btnRegisterNewPatient
@@ -56,10 +56,9 @@
             btnRegisterNewPatient.BackColor = System.Drawing.Color.RosyBrown;
             btnRegisterNewPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnRegisterNewPatient.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnRegisterNewPatient.Location = new System.Drawing.Point(4, 108);
-            btnRegisterNewPatient.Margin = new System.Windows.Forms.Padding(4);
+            btnRegisterNewPatient.Location = new System.Drawing.Point(3, 86);
             btnRegisterNewPatient.Name = "btnRegisterNewPatient";
-            btnRegisterNewPatient.Size = new System.Drawing.Size(260, 60);
+            btnRegisterNewPatient.Size = new System.Drawing.Size(208, 48);
             btnRegisterNewPatient.TabIndex = 3;
             btnRegisterNewPatient.Text = "Register new patient";
             btnRegisterNewPatient.UseVisualStyleBackColor = false;
@@ -70,10 +69,9 @@
             btnUpdatePatientInformation.BackColor = System.Drawing.Color.RosyBrown;
             btnUpdatePatientInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnUpdatePatientInformation.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnUpdatePatientInformation.Location = new System.Drawing.Point(4, 176);
-            btnUpdatePatientInformation.Margin = new System.Windows.Forms.Padding(4);
+            btnUpdatePatientInformation.Location = new System.Drawing.Point(3, 140);
             btnUpdatePatientInformation.Name = "btnUpdatePatientInformation";
-            btnUpdatePatientInformation.Size = new System.Drawing.Size(260, 61);
+            btnUpdatePatientInformation.Size = new System.Drawing.Size(208, 49);
             btnUpdatePatientInformation.TabIndex = 6;
             btnUpdatePatientInformation.Text = "Update patient information";
             btnUpdatePatientInformation.UseVisualStyleBackColor = false;
@@ -84,10 +82,9 @@
             btnManageAppointment.BackColor = System.Drawing.Color.RosyBrown;
             btnManageAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnManageAppointment.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnManageAppointment.Location = new System.Drawing.Point(4, 312);
-            btnManageAppointment.Margin = new System.Windows.Forms.Padding(4);
+            btnManageAppointment.Location = new System.Drawing.Point(3, 248);
             btnManageAppointment.Name = "btnManageAppointment";
-            btnManageAppointment.Size = new System.Drawing.Size(260, 59);
+            btnManageAppointment.Size = new System.Drawing.Size(208, 47);
             btnManageAppointment.TabIndex = 4;
             btnManageAppointment.Text = "Manage existing appointment";
             btnManageAppointment.UseVisualStyleBackColor = false;
@@ -98,10 +95,9 @@
             btnRegisterNewDiagnosis.BackColor = System.Drawing.Color.RosyBrown;
             btnRegisterNewDiagnosis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnRegisterNewDiagnosis.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnRegisterNewDiagnosis.Location = new System.Drawing.Point(4, 379);
-            btnRegisterNewDiagnosis.Margin = new System.Windows.Forms.Padding(4);
+            btnRegisterNewDiagnosis.Location = new System.Drawing.Point(3, 301);
             btnRegisterNewDiagnosis.Name = "btnRegisterNewDiagnosis";
-            btnRegisterNewDiagnosis.Size = new System.Drawing.Size(260, 58);
+            btnRegisterNewDiagnosis.Size = new System.Drawing.Size(208, 46);
             btnRegisterNewDiagnosis.TabIndex = 5;
             btnRegisterNewDiagnosis.Text = "Register new diagnosis";
             btnRegisterNewDiagnosis.UseVisualStyleBackColor = false;
@@ -112,10 +108,9 @@
             btnBookNewAppointment.BackColor = System.Drawing.Color.RosyBrown;
             btnBookNewAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnBookNewAppointment.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnBookNewAppointment.Location = new System.Drawing.Point(4, 245);
-            btnBookNewAppointment.Margin = new System.Windows.Forms.Padding(4);
+            btnBookNewAppointment.Location = new System.Drawing.Point(3, 195);
             btnBookNewAppointment.Name = "btnBookNewAppointment";
-            btnBookNewAppointment.Size = new System.Drawing.Size(260, 59);
+            btnBookNewAppointment.Size = new System.Drawing.Size(208, 47);
             btnBookNewAppointment.TabIndex = 6;
             btnBookNewAppointment.Text = "Book new appointment";
             btnBookNewAppointment.UseVisualStyleBackColor = false;
@@ -126,10 +121,9 @@
             btnDisplayAppointments.BackColor = System.Drawing.Color.RosyBrown;
             btnDisplayAppointments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnDisplayAppointments.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnDisplayAppointments.Location = new System.Drawing.Point(4, 525);
-            btnDisplayAppointments.Margin = new System.Windows.Forms.Padding(4);
+            btnDisplayAppointments.Location = new System.Drawing.Point(3, 417);
             btnDisplayAppointments.Name = "btnDisplayAppointments";
-            btnDisplayAppointments.Size = new System.Drawing.Size(260, 72);
+            btnDisplayAppointments.Size = new System.Drawing.Size(208, 58);
             btnDisplayAppointments.TabIndex = 5;
             btnDisplayAppointments.Text = "Display upcoming appointments";
             btnDisplayAppointments.UseVisualStyleBackColor = false;
@@ -140,10 +134,9 @@
             btnRegisterPrescription.BackColor = System.Drawing.Color.RosyBrown;
             btnRegisterPrescription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnRegisterPrescription.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnRegisterPrescription.Location = new System.Drawing.Point(4, 445);
-            btnRegisterPrescription.Margin = new System.Windows.Forms.Padding(4);
+            btnRegisterPrescription.Location = new System.Drawing.Point(3, 353);
             btnRegisterPrescription.Name = "btnRegisterPrescription";
-            btnRegisterPrescription.Size = new System.Drawing.Size(260, 72);
+            btnRegisterPrescription.Size = new System.Drawing.Size(208, 58);
             btnRegisterPrescription.TabIndex = 7;
             btnRegisterPrescription.Text = "Register new prescription";
             btnRegisterPrescription.UseVisualStyleBackColor = false;
@@ -154,67 +147,62 @@
             btnLogOff.BackColor = System.Drawing.Color.RosyBrown;
             btnLogOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnLogOff.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnLogOff.Location = new System.Drawing.Point(4, 605);
-            btnLogOff.Margin = new System.Windows.Forms.Padding(4);
+            btnLogOff.Location = new System.Drawing.Point(3, 481);
             btnLogOff.Name = "btnLogOff";
-            btnLogOff.Size = new System.Drawing.Size(260, 72);
+            btnLogOff.Size = new System.Drawing.Size(208, 58);
             btnLogOff.TabIndex = 8;
             btnLogOff.Text = "Log Off";
             btnLogOff.UseVisualStyleBackColor = false;
             btnLogOff.Click += btnLogOff_Click;
             // 
-            // sidebar
+            // FlowLayoutPanel_menu
             // 
-            sidebar.BackColor = System.Drawing.Color.RosyBrown;
-            sidebar.Controls.Add(panel1);
-            sidebar.Controls.Add(btnRegisterNewPatient);
-            sidebar.Controls.Add(btnUpdatePatientInformation);
-            sidebar.Controls.Add(btnBookNewAppointment);
-            sidebar.Controls.Add(btnManageAppointment);
-            sidebar.Controls.Add(btnRegisterNewDiagnosis);
-            sidebar.Controls.Add(btnRegisterPrescription);
-            sidebar.Controls.Add(btnDisplayAppointments);
-            sidebar.Controls.Add(btnLogOff);
-            sidebar.Location = new System.Drawing.Point(0, -1);
-            sidebar.Margin = new System.Windows.Forms.Padding(4);
-            sidebar.MaximumSize = new System.Drawing.Size(271, 679);
-            sidebar.MinimumSize = new System.Drawing.Size(95, 679);
-            sidebar.Name = "sidebar";
-            sidebar.Size = new System.Drawing.Size(271, 679);
-            sidebar.TabIndex = 9;
+            FlowLayoutPanel_menu.BackColor = System.Drawing.Color.RosyBrown;
+            FlowLayoutPanel_menu.Controls.Add(panel1);
+            FlowLayoutPanel_menu.Controls.Add(btnRegisterNewPatient);
+            FlowLayoutPanel_menu.Controls.Add(btnUpdatePatientInformation);
+            FlowLayoutPanel_menu.Controls.Add(btnBookNewAppointment);
+            FlowLayoutPanel_menu.Controls.Add(btnManageAppointment);
+            FlowLayoutPanel_menu.Controls.Add(btnRegisterNewDiagnosis);
+            FlowLayoutPanel_menu.Controls.Add(btnRegisterPrescription);
+            FlowLayoutPanel_menu.Controls.Add(btnDisplayAppointments);
+            FlowLayoutPanel_menu.Controls.Add(btnLogOff);
+            FlowLayoutPanel_menu.Location = new System.Drawing.Point(0, -1);
+            FlowLayoutPanel_menu.MaximumSize = new System.Drawing.Size(217, 543);
+            FlowLayoutPanel_menu.MinimumSize = new System.Drawing.Size(76, 543);
+            FlowLayoutPanel_menu.Name = "FlowLayoutPanel_menu";
+            FlowLayoutPanel_menu.Size = new System.Drawing.Size(217, 543);
+            FlowLayoutPanel_menu.TabIndex = 9;
             // 
             // panel1
             // 
             panel1.Controls.Add(lblMenubar);
-            panel1.Controls.Add(menu4);
-            panel1.Location = new System.Drawing.Point(4, 4);
-            panel1.Margin = new System.Windows.Forms.Padding(4);
+            panel1.Controls.Add(PictureBox_bar);
+            panel1.Location = new System.Drawing.Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(268, 96);
+            panel1.Size = new System.Drawing.Size(214, 77);
             panel1.TabIndex = 0;
             // 
             // lblMenubar
             // 
             lblMenubar.AutoSize = true;
             lblMenubar.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblMenubar.Location = new System.Drawing.Point(91, 34);
-            lblMenubar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblMenubar.Location = new System.Drawing.Point(73, 27);
             lblMenubar.Name = "lblMenubar";
-            lblMenubar.Size = new System.Drawing.Size(143, 37);
+            lblMenubar.Size = new System.Drawing.Size(122, 33);
             lblMenubar.TabIndex = 0;
             lblMenubar.Text = "Menu bar";
             // 
-            // menu4
+            // PictureBox_bar
             // 
-            menu4.Cursor = System.Windows.Forms.Cursors.Hand;
-            menu4.Image = (System.Drawing.Image)resources.GetObject("menu4.Image");
-            menu4.Location = new System.Drawing.Point(4, 12);
-            menu4.Margin = new System.Windows.Forms.Padding(4);
-            menu4.Name = "menu4";
-            menu4.Size = new System.Drawing.Size(80, 78);
-            menu4.TabIndex = 9;
-            menu4.TabStop = false;
-            menu4.Click += menuSlide_Click;
+            PictureBox_bar.Cursor = System.Windows.Forms.Cursors.Hand;
+            PictureBox_bar.Image = (System.Drawing.Image)resources.GetObject("PictureBox_bar.Image");
+            PictureBox_bar.Location = new System.Drawing.Point(3, 10);
+            PictureBox_bar.Name = "PictureBox_bar";
+            PictureBox_bar.Size = new System.Drawing.Size(64, 62);
+            PictureBox_bar.TabIndex = 9;
+            PictureBox_bar.TabStop = false;
+            PictureBox_bar.Click += menuSlide_Click;
             // 
             // sqlCommand1
             // 
@@ -227,34 +215,34 @@
             // 
             sidebarTimer.Tick += sidebarTimer_Tick;
             // 
-            // pictureBox1
+            // PictureBox_logo
             // 
-            pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new System.Drawing.Point(463, 96);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(500, 500);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            pictureBox1.TabIndex = 10;
-            pictureBox1.TabStop = false;
+            PictureBox_logo.Image = (System.Drawing.Image)resources.GetObject("PictureBox_logo.Image");
+            PictureBox_logo.Location = new System.Drawing.Point(370, 77);
+            PictureBox_logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            PictureBox_logo.Name = "PictureBox_logo";
+            PictureBox_logo.Size = new System.Drawing.Size(500, 500);
+            PictureBox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            PictureBox_logo.TabIndex = 10;
+            PictureBox_logo.TabStop = false;
             // 
             // MenuViewForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(1184, 679);
-            Controls.Add(pictureBox1);
-            Controls.Add(sidebar);
+            ClientSize = new System.Drawing.Size(947, 543);
+            Controls.Add(PictureBox_logo);
+            Controls.Add(FlowLayoutPanel_menu);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            Margin = new System.Windows.Forms.Padding(4);
             Name = "MenuViewForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MenuViewForm";
-            sidebar.ResumeLayout(false);
+            FlowLayoutPanel_menu.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)menu4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBox_bar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBox_logo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -268,12 +256,12 @@
         private System.Windows.Forms.Button btnDisplayAppointments;
         private System.Windows.Forms.Button btnRegisterPrescription;
         private System.Windows.Forms.Button btnLogOff;
-        private System.Windows.Forms.FlowLayoutPanel sidebar;
+        private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel_menu;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private System.Windows.Forms.Label lblMenubar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox menu4;
+        private System.Windows.Forms.PictureBox PictureBox_bar;
         private System.Windows.Forms.Timer sidebarTimer;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PictureBox_logo;
     }
 }

@@ -30,24 +30,23 @@
         {
             btnBack = new System.Windows.Forms.Button();
             btnSearch = new System.Windows.Forms.Button();
-            textPersonalnumber = new System.Windows.Forms.TextBox();
-            Personalnumber = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
+            txtPersonalnumber = new System.Windows.Forms.TextBox();
+            lblPersonalnumber = new System.Windows.Forms.Label();
+            lblSelect = new System.Windows.Forms.Label();
             btnUpdate = new System.Windows.Forms.Button();
             lblPatientInfo = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             listbox_Patient = new System.Windows.Forms.ListBox();
-            label2 = new System.Windows.Forms.Label();
+            lblCurrentinfo = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
             // btnBack
             // 
             btnBack.BackColor = System.Drawing.Color.White;
             btnBack.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnBack.Location = new System.Drawing.Point(194, 501);
-            btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnBack.Location = new System.Drawing.Point(155, 401);
             btnBack.Name = "btnBack";
-            btnBack.Size = new System.Drawing.Size(138, 46);
+            btnBack.Size = new System.Drawing.Size(110, 37);
             btnBack.TabIndex = 0;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = false;
@@ -57,53 +56,48 @@
             // 
             btnSearch.BackColor = System.Drawing.Color.White;
             btnSearch.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnSearch.Location = new System.Drawing.Point(608, 120);
-            btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnSearch.Location = new System.Drawing.Point(486, 96);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new System.Drawing.Size(121, 34);
+            btnSearch.Size = new System.Drawing.Size(97, 27);
             btnSearch.TabIndex = 1;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSelect_Click;
             // 
-            // textPersonalnumber
+            // txtPersonalnumber
             // 
-            textPersonalnumber.Location = new System.Drawing.Point(389, 120);
-            textPersonalnumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            textPersonalnumber.Name = "textPersonalnumber";
-            textPersonalnumber.Size = new System.Drawing.Size(210, 31);
-            textPersonalnumber.TabIndex = 3;
+            txtPersonalnumber.Location = new System.Drawing.Point(311, 96);
+            txtPersonalnumber.Name = "txtPersonalnumber";
+            txtPersonalnumber.Size = new System.Drawing.Size(169, 27);
+            txtPersonalnumber.TabIndex = 3;
             // 
-            // Personalnumber
+            // lblPersonalnumber
             // 
-            Personalnumber.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            Personalnumber.Location = new System.Drawing.Point(234, 124);
-            Personalnumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            Personalnumber.Name = "Personalnumber";
-            Personalnumber.Size = new System.Drawing.Size(142, 29);
-            Personalnumber.TabIndex = 0;
-            Personalnumber.Text = "Personalnumber:";
+            lblPersonalnumber.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblPersonalnumber.Location = new System.Drawing.Point(187, 99);
+            lblPersonalnumber.Name = "lblPersonalnumber";
+            lblPersonalnumber.Size = new System.Drawing.Size(114, 23);
+            lblPersonalnumber.TabIndex = 0;
+            lblPersonalnumber.Text = "Personalnumber:";
             // 
-            // label1
+            // lblSelect
             // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.ForeColor = System.Drawing.Color.Black;
-            label1.Location = new System.Drawing.Point(220, 62);
-            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(460, 33);
-            label1.TabIndex = 4;
-            label1.Text = "Select personalnumber to update patient";
+            lblSelect.AutoSize = true;
+            lblSelect.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblSelect.ForeColor = System.Drawing.Color.Black;
+            lblSelect.Location = new System.Drawing.Point(176, 50);
+            lblSelect.Name = "lblSelect";
+            lblSelect.Size = new System.Drawing.Size(384, 26);
+            lblSelect.TabIndex = 4;
+            lblSelect.Text = "Select personalnumber to update patient";
             // 
             // btnUpdate
             // 
             btnUpdate.BackColor = System.Drawing.Color.White;
             btnUpdate.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnUpdate.Location = new System.Drawing.Point(584, 501);
-            btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnUpdate.Location = new System.Drawing.Point(467, 401);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new System.Drawing.Size(236, 46);
+            btnUpdate.Size = new System.Drawing.Size(189, 37);
             btnUpdate.TabIndex = 5;
             btnUpdate.Text = "Select option to update";
             btnUpdate.UseVisualStyleBackColor = false;
@@ -112,59 +106,54 @@
             // lblPatientInfo
             // 
             lblPatientInfo.AutoSize = true;
-            lblPatientInfo.Location = new System.Drawing.Point(331, 190);
-            lblPatientInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblPatientInfo.Location = new System.Drawing.Point(265, 152);
             lblPatientInfo.Name = "lblPatientInfo";
-            lblPatientInfo.Size = new System.Drawing.Size(0, 25);
+            lblPatientInfo.Size = new System.Drawing.Size(0, 20);
             lblPatientInfo.TabIndex = 6;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(270, 190);
-            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Location = new System.Drawing.Point(216, 152);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(0, 25);
+            label3.Size = new System.Drawing.Size(0, 20);
             label3.TabIndex = 7;
             // 
             // listbox_Patient
             // 
             listbox_Patient.FormattingEnabled = true;
-            listbox_Patient.ItemHeight = 25;
-            listbox_Patient.Location = new System.Drawing.Point(195, 295);
-            listbox_Patient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            listbox_Patient.ItemHeight = 20;
+            listbox_Patient.Location = new System.Drawing.Point(156, 236);
             listbox_Patient.Name = "listbox_Patient";
-            listbox_Patient.Size = new System.Drawing.Size(624, 179);
+            listbox_Patient.Size = new System.Drawing.Size(500, 144);
             listbox_Patient.TabIndex = 8;
             // 
-            // label2
+            // lblCurrentinfo
             // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label2.Location = new System.Drawing.Point(195, 250);
-            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(249, 25);
-            label2.TabIndex = 9;
-            label2.Text = "Current patient information";
+            lblCurrentinfo.AutoSize = true;
+            lblCurrentinfo.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblCurrentinfo.Location = new System.Drawing.Point(156, 200);
+            lblCurrentinfo.Name = "lblCurrentinfo";
+            lblCurrentinfo.Size = new System.Drawing.Size(205, 20);
+            lblCurrentinfo.TabIndex = 9;
+            lblCurrentinfo.Text = "Current patient information";
             // 
             // UpdatePatientViewForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.Ivory;
-            ClientSize = new System.Drawing.Size(1000, 562);
-            Controls.Add(label2);
+            ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(lblCurrentinfo);
             Controls.Add(listbox_Patient);
             Controls.Add(label3);
             Controls.Add(lblPatientInfo);
             Controls.Add(btnUpdate);
-            Controls.Add(label1);
-            Controls.Add(Personalnumber);
-            Controls.Add(textPersonalnumber);
+            Controls.Add(lblSelect);
+            Controls.Add(lblPersonalnumber);
+            Controls.Add(txtPersonalnumber);
             Controls.Add(btnSearch);
             Controls.Add(btnBack);
-            Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             Name = "UpdatePatientViewForm";
             Text = "Update patient information";
             ResumeLayout(false);
@@ -175,13 +164,13 @@
 
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textPersonalnumber;
-        private System.Windows.Forms.Label Personalnumber;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPersonalnumber;
+        private System.Windows.Forms.Label lblPersonalnumber;
+        private System.Windows.Forms.Label lblSelect;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblPatientInfo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listbox_Patient;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCurrentinfo;
     }
 }

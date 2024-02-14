@@ -83,8 +83,8 @@ namespace PatientMSWinForms
         {
             if (sidebarExpand)
             {
-                sidebar.Width -= 10;
-                if (sidebar.Width == sidebar.MinimumSize.Width)
+                FlowLayoutPanel_menu.Width -= 10;
+                if (FlowLayoutPanel_menu.Width == FlowLayoutPanel_menu.MinimumSize.Width)
                 {
                     sidebarExpand = false;
                     sidebarTimer.Stop();
@@ -92,8 +92,8 @@ namespace PatientMSWinForms
             }
             else
             {
-                sidebar.Width += 10;
-                if (sidebar.Width == sidebar.MaximumSize.Width)
+                FlowLayoutPanel_menu.Width += 10;
+                if (FlowLayoutPanel_menu.Width == FlowLayoutPanel_menu.MaximumSize.Width)
                 {
                     sidebarExpand = true;
                     sidebarTimer.Stop();
