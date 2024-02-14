@@ -16,12 +16,10 @@ namespace PatientMSWinForms
     public partial class DisplayAppointmentViewForm : Form
     {
         private JournalController journalController;
-        private PatientController patientController;
 
         public DisplayAppointmentViewForm()
         {
             InitializeComponent();
-            patientController = new PatientController();
             journalController = new JournalController();
             txtPersonalNumber.ForeColor = Color.Gray;
         }
@@ -33,7 +31,7 @@ namespace PatientMSWinForms
 
             string patientPersonalNumber = txtPersonalNumber.Text;
 
-            Patient patient = patientController.GetPatient(patientPersonalNumber);
+            Patient patient = journalController.GetPatient(patientPersonalNumber);
 
             if (!Regex.IsMatch(patientPersonalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {

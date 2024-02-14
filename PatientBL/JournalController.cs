@@ -10,22 +10,23 @@ namespace PatientBL
 {
     public class JournalController
     {
-        private UnitOfWork unitOfWork;
+        private JournalRepository journalRepository;
         public JournalController()
         {
-            unitOfWork = UnitOfWork.GetInstance();
+            journalRepository = new JournalRepository();
         }
+
+        #region Get patient Method
+        public Patient GetPatient(string patientPersonalNumber)
+        {
+            return journalRepository.GetPatient(patientPersonalNumber);
+        }
+        #endregion
 
         #region Get appointment List Method
         public IQueryable<Appointment> GetAppointmentList(Patient patient)
         {
-            IQueryable<Appointment> appointments = unitOfWork.AppointmentRepository.Query();
-
-            var result = from x in appointments
-                         where x.Patient.PersonalNumber.Equals(patient.PersonalNumber)
-                         orderby x.DateAndTime ascending
-                         select x;
-            return result;
+           return journalRepository.GetAppointmentList(patient);
         }
 
         #endregion
