@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             lblBookappointment = new System.Windows.Forms.Label();
-            lblFindPatient = new System.Windows.Forms.Label();
+            lblPatientPersonalnumber = new System.Windows.Forms.Label();
             txtPersonalnumber = new System.Windows.Forms.TextBox();
             btnSearch = new System.Windows.Forms.Button();
             lblSearchInfo = new System.Windows.Forms.Label();
             lblDateTime = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
+            lblReason = new System.Windows.Forms.Label();
             txtDateTime = new System.Windows.Forms.TextBox();
             txtReason = new System.Windows.Forms.TextBox();
             btnFindDoctor = new System.Windows.Forms.Button();
             listBox_Doctor = new System.Windows.Forms.ListBox();
-            label2 = new System.Windows.Forms.Label();
+            lblAvailableDoctors = new System.Windows.Forms.Label();
             lblDoctorNumber = new System.Windows.Forms.Label();
             btnBookAppointment = new System.Windows.Forms.Button();
             btnBack = new System.Windows.Forms.Button();
@@ -56,15 +56,15 @@
             lblBookappointment.TabIndex = 0;
             lblBookappointment.Text = "Book appointment";
             // 
-            // lblFindPatient
+            // lblPatientPersonalnumber
             // 
-            lblFindPatient.AutoSize = true;
-            lblFindPatient.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblFindPatient.Location = new System.Drawing.Point(61, 82);
-            lblFindPatient.Name = "lblFindPatient";
-            lblFindPatient.Size = new System.Drawing.Size(235, 20);
-            lblFindPatient.TabIndex = 1;
-            lblFindPatient.Text = "Enter patient personalnumber:  ";
+            lblPatientPersonalnumber.AutoSize = true;
+            lblPatientPersonalnumber.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblPatientPersonalnumber.Location = new System.Drawing.Point(61, 82);
+            lblPatientPersonalnumber.Name = "lblPatientPersonalnumber";
+            lblPatientPersonalnumber.Size = new System.Drawing.Size(235, 20);
+            lblPatientPersonalnumber.TabIndex = 1;
+            lblPatientPersonalnumber.Text = "Enter patient personalnumber:  ";
             // 
             // txtPersonalnumber
             // 
@@ -72,14 +72,14 @@
             txtPersonalnumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             txtPersonalnumber.Name = "txtPersonalnumber";
             txtPersonalnumber.PlaceholderText = "yyyy-mm-dd-xxxx";
-            txtPersonalnumber.Size = new System.Drawing.Size(470, 28);
+            txtPersonalnumber.Size = new System.Drawing.Size(657, 28);
             txtPersonalnumber.TabIndex = 2;
             // 
             // btnSearch
             // 
             btnSearch.BackColor = System.Drawing.Color.White;
             btnSearch.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnSearch.Location = new System.Drawing.Point(787, 74);
+            btnSearch.Location = new System.Drawing.Point(995, 73);
             btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new System.Drawing.Size(142, 29);
@@ -106,14 +106,14 @@
             lblDateTime.TabIndex = 6;
             lblDateTime.Text = "Enter appointment date:";
             // 
-            // label1
+            // lblReason
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(58, 437);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(164, 20);
-            label1.TabIndex = 7;
-            label1.Text = "Enter reason for visit:";
+            lblReason.AutoSize = true;
+            lblReason.Location = new System.Drawing.Point(58, 437);
+            lblReason.Name = "lblReason";
+            lblReason.Size = new System.Drawing.Size(164, 20);
+            lblReason.TabIndex = 7;
+            lblReason.Text = "Enter reason for visit:";
             // 
             // txtDateTime
             // 
@@ -150,14 +150,14 @@
             listBox_Doctor.Size = new System.Drawing.Size(1081, 124);
             listBox_Doctor.TabIndex = 11;
             // 
-            // label2
+            // lblAvailableDoctors
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(58, 224);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(140, 20);
-            label2.TabIndex = 12;
-            label2.Text = "Available Doctors:";
+            lblAvailableDoctors.AutoSize = true;
+            lblAvailableDoctors.Location = new System.Drawing.Point(58, 224);
+            lblAvailableDoctors.Name = "lblAvailableDoctors";
+            lblAvailableDoctors.Size = new System.Drawing.Size(140, 20);
+            lblAvailableDoctors.TabIndex = 12;
+            lblAvailableDoctors.Text = "Available Doctors:";
             // 
             // lblDoctorNumber
             // 
@@ -211,17 +211,17 @@
             Controls.Add(btnBack);
             Controls.Add(btnBookAppointment);
             Controls.Add(lblDoctorNumber);
-            Controls.Add(label2);
+            Controls.Add(lblAvailableDoctors);
             Controls.Add(listBox_Doctor);
             Controls.Add(btnFindDoctor);
             Controls.Add(txtReason);
             Controls.Add(txtDateTime);
-            Controls.Add(label1);
+            Controls.Add(lblReason);
             Controls.Add(lblDateTime);
             Controls.Add(lblSearchInfo);
             Controls.Add(btnSearch);
             Controls.Add(txtPersonalnumber);
-            Controls.Add(lblFindPatient);
+            Controls.Add(lblPatientPersonalnumber);
             Controls.Add(lblBookappointment);
             Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -234,17 +234,17 @@
         #endregion
 
         private System.Windows.Forms.Label lblBookappointment;
-        private System.Windows.Forms.Label lblFindPatient;
+        private System.Windows.Forms.Label lblPatientPersonalnumber;
         private System.Windows.Forms.TextBox txtPersonalnumber;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblSearchInfo;
         private System.Windows.Forms.Label lblDateTime;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblReason;
         private System.Windows.Forms.TextBox txtDateTime;
         private System.Windows.Forms.TextBox txtReason;
         private System.Windows.Forms.Button btnFindDoctor;
         private System.Windows.Forms.ListBox listBox_Doctor;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblAvailableDoctors;
         private System.Windows.Forms.Label lblDoctorNumber;
         private System.Windows.Forms.Button btnBookAppointment;
         private System.Windows.Forms.Button btnBack;
