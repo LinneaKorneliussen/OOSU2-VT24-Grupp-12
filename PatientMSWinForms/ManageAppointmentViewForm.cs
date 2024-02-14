@@ -19,7 +19,6 @@ namespace PatientMSWinForms
         private AppointmentController appointmentController;
         private PatientController patientController;
         private List<Appointment> appointment;
-        private Patient patient;
 
         public ManageAppointmentViewForm()
         {
@@ -35,7 +34,7 @@ namespace PatientMSWinForms
             listbox_Appointments.Items.Clear();
 
             string personalNumber = txtGetPersonalNumber.Text;
-            patient = patientController.GetPatient(personalNumber);
+            Patient patient = patientController.GetPatient(personalNumber);
 
             if (!Regex.IsMatch(personalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
@@ -46,7 +45,7 @@ namespace PatientMSWinForms
             {
                 listbox_Appointments.Items.Clear();
                 lblPatientFound.Text = $"Patient found: {patient.PersonalNumber}";
-                appointment = appointmentController.GetAppointmentListPersonalNumber(personalNumber);
+                appointment = appointmentController.GetAppointmentListPersonalNumber(patient);
                 DisplayAppointmentInfo(appointment);
             }
             else
@@ -56,7 +55,7 @@ namespace PatientMSWinForms
 
         }
 
-        private void btnSelectAppointment_Click(object sender, EventArgs e)
+        private void btnUpdateAppointment_Click(object sender, EventArgs e)
         {
             if (listbox_Appointments.SelectedIndex == -1)
             {
@@ -103,5 +102,7 @@ namespace PatientMSWinForms
             }
         }
         #endregion
+
+        
     }
 }

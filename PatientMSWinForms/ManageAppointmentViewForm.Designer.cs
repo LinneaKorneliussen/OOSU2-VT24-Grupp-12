@@ -31,7 +31,7 @@
             lblPersonalNumber = new System.Windows.Forms.Label();
             btnShowAppointments = new System.Windows.Forms.Button();
             txtGetPersonalNumber = new System.Windows.Forms.TextBox();
-            btnSelectAppointment = new System.Windows.Forms.Button();
+            btnUpdateAppointment = new System.Windows.Forms.Button();
             btnRemoveAppointment = new System.Windows.Forms.Button();
             btnBack = new System.Windows.Forms.Button();
             label2 = new System.Windows.Forms.Label();
@@ -44,9 +44,10 @@
             // 
             lblPersonalNumber.AutoSize = true;
             lblPersonalNumber.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblPersonalNumber.Location = new System.Drawing.Point(64, 144);
+            lblPersonalNumber.Location = new System.Drawing.Point(80, 180);
+            lblPersonalNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblPersonalNumber.Name = "lblPersonalNumber";
-            lblPersonalNumber.Size = new System.Drawing.Size(144, 17);
+            lblPersonalNumber.Size = new System.Drawing.Size(177, 20);
             lblPersonalNumber.TabIndex = 0;
             lblPersonalNumber.Text = "Enter personal number:";
             // 
@@ -54,9 +55,10 @@
             // 
             btnShowAppointments.BackColor = System.Drawing.Color.RosyBrown;
             btnShowAppointments.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            btnShowAppointments.Location = new System.Drawing.Point(569, 134);
+            btnShowAppointments.Location = new System.Drawing.Point(711, 168);
+            btnShowAppointments.Margin = new System.Windows.Forms.Padding(4);
             btnShowAppointments.Name = "btnShowAppointments";
-            btnShowAppointments.Size = new System.Drawing.Size(155, 34);
+            btnShowAppointments.Size = new System.Drawing.Size(194, 42);
             btnShowAppointments.TabIndex = 1;
             btnShowAppointments.Text = "Show appointments";
             btnShowAppointments.UseVisualStyleBackColor = false;
@@ -64,31 +66,34 @@
             // 
             // txtGetPersonalNumber
             // 
-            txtGetPersonalNumber.Location = new System.Drawing.Point(214, 138);
+            txtGetPersonalNumber.Location = new System.Drawing.Point(268, 172);
+            txtGetPersonalNumber.Margin = new System.Windows.Forms.Padding(4);
             txtGetPersonalNumber.Name = "txtGetPersonalNumber";
             txtGetPersonalNumber.PlaceholderText = "yyyy-mm-dd-xxxx";
-            txtGetPersonalNumber.Size = new System.Drawing.Size(317, 27);
+            txtGetPersonalNumber.Size = new System.Drawing.Size(395, 31);
             txtGetPersonalNumber.TabIndex = 2;
             // 
-            // btnSelectAppointment
+            // btnUpdateAppointment
             // 
-            btnSelectAppointment.BackColor = System.Drawing.Color.RosyBrown;
-            btnSelectAppointment.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            btnSelectAppointment.Location = new System.Drawing.Point(558, 389);
-            btnSelectAppointment.Name = "btnSelectAppointment";
-            btnSelectAppointment.Size = new System.Drawing.Size(166, 34);
-            btnSelectAppointment.TabIndex = 4;
-            btnSelectAppointment.Text = "Select appointment";
-            btnSelectAppointment.UseVisualStyleBackColor = false;
-            btnSelectAppointment.Click += btnSelectAppointment_Click;
+            btnUpdateAppointment.BackColor = System.Drawing.Color.RosyBrown;
+            btnUpdateAppointment.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnUpdateAppointment.Location = new System.Drawing.Point(698, 486);
+            btnUpdateAppointment.Margin = new System.Windows.Forms.Padding(4);
+            btnUpdateAppointment.Name = "btnUpdateAppointment";
+            btnUpdateAppointment.Size = new System.Drawing.Size(208, 42);
+            btnUpdateAppointment.TabIndex = 4;
+            btnUpdateAppointment.Text = "Update appointment";
+            btnUpdateAppointment.UseVisualStyleBackColor = false;
+            btnUpdateAppointment.Click += btnUpdateAppointment_Click;
             // 
             // btnRemoveAppointment
             // 
             btnRemoveAppointment.BackColor = System.Drawing.Color.RosyBrown;
             btnRemoveAppointment.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            btnRemoveAppointment.Location = new System.Drawing.Point(345, 389);
+            btnRemoveAppointment.Location = new System.Drawing.Point(431, 486);
+            btnRemoveAppointment.Margin = new System.Windows.Forms.Padding(4);
             btnRemoveAppointment.Name = "btnRemoveAppointment";
-            btnRemoveAppointment.Size = new System.Drawing.Size(166, 34);
+            btnRemoveAppointment.Size = new System.Drawing.Size(208, 42);
             btnRemoveAppointment.TabIndex = 5;
             btnRemoveAppointment.Text = "Remove appointment";
             btnRemoveAppointment.UseVisualStyleBackColor = false;
@@ -98,9 +103,10 @@
             // 
             btnBack.BackColor = System.Drawing.Color.RosyBrown;
             btnBack.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            btnBack.Location = new System.Drawing.Point(12, 389);
+            btnBack.Location = new System.Drawing.Point(15, 486);
+            btnBack.Margin = new System.Windows.Forms.Padding(4);
             btnBack.Name = "btnBack";
-            btnBack.Size = new System.Drawing.Size(166, 34);
+            btnBack.Size = new System.Drawing.Size(208, 42);
             btnBack.TabIndex = 7;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = false;
@@ -109,55 +115,60 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(55, 196);
+            label2.Location = new System.Drawing.Point(69, 245);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(0, 20);
+            label2.Size = new System.Drawing.Size(0, 25);
             label2.TabIndex = 8;
             // 
             // listbox_Appointments
             // 
             listbox_Appointments.FormattingEnabled = true;
-            listbox_Appointments.ItemHeight = 20;
-            listbox_Appointments.Location = new System.Drawing.Point(86, 198);
+            listbox_Appointments.ItemHeight = 25;
+            listbox_Appointments.Location = new System.Drawing.Point(108, 248);
+            listbox_Appointments.Margin = new System.Windows.Forms.Padding(4);
             listbox_Appointments.Name = "listbox_Appointments";
-            listbox_Appointments.Size = new System.Drawing.Size(638, 164);
+            listbox_Appointments.Size = new System.Drawing.Size(796, 204);
             listbox_Appointments.TabIndex = 10;
             // 
             // lblPatientFound
             // 
             lblPatientFound.AutoSize = true;
-            lblPatientFound.Location = new System.Drawing.Point(86, 175);
+            lblPatientFound.Location = new System.Drawing.Point(108, 219);
+            lblPatientFound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblPatientFound.Name = "lblPatientFound";
-            lblPatientFound.Size = new System.Drawing.Size(0, 20);
+            lblPatientFound.Size = new System.Drawing.Size(0, 25);
             lblPatientFound.TabIndex = 11;
             // 
             // lblManageAppointment
             // 
             lblManageAppointment.AutoSize = true;
             lblManageAppointment.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lblManageAppointment.Location = new System.Drawing.Point(193, 56);
+            lblManageAppointment.Location = new System.Drawing.Point(241, 70);
+            lblManageAppointment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblManageAppointment.Name = "lblManageAppointment";
-            lblManageAppointment.Size = new System.Drawing.Size(387, 35);
+            lblManageAppointment.Size = new System.Drawing.Size(467, 41);
             lblManageAppointment.TabIndex = 12;
             lblManageAppointment.Text = "Manage existing appointment";
             // 
             // ManageAppointmentViewForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.Ivory;
-            ClientSize = new System.Drawing.Size(800, 450);
+            ClientSize = new System.Drawing.Size(1000, 562);
             Controls.Add(lblManageAppointment);
             Controls.Add(lblPatientFound);
             Controls.Add(listbox_Appointments);
             Controls.Add(label2);
             Controls.Add(btnBack);
-            Controls.Add(btnSelectAppointment);
+            Controls.Add(btnUpdateAppointment);
             Controls.Add(btnRemoveAppointment);
             Controls.Add(txtGetPersonalNumber);
             Controls.Add(btnShowAppointments);
             Controls.Add(lblPersonalNumber);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Margin = new System.Windows.Forms.Padding(4);
             Name = "ManageAppointmentViewForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "ManageAppointmentViewForm";
@@ -170,7 +181,7 @@
         private System.Windows.Forms.Label lblPersonalNumber;
         private System.Windows.Forms.Button btnShowAppointments;
         private System.Windows.Forms.TextBox txtGetPersonalNumber;
-        private System.Windows.Forms.Button btnSelectAppointment;
+        private System.Windows.Forms.Button btnUpdateAppointment;
         private System.Windows.Forms.Button btnRemoveAppointment;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label2;

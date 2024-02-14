@@ -19,11 +19,12 @@ namespace PatientMSWinForms
 {
     public partial class BookAppointmentViewForm : Form
     {
+        private AppointmentController appointmentController;
+        private PatientController patientController;
         private Patient patient;
         private List<Staff> allDoctors;
         private DateTime appointmentDateTime;
-        private AppointmentController appointmentController;
-        private PatientController patientController;
+
         public BookAppointmentViewForm()
         {
             InitializeComponent();

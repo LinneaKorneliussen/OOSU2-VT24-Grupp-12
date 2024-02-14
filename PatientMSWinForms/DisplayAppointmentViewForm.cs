@@ -15,10 +15,8 @@ namespace PatientMSWinForms
 {
     public partial class DisplayAppointmentViewForm : Form
     {
-        private Patient patient;
         private JournalController journalController;
         private PatientController patientController;
-        private IQueryable<Appointment> appointment;
 
         public DisplayAppointmentViewForm()
         {
@@ -35,7 +33,7 @@ namespace PatientMSWinForms
 
             string patientPersonalNumber = txtPersonalNumber.Text;
 
-            patient = patientController.GetPatient(patientPersonalNumber);
+            Patient patient = patientController.GetPatient(patientPersonalNumber);
 
             if (!Regex.IsMatch(patientPersonalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
@@ -46,7 +44,7 @@ namespace PatientMSWinForms
             if (patient != null)
             {
                 lblPatientFound.Text = $"Patient found: {patient.Name}";
-                appointment = journalController.GetAppointmentList(patient);
+                IQueryable<Appointment> appointment = journalController.GetAppointmentList(patient);
                 DisplayAppointmentInfo(appointment);
             }
             else
