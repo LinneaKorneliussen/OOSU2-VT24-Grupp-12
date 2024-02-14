@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PatientDL.AppointmentRepository" Collapsed="true">
+    <Position X="5.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAABAAABCAAAACIAQAAAAABAAAACA=</HashCode>
+      <FileName>AppointmentRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientDL.DiagnosisRepository" Collapsed="true">
+    <Position X="3.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAKA=</HashCode>
+      <FileName>DiagnosisRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientDL.JournalRepository" Collapsed="true">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <AssociationLine Name="unitOfWork" Type="PatientDL.UnitOfWork" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="3.031" />
+        <Point X="7.948" Y="3.031" />
+        <Point X="7.948" Y="3.583" />
+        <Point X="5.75" Y="3.583" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAQAACA=</HashCode>
+      <FileName>JournalRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientDL.LoginRepository" Collapsed="true">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAACAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>LoginRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientDL.PatientContext" Collapsed="true">
+    <Position X="7.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAQAAARAAAAAAAAAAAAAAUCAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PatientContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientDL.PatientRepository" Collapsed="true">
+    <Position X="7" Y="0.75" Width="1.5" />
+    <AssociationLine Name="unitOfWork" Type="PatientDL.UnitOfWork" ManuallyRouted="true">
+      <Path>
+        <Point X="7.719" Y="1.312" />
+        <Point X="7.719" Y="3.341" />
+        <Point X="6.4" Y="3.341" />
+        <Point X="6.4" Y="3.435" />
+        <Point X="5.75" Y="3.435" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAABAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>PatientRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientDL.PrescriptionRepository" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAQAAAAAAAAAAAACA=</HashCode>
+      <FileName>PrescriptionRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="unitOfWork" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PatientDL.Repository&lt;T&gt;">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAIAAAAAAAAAAAABAAAAAAIAAgACgAAAAAAAAA=</HashCode>
+      <FileName>Repository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientDL.UnitOfWork">
+    <Position X="4.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgIAAIAAAAAEAAEAAAQAABABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="context" />
+      <Field Name="instance" />
+      <Property Name="AppointmentRepository" />
+      <Property Name="DiagnosisRepository" />
+      <Property Name="PatientRepository" />
+      <Property Name="PrescriptionRepository" />
+      <Property Name="StaffRepository" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
