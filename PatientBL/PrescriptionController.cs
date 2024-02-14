@@ -10,18 +10,23 @@ namespace PatientBL
 {
     public class PrescriptionController
     {
-        private UnitOfWork unitOfWork;
+        private PrescriptionRepository prescriptionRepository;
         public PrescriptionController()
         {
-            unitOfWork = UnitOfWork.GetInstance();
+            prescriptionRepository = new PrescriptionRepository();
         }
+
+        #region Get patient Method
+        public Patient GetPatient(string patientPersonalNumber)
+        {
+            return prescriptionRepository.GetPatient(patientPersonalNumber);
+        }
+        #endregion
 
         #region Add Prescription Method
         public void AddPrescription(Patient p, string medicineName, string dose, DateTime prescriptionDate)
         {
-            Prescription newPrescription = new Prescription(p, medicineName, dose, prescriptionDate);
-            unitOfWork.PrescriptionRepository.Add(newPrescription);
-            unitOfWork.Save();
+            prescriptionRepository.AddPrescription(p, medicineName, dose, prescriptionDate);
         }
         #endregion
     }

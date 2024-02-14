@@ -13,7 +13,7 @@ namespace PatientMSWinForms
     public partial class MenuViewForm : Form
     {
 
-        bool sidebarExpand;
+        private bool sidebarExpand;
 
         public MenuViewForm()
         {

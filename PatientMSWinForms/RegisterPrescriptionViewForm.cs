@@ -21,13 +21,11 @@ namespace PatientMSWinForms
     {
         private Patient patient;
         private PrescriptionController prescriptionController;
-        private PatientController patientController;
 
         public RegisterPrescriptionViewForm()
         {
             InitializeComponent();
             prescriptionController = new PrescriptionController();
-            patientController = new PatientController();
             txtPersonalNumber.ForeColor = Color.Gray;
             txtMedicineName.ForeColor = Color.Gray;
             txtDose.ForeColor = Color.Gray;
@@ -39,7 +37,7 @@ namespace PatientMSWinForms
         {
             string patientPersonalNumber = txtPersonalNumber.Text;
 
-            patient = patientController.GetPatient(patientPersonalNumber);
+            patient = prescriptionController.GetPatient(patientPersonalNumber);
 
             if (!Regex.IsMatch(patientPersonalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
