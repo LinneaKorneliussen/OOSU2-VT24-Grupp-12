@@ -10,11 +10,11 @@ namespace PatientBL
 {
     public class LoginController
     {
-        private LoginRepository loginRepository;
+        private LogInRepository loginRepository;
 
         public LoginController()
         {
-            loginRepository = new LoginRepository();
+            loginRepository = new LogInRepository();
         }
 
         #region Log in Method
@@ -22,7 +22,6 @@ namespace PatientBL
         {
             return loginRepository.AuthorizeUser(staffId, password);
         }
-
         #endregion
     }
 }

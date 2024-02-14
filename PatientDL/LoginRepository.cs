@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace PatientDL
 {
-    public class LoginRepository
+    public class LogInRepository
     {
         private UnitOfWork unitOfWork;
-       
+
         public Staff LoggedIn
         {
             get; private set;
@@ -32,7 +32,6 @@ namespace PatientDL
             LoggedIn = null;
             return null;
         }
-
         #endregion
     }
 }
