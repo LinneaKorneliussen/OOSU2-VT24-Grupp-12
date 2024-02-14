@@ -10,29 +10,17 @@ namespace PatientBL
 {
     public class LoginController
     {
-        private UnitOfWork unitOfWork;
+        private LoginRepository loginRepository;
 
-        public Staff LoggedIn
+        public LoginController()
         {
-            get; private set;
+            loginRepository = new LoginRepository();
         }
 
         #region Log in Method
-        public bool AuthorizeUser(int staffId, string password)
+        public Staff AuthorizeUser(int staffId, string password)
         {
-            unitOfWork = UnitOfWork.GetInstance();
-
-            Staff VerifiedUser = unitOfWork.StaffRepository.FirstOrDefault(s => s.StaffId == staffId);
-
-            if (VerifiedUser != null && VerifiedUser.GetHashedPassword(password) == VerifiedUser.PasswordHash)
-            {
-                LoggedIn = VerifiedUser;
-                return true;
-            }
-
-            LoggedIn = null;
-            return false;
-
+            return loginRepository.AuthorizeUser(staffId, password);
         }
         #endregion
     }

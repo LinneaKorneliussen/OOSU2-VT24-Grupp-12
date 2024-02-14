@@ -34,10 +34,10 @@ namespace PatientMSWinForms
                 int staffId = int.Parse(staffIdInput);
                 pictureLoading.Visible = true;
 
-                bool user = loginController.AuthorizeUser(staffId, password);
-                if (user)
+                Staff user = loginController.AuthorizeUser(staffId, password);
+                if (user != null)
                 {
-                    MessageBox.Show($"You are logged in as Caregiver: {loginController.LoggedIn.OccupationalRole} {loginController.LoggedIn.StaffName}");
+                    MessageBox.Show($"You are logged in as Caregiver: {user.OccupationalRole} {user.StaffName}");
 
                     MenuViewForm menu = new MenuViewForm();
                     menu.Show();
