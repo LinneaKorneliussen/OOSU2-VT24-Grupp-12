@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm));
             txtStaffID = new System.Windows.Forms.TextBox();
             txtPassword = new System.Windows.Forms.TextBox();
             btnLogIn = new System.Windows.Forms.Button();
@@ -35,12 +36,14 @@
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             btnClear = new System.Windows.Forms.Button();
+            pictureLoading = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureLoading).BeginInit();
             SuspendLayout();
             // 
             // txtStaffID
             // 
             txtStaffID.Location = new System.Drawing.Point(464, 186);
-            txtStaffID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtStaffID.Margin = new System.Windows.Forms.Padding(4);
             txtStaffID.Name = "txtStaffID";
             txtStaffID.Size = new System.Drawing.Size(238, 31);
             txtStaffID.TabIndex = 0;
@@ -48,7 +51,7 @@
             // txtPassword
             // 
             txtPassword.Location = new System.Drawing.Point(464, 279);
-            txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtPassword.Margin = new System.Windows.Forms.Padding(4);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new System.Drawing.Size(238, 31);
@@ -56,10 +59,10 @@
             // 
             // btnLogIn
             // 
-            btnLogIn.BackColor = System.Drawing.Color.White;
+            btnLogIn.BackColor = System.Drawing.Color.MistyRose;
             btnLogIn.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnLogIn.Location = new System.Drawing.Point(552, 399);
-            btnLogIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnLogIn.Margin = new System.Windows.Forms.Padding(4);
             btnLogIn.Name = "btnLogIn";
             btnLogIn.Size = new System.Drawing.Size(164, 49);
             btnLogIn.TabIndex = 2;
@@ -102,10 +105,10 @@
             // 
             // btnClear
             // 
-            btnClear.BackColor = System.Drawing.Color.White;
+            btnClear.BackColor = System.Drawing.Color.MistyRose;
             btnClear.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnClear.Location = new System.Drawing.Point(261, 399);
-            btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnClear.Margin = new System.Windows.Forms.Padding(4);
             btnClear.Name = "btnClear";
             btnClear.Size = new System.Drawing.Size(154, 49);
             btnClear.TabIndex = 6;
@@ -113,12 +116,25 @@
             btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += btnClear_Click;
             // 
+            // pictureLoading
+            // 
+            pictureLoading.BackColor = System.Drawing.Color.MistyRose;
+            pictureLoading.Image = (System.Drawing.Image)resources.GetObject("pictureLoading.Image");
+            pictureLoading.Location = new System.Drawing.Point(786, 524);
+            pictureLoading.Name = "pictureLoading";
+            pictureLoading.Size = new System.Drawing.Size(173, 148);
+            pictureLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureLoading.TabIndex = 7;
+            pictureLoading.TabStop = false;
+            pictureLoading.Visible = false;
+            // 
             // LogInForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.MistyRose;
-            ClientSize = new System.Drawing.Size(1000, 562);
+            BackColor = System.Drawing.Color.White;
+            ClientSize = new System.Drawing.Size(988, 704);
+            Controls.Add(pictureLoading);
             Controls.Add(btnClear);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -126,9 +142,10 @@
             Controls.Add(btnLogIn);
             Controls.Add(txtPassword);
             Controls.Add(txtStaffID);
-            Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            Margin = new System.Windows.Forms.Padding(4);
             Name = "LogInForm";
             Text = "Log in";
+            ((System.ComponentModel.ISupportInitialize)pictureLoading).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,5 +159,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.PictureBox pictureLoading;
     }
 }

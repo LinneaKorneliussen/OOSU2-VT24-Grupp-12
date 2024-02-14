@@ -32,6 +32,8 @@ namespace PatientMSWinForms
             if (IsValidInteger(staffIdInput))
             {
                 int staffId = int.Parse(staffIdInput);
+                pictureLoading.Visible = true;
+
                 bool user = loginController.AuthorizeUser(staffId, password);
                 if (user)
                 {
@@ -46,12 +48,12 @@ namespace PatientMSWinForms
                 {
                     MessageBox.Show($"Failed to log in. Try again!");
                 }
+                pictureLoading.Visible = false;
             }
             else
             {
                 MessageBox.Show("Invalid Staff ID. Please enter a valid integer.");
             }
-
         }
 
         private void btnClear_Click(object sender, EventArgs e)
