@@ -41,29 +41,26 @@
             // 
             lblEnterpersonalnumber.AutoSize = true;
             lblEnterpersonalnumber.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblEnterpersonalnumber.Location = new System.Drawing.Point(74, 145);
-            lblEnterpersonalnumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblEnterpersonalnumber.Location = new System.Drawing.Point(59, 116);
             lblEnterpersonalnumber.Name = "lblEnterpersonalnumber";
-            lblEnterpersonalnumber.Size = new System.Drawing.Size(177, 20);
+            lblEnterpersonalnumber.Size = new System.Drawing.Size(144, 17);
             lblEnterpersonalnumber.TabIndex = 0;
             lblEnterpersonalnumber.Text = "Enter personal number:";
             // 
             // txtPersonalNumber
             // 
-            txtPersonalNumber.Location = new System.Drawing.Point(261, 139);
-            txtPersonalNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtPersonalNumber.Location = new System.Drawing.Point(209, 111);
             txtPersonalNumber.Name = "txtPersonalNumber";
-            txtPersonalNumber.Size = new System.Drawing.Size(465, 31);
+            txtPersonalNumber.Size = new System.Drawing.Size(373, 27);
             txtPersonalNumber.TabIndex = 1;
             // 
             // btnSearch
             // 
             btnSearch.BackColor = System.Drawing.Color.White;
-            btnSearch.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            btnSearch.Location = new System.Drawing.Point(751, 139);
-            btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnSearch.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnSearch.Location = new System.Drawing.Point(601, 111);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new System.Drawing.Size(118, 36);
+            btnSearch.Size = new System.Drawing.Size(94, 29);
             btnSearch.TabIndex = 2;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
@@ -72,20 +69,19 @@
             // listBox_Appointments
             // 
             listBox_Appointments.FormattingEnabled = true;
-            listBox_Appointments.ItemHeight = 25;
-            listBox_Appointments.Location = new System.Drawing.Point(74, 215);
-            listBox_Appointments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            listBox_Appointments.ItemHeight = 20;
+            listBox_Appointments.Location = new System.Drawing.Point(59, 172);
             listBox_Appointments.Name = "listBox_Appointments";
-            listBox_Appointments.Size = new System.Drawing.Size(1188, 329);
+            listBox_Appointments.Size = new System.Drawing.Size(951, 264);
             listBox_Appointments.TabIndex = 3;
             // 
             // btnBack
             // 
             btnBack.BackColor = System.Drawing.Color.White;
-            btnBack.Location = new System.Drawing.Point(1039, 579);
-            btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnBack.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnBack.Location = new System.Drawing.Point(881, 478);
             btnBack.Name = "btnBack";
-            btnBack.Size = new System.Drawing.Size(224, 70);
+            btnBack.Size = new System.Drawing.Size(129, 34);
             btnBack.TabIndex = 4;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = false;
@@ -95,28 +91,26 @@
             // 
             lblDisplayAppointments.AutoSize = true;
             lblDisplayAppointments.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lblDisplayAppointments.Location = new System.Drawing.Point(449, 45);
-            lblDisplayAppointments.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblDisplayAppointments.Location = new System.Drawing.Point(359, 36);
             lblDisplayAppointments.Name = "lblDisplayAppointments";
-            lblDisplayAppointments.Size = new System.Drawing.Size(346, 41);
+            lblDisplayAppointments.Size = new System.Drawing.Size(290, 35);
             lblDisplayAppointments.TabIndex = 6;
             lblDisplayAppointments.Text = "Display appointments";
             // 
             // lblPatientFound
             // 
             lblPatientFound.AutoSize = true;
-            lblPatientFound.Location = new System.Drawing.Point(74, 186);
-            lblPatientFound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblPatientFound.Location = new System.Drawing.Point(59, 149);
             lblPatientFound.Name = "lblPatientFound";
-            lblPatientFound.Size = new System.Drawing.Size(0, 25);
+            lblPatientFound.Size = new System.Drawing.Size(0, 20);
             lblPatientFound.TabIndex = 7;
             // 
             // DisplayAppointmentViewForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.Ivory;
-            ClientSize = new System.Drawing.Size(1341, 700);
+            ClientSize = new System.Drawing.Size(1073, 560);
             Controls.Add(lblPatientFound);
             Controls.Add(lblDisplayAppointments);
             Controls.Add(btnBack);
@@ -125,7 +119,6 @@
             Controls.Add(txtPersonalNumber);
             Controls.Add(lblEnterpersonalnumber);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             Name = "DisplayAppointmentViewForm";
             Text = "DisplayAppointmentViewForm";
             ResumeLayout(false);
