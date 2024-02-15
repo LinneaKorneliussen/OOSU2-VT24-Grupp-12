@@ -37,8 +37,8 @@
             // 
             // btnUpdateAppointment
             // 
-            btnUpdateAppointment.BackColor = System.Drawing.Color.RosyBrown;
-            btnUpdateAppointment.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnUpdateAppointment.BackColor = System.Drawing.Color.White;
+            btnUpdateAppointment.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnUpdateAppointment.Location = new System.Drawing.Point(297, 143);
             btnUpdateAppointment.Name = "btnUpdateAppointment";
             btnUpdateAppointment.Size = new System.Drawing.Size(118, 44);
@@ -49,8 +49,8 @@
             // 
             // btnBack
             // 
-            btnBack.BackColor = System.Drawing.Color.RosyBrown;
-            btnBack.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnBack.BackColor = System.Drawing.Color.White;
+            btnBack.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnBack.Location = new System.Drawing.Point(80, 143);
             btnBack.Name = "btnBack";
             btnBack.Size = new System.Drawing.Size(118, 44);

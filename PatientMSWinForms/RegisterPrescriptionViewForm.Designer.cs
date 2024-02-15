@@ -127,8 +127,8 @@
             // 
             // btnSearch
             // 
-            btnSearch.BackColor = System.Drawing.Color.RosyBrown;
-            btnSearch.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnSearch.BackColor = System.Drawing.Color.White;
+            btnSearch.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnSearch.Location = new System.Drawing.Point(638, 112);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new System.Drawing.Size(94, 29);
@@ -139,8 +139,8 @@
             // 
             // btnAddPrescription
             // 
-            btnAddPrescription.BackColor = System.Drawing.Color.RosyBrown;
-            btnAddPrescription.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnAddPrescription.BackColor = System.Drawing.Color.White;
+            btnAddPrescription.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnAddPrescription.Location = new System.Drawing.Point(638, 363);
             btnAddPrescription.Name = "btnAddPrescription";
             btnAddPrescription.Size = new System.Drawing.Size(111, 49);
@@ -161,8 +161,8 @@
             // 
             // btnClose
             // 
-            btnClose.BackColor = System.Drawing.Color.RosyBrown;
-            btnClose.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnClose.BackColor = System.Drawing.Color.White;
+            btnClose.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnClose.Location = new System.Drawing.Point(26, 409);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(94, 29);
@@ -173,8 +173,8 @@
             // 
             // btnClear
             // 
-            btnClear.BackColor = System.Drawing.Color.RosyBrown;
-            btnClear.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnClear.BackColor = System.Drawing.Color.White;
+            btnClear.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnClear.Location = new System.Drawing.Point(344, 409);
             btnClear.Name = "btnClear";
             btnClear.Size = new System.Drawing.Size(94, 29);
