@@ -100,6 +100,14 @@ namespace PatientDL
             //Staff s6 = new Staff("April Kepner", "Doctor", "Iamapril", "Endocrinologist");
             //Staff.Add(s6);
 
+            //Staff s7 = new Staff("Joe Jonas", "Nurse", "Iamjoe", "General Nurse");
+            //Staff.Add(s7);
+
+            //Staff s8 = new Staff("Julia Robert", "Nurse", "Iamjulia", "Oncology Nurse");
+            //Staff.Add(s8);
+
+            //Staff s9 = new Staff("Samuel Smith", "Nurse", "Iamsamuel", "Pediatric Nurse");
+            //Staff.Add(s9);
 
             //Appointment a = new Appointment(p2, new DateTime(2024, 2, 9, 10, 30, 0), "Feeling ill, sore throat", s);
             //Appointments.Add(a);
