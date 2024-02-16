@@ -21,7 +21,7 @@ namespace PatientDL
 
         public PatientContext()
         {
-            //resetSeed(); 
+            //resetSeed();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -37,7 +37,7 @@ namespace PatientDL
         #region Reset Seed Method
         public void resetSeed()
         {
-            ////Database.EnsureDeleted();
+            //////Database.EnsureDeleted();
             //Database.EnsureCreated();
 
             //Patient p = new Patient("Lisa Svensson", "1994-05-18-6462", "St Patric 6", "070-2298675", "LisaSvensson@gmail.com");
