@@ -36,16 +36,16 @@ namespace PatientMSWinForms
 
             patient = patientController.GetPatient(patientPersonalNumber);
 
-            if (patient != null)
-            {
-                listbox_Patient.Items.Clear();
-                listbox_Patient.Items.Add($"Personal Number:{patient.PersonalNumber}");
-                DisplayPatientInfo(patient);
-            }
             if (!Regex.IsMatch(patientPersonalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
                 MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
                 return;
+            }
+            if (patient != null)
+            {
+                listbox_Patient.Items.Clear();
+                lblPatientInfo.Text = $"Patient found: {patient.Name}";
+                DisplayPatientInfo(patient);
             }
             else
             {

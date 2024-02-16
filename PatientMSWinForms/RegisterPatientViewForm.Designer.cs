@@ -253,9 +253,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblHeadline;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblPersonalNumber;

@@ -22,6 +22,7 @@ namespace PatientDL
         }
         #endregion
 
+        #region Book appointment and get doctors Methods
         public void BookAppointment(Patient patient, DateTime dateAndTime, string reasonForVisit, Staff selectedDoctor)
         {
             if (selectedDoctor != null)
@@ -56,7 +57,9 @@ namespace PatientDL
 
             return availableDoctors;
         }
+        #endregion
 
+        #region Manage existing appointments Methods 
         public List<Appointment> GetAppointmentListPersonalNumber(Patient patient)
         {
             return unitOfWork.AppointmentRepository.GetAll().Where(appointment => appointment.Patient.PersonalNumber == patient.PersonalNumber).ToList();
@@ -71,6 +74,6 @@ namespace PatientDL
             appointment.DateAndTime = newDateTime;
             unitOfWork.Save();
         }
-
+        #endregion
     }
 }

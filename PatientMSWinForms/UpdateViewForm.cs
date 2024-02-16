@@ -15,7 +15,7 @@ namespace PatientMSWinForms
 {
     public partial class UpdateViewForm : Form
     {
-        private PatientController patientController; 
+        private PatientController patientController;
         private Patient patient;
         private int select;
 
@@ -45,9 +45,10 @@ namespace PatientMSWinForms
         {
             string newName = txtNewvalue.Text;
             patientController.UpdatePatientInfo(patient, select, newName);
-            MessageBox.Show("Patient information updated successfully!\n\n" + $"New value: {newName}\n");                        
+            MessageBox.Show("Patient information updated successfully!\n\n" + $"New value: {newName}\n");
             this.Close();
         }
         #endregion
+
     }
 }

@@ -7,8 +7,8 @@
       <FileName>BookAppointmentViewForm.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="allDoctors" />
       <Field Name="appointmentController" />
+      <Field Name="allDoctors" />
     </ShowAsAssociation>
   </Class>
   <Class Name="PatientMSWinForms.DisplayAppointmentViewForm" Collapsed="true">
@@ -38,8 +38,8 @@
       <FileName>ManageAppointmentViewForm.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="appointment" />
       <Field Name="appointmentController" />
+      <Field Name="appointment" />
     </ShowAsAssociation>
   </Class>
   <Class Name="PatientMSWinForms.MenuViewForm" Collapsed="true">
@@ -53,7 +53,9 @@
     <Position X="9.25" Y="5.5" Width="1.5" />
     <AssociationLine Name="patient" Type="PatientEntities.Patient" FixedToPoint="true">
       <Path>
-        <Point X="10.75" Y="6.062" />
+        <Point X="10" Y="6.191" />
+        <Point X="10" Y="6.566" />
+        <Point X="12.25" Y="6.566" />
         <Point X="12.25" Y="6.062" />
       </Path>
     </AssociationLine>
@@ -69,7 +71,7 @@
   <Class Name="PatientMSWinForms.RegisterPatientViewForm" Collapsed="true">
     <Position X="9" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ASACAAAAASACCBAAAACAAABSAAAYYAAgBIEBAQggAEQ=</HashCode>
+      <HashCode>AQACAAAAASACCBAAAACAAAASAAAYYAAgBIEBAQggAEQ=</HashCode>
       <FileName>RegisterPatientViewForm.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -94,8 +96,8 @@
       <FileName>UpdateAppointmentViewForm.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="appointment" />
       <Field Name="appointmentController" />
+      <Field Name="appointment" />
     </ShowAsAssociation>
   </Class>
   <Class Name="PatientMSWinForms.UpdatePatientViewForm" Collapsed="true">
@@ -111,18 +113,12 @@
   </Class>
   <Class Name="PatientMSWinForms.UpdateViewForm" Collapsed="true">
     <Position X="9.25" Y="4.25" Width="1.5" />
-    <AssociationLine Name="patient" Type="PatientEntities.Patient" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="10.75" Y="4.812" />
-        <Point X="11.25" Y="4.812" />
-        <Point X="11.25" Y="5.781" />
-        <Point X="12.25" Y="5.781" />
-      </Path>
+    <AssociationLine Name="patient" Type="PatientEntities.Patient">
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.11" Y="-0.225" />
+        <Position X="-0.225" Y="0.11" />
       </MemberNameLabel>
     </AssociationLine>
-    <AssociationLine Name="patientController" Type="PatientBL.PatientController" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="patientController" Type="PatientBL.PatientController" ManuallyRouted="true">
       <Path>
         <Point X="10.75" Y="4.5" />
         <Point X="11.096" Y="4.5" />
@@ -131,12 +127,12 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAIQQAACCAAABAAAACAAIASAAAAAABAEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAIQQAACCAAAAAAAACAAIBSAAAAAABAEAAAAAAAAAA=</HashCode>
       <FileName>UpdateViewForm.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="patient" />
       <Field Name="patientController" />
+      <Field Name="patient" />
     </ShowAsAssociation>
   </Class>
   <Class Name="PatientBL.LoginController" Collapsed="true">

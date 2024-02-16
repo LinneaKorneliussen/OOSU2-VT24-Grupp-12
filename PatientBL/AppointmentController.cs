@@ -31,15 +31,7 @@ namespace PatientBL
         }
         #endregion
 
-        #region Get patients and doctors Methods
-        public List<Staff> GetAllDoctors()
-        {
-            return appointmentRepository.GetAllDoctors();
-        }
-        public List<Appointment> GetAppointmentsForDateTime(DateTime appointmentDateTime)
-        {
-            return appointmentRepository.GetAppointmentsForDateTime(appointmentDateTime);
-        }
+        #region Get doctors avilable Methods
         public List<Staff> GetAllAvailableDoctors(DateTime appointmentDateTime)
         {
             return appointmentRepository.GetAllAvailableDoctors(appointmentDateTime);
