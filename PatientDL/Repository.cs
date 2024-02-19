@@ -72,5 +72,15 @@ namespace PatientDL
             return dbSet;
         }
 
+        /// <summary>
+        /// Determines whether any element of the dataset satisfies a condition defined by a specified predicate function.
+        /// </summary>
+        /// <param name="predicate">A function to test each element for a condition.</param>
+        /// <returns>True if any element satisfies the condition; otherwise, false.</returns>
+        public bool Any(Func<T, bool> predicate)
+        {
+            return dbSet.Any(predicate);
+        }
+
     }
 }

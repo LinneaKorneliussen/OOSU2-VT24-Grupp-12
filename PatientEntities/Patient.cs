@@ -12,13 +12,13 @@ namespace PatientEntities
     {
         public int PatientId { get; init; }
         [Column("Personal number")]
-        //[Required]
+        [Required]
         public string PersonalNumber { get; private set; }
-        //[Required]
+        [Required]
         public string Name { get; set; }
-        //[Required]
+        [Required]
         public string Address { get; set; }
-        //[Required]
+        [Required]
         public string Phonenumber { get; set; }
         [Column("Email address")]
         public string EmailAddress { get; set; }

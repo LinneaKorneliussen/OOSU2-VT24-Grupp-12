@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,6 +38,12 @@ namespace PatientDL
                 .Build()                                      
                 .GetConnectionString("PatientMS"));
             base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Patient>().HasIndex(p => p.PersonalNumber).IsUnique();
+            base.OnModelCreating(modelBuilder);
         }
 
         #region Reset Seed Method

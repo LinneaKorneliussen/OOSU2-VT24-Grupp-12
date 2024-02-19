@@ -1,4 +1,5 @@
-﻿using PatientEntities;
+﻿using Microsoft.EntityFrameworkCore;
+using PatientEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,14 @@ namespace PatientDL
         {
             unitOfWork = UnitOfWork.GetInstance();
         }
+
+        #region Patient peronalnumber unique Method
+        public bool IsPersonalNumberUnique(string personalNumber)
+        {
+            bool isUnique = !unitOfWork.PatientRepository.Any(p => p.PersonalNumber == personalNumber);
+            return isUnique;
+        }
+        #endregion
 
         #region Get patient Method
         public Patient GetPatient(string patientPersonalNumber)

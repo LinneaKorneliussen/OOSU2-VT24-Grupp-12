@@ -1,4 +1,5 @@
-﻿using PatientDL;
+﻿using Microsoft.EntityFrameworkCore;
+using PatientDL;
 using PatientEntities;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,13 @@ namespace PatientBL
         {
             patientRepository = new PatientRepository();
         }
+
+        #region Patient personalnumber unique Method
+        public bool IsPersonalNumberUnique(string personalNumber)
+        {
+           return patientRepository.IsPersonalNumberUnique(personalNumber);
+        }
+        #endregion
 
         #region Get patient Method
         public Patient GetPatient(string patientPersonalNumber)

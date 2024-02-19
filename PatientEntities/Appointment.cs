@@ -12,10 +12,10 @@ namespace PatientEntities
         public DateTime EndDateTime => DateAndTime.Add(Duration);
         [Column("Reason for visit")]
         public string ReasonForVisit { get; private set; }
-        //[Required]
+        [Required]
         public Staff Doctor {  get; private set; }
-        //[Required]
-        public Patient Patient { get; /*private*/ set; }
+        [Required]
+        public Patient Patient { get; private set; }
 
         public Appointment(Patient patient, DateTime dateAndTime, string reason, Staff doctor)
         {
