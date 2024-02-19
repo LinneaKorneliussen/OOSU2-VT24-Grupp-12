@@ -34,17 +34,20 @@ namespace PatientMSWinForms
             listbox_Appointments.Items.Clear();
 
             string personalNumber = txtGetPersonalNumber.Text;
-            patient = appointmentController.GetPatient(personalNumber);
 
             if (!Regex.IsMatch(personalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
                 MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
                 return;
             }
+
+            patient = appointmentController.GetPatient(personalNumber);
+
             if (patient != null)
             {
                 listbox_Appointments.Items.Clear();
                 lblPatientFound.Text = $"Patient found: {patient.PersonalNumber}";
+
                 appointment = appointmentController.GetAppointmentListPersonalNumber(patient);
                 DisplayAppointmentInfo(appointment);
             }

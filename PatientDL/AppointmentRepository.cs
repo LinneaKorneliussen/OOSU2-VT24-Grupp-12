@@ -68,8 +68,8 @@ namespace PatientDL
 
         #region Manage existing appointments Methods 
         public List<Appointment> GetAppointmentListPersonalNumber(Patient patient)
-        {
-            return unitOfWork.AppointmentRepository.GetAll().Where(appointment => appointment.Patient.PersonalNumber == patient.PersonalNumber).ToList();
+        { 
+            return unitOfWork.AppointmentRepository.GetAll().Where(appointment => appointment.Patient != null && appointment.Patient.PersonalNumber == patient.PersonalNumber).ToList();
         }
         public void RemoveAppointment(Appointment appointmentToRemove)
         {
