@@ -10,11 +10,14 @@ namespace PatientEntities
 {
     public class Staff
     {
-        public int StaffId { get; set; }
-        public string StaffName { get; set; }
-        public string OccupationalRole { get; set; }
+        public int StaffId { get; init; }
+        [Required]
+        public string StaffName { get; private set; }
+        [Required]
+        public string OccupationalRole { get; private set; }
+        [Required]
         public string PasswordHash { get; private set; }
-        public string Specialization { get; set; }
+        public string Specialization { get; private set; }
         public ICollection<Appointment> appointments { get; set; }
 
 

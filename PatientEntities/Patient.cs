@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,17 @@ namespace PatientEntities
 {
     public class Patient
     {
-        public int PatientId { get; set; }
+        public int PatientId { get; init; }
+        [Column("Personal number")]
+        //[Required]
+        public string PersonalNumber { get; private set; }
+        //[Required]
         public string Name { get; set; }
-        public string PersonalNumber { get; set; }
+        //[Required]
         public string Address { get; set; }
+        //[Required]
         public string Phonenumber { get; set; }
+        [Column("Email address")]
         public string EmailAddress { get; set; }
         public ICollection<Diagnosis> Diagnosis { get; set; }
         public ICollection<Prescription> Prescriptions { get; set; }
