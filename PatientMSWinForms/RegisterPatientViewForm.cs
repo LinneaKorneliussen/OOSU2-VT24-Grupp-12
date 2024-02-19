@@ -25,31 +25,6 @@ namespace PatientMSWinForms
         #region Register new patient clicks
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            //string name = txtName.Text;
-            //string personalNumber = txtSSN.Text;
-            //string address = txtAddress.Text;
-            //string phonenumber = txtPhone.Text;
-            //string emailAddress = txtMail.Text;
-
-            //if (!Regex.IsMatch(personalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
-            //{
-            //    MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
-            //    return;
-            //}
-            //if (string.IsNullOrWhiteSpace(name) ||
-            //string.IsNullOrWhiteSpace(personalNumber) ||
-            //string.IsNullOrWhiteSpace(address) ||
-            //string.IsNullOrWhiteSpace(phonenumber) ||
-            //string.IsNullOrWhiteSpace(emailAddress))
-            //{
-            //    MessageBox.Show("Please make sure all fields contain information before proceeding", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-
-            //patientController.CreateNewPatient(name, personalNumber, address, phonenumber, emailAddress);
-            //MessageBox.Show($"Patient registered successfully, See details below:\n Name: {name}\n SSN: {personalNumber}\n Address: {address}\n Phone: {phonenumber}\n Email: {emailAddress}");
-            //this.Hide();
-
             string name = txtName.Text;
             string personalNumber = txtSSN.Text;
             string address = txtAddress.Text;
@@ -62,11 +37,8 @@ namespace PatientMSWinForms
                 MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
                 return;
             }
-            if (string.IsNullOrWhiteSpace(name) ||
-                string.IsNullOrWhiteSpace(personalNumber) ||
-                string.IsNullOrWhiteSpace(address) ||
-                string.IsNullOrWhiteSpace(phonenumber) ||
-                string.IsNullOrWhiteSpace(emailAddress))
+            if (string.IsNullOrWhiteSpace(name) ||  string.IsNullOrWhiteSpace(personalNumber) || string.IsNullOrWhiteSpace(address) ||
+                string.IsNullOrWhiteSpace(phonenumber) || string.IsNullOrWhiteSpace(emailAddress))
             {
                 MessageBox.Show("Please make sure all fields contain information before proceeding", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
