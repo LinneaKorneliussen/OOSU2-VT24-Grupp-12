@@ -1,7 +1,9 @@
 {
   "ConnectionStrings": {
-    //"PatientMS": "Server=(localdb)\\mssqllocaldb;Database=PatientMS;Trusted_Connection=True;",
-    "PatientMS": "Server=sqlutb2-db.hb.se,56077;Database=oosu2412;User Id=oosu2412;Password=FQT406;TrustServerCertificate=True;"
+    //"PatientMS": "Server=(localdb)\\mssqllocaldb;Database=PatientMS;Trusted_Connection=True;", // Connection string for connecting to local database.
+    "PatientMS": "Server=sqlutb2-db.hb.se,56077;Database=oosu2412;User Id=oosu2412;Password=FQT406;TrustServerCertificate=True;" //Connection string configured to connect to an external SQL Server database. 
   }
+
+  //// The JSON file contains sensitive information, and shall be handled with caution.
 
 }
