@@ -10,6 +10,10 @@ namespace PatientBL
 {
     public class DiagnosisController
     {
+        /// <summary>
+        /// Controller class responsible for managing operations (Get patient by personalnumber and adding diagnosis) relating to diagnoses. 
+        /// </summary>
+        
         private DiagnosisRepository diagnosisRepository;
         public DiagnosisController()
         {

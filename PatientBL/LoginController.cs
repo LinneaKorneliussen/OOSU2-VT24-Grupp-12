@@ -10,6 +10,10 @@ namespace PatientBL
 {
     public class LoginController
     {
+        /// <summary>
+        /// Controller class responsible for user authentication and authorization.
+        /// </summary>
+
         private LogInRepository loginRepository;
 
         public LoginController()

@@ -10,6 +10,10 @@ namespace PatientBL
 {
     public class PrescriptionController
     {
+        /// <summary>
+        /// Controller class responsible for managing operations (Get patient by personalnumber and adding prescriptions) relating to prescriptions. 
+        /// </summary>
+       
         private PrescriptionRepository prescriptionRepository;
         public PrescriptionController()
         {
