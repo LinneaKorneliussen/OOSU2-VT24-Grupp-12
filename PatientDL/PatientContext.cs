@@ -13,6 +13,11 @@ namespace PatientDL
 {
     public class PatientContext : DbContext
     {
+        /// <summary>
+        /// Represents the database context for the system. The context provides access to the underlying data storage and manages the entity sets, 
+        /// including patients, diagnoses, prescriptions, staff, and appointments. It´s responsible for configuring the database connection and entity mappings.
+        /// </summary>
+
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Diagnosis> Diagnoses { get; set; }
         public DbSet<Prescription> Prescriptions { get; set; }  
