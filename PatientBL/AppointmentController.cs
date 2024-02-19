@@ -11,6 +11,12 @@ namespace PatientBL
 {
     public class AppointmentController
     {
+        /// <summary>
+        /// Controller class responsible for managing appointments and related operations.
+        /// This class provides methods for retrieving patient information, available doctors information, booking appointments,
+        /// managing existing appointments.  
+        /// </summary>
+
         private AppointmentRepository appointmentRepository;
         public AppointmentController()
         {
@@ -25,6 +31,7 @@ namespace PatientBL
         #endregion
 
         #region Book appointment Methods
+
         public void BookAppointment(Patient patient, DateTime dateAndTime, string reasonForVisit, Staff selectedDoctor)
         {
            appointmentRepository.BookAppointment(patient, dateAndTime, reasonForVisit, selectedDoctor);
