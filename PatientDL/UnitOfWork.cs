@@ -6,6 +6,11 @@ namespace PatientDL
 {
     public class UnitOfWork
     {
+        /// <summary>
+        /// Manages repositories for various entities within the application's data context, 
+        /// providing a centralized access point for data operations and ensuring transactional integrity.
+        /// </summary>
+    
         private static UnitOfWork instance;
         private PatientContext context;
 
@@ -15,6 +20,7 @@ namespace PatientDL
         public Repository<Prescription> PrescriptionRepository { get; private set; }
         public Repository<Staff> StaffRepository { get; private set; }
 
+        // Using singelton pattern to ensure only one instance.
         public static UnitOfWork GetInstance()
         {
             if (instance == null)

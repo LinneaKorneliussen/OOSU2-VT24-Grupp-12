@@ -9,6 +9,11 @@ namespace PatientDL
 {
     public class JournalRepository
     {
+        /// <summary>
+        /// This repository class serves as a bridge for accessing patient and appointment data 
+        /// within the application, with a focus on supporting journaling activities. 
+        /// </summary>
+
         private UnitOfWork unitOfWork;
         public JournalRepository()
         {

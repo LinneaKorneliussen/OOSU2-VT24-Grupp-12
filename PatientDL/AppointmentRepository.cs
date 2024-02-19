@@ -9,6 +9,13 @@ namespace PatientDL
 {
     public class AppointmentRepository
     {
+        /// <summary>
+        /// This repository class serves as the intermediary layer between the application's business logic 
+        /// and the data storage, facilitating operations pertaining to appointments and associated entities. 
+        /// It encapsulates data access logic, providing methods for retrieving patient information, booking 
+        /// appointments, managing existing appointments, and doctor availability.
+        /// </summary>
+       
         private UnitOfWork unitOfWork;
         public AppointmentRepository()
         {

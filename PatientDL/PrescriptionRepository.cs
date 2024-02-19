@@ -9,6 +9,11 @@ namespace PatientDL
 {
     public  class PrescriptionRepository
     {
+        /// <summary>
+        /// Facilitates patient data management and prescription record keeping within the application, 
+        /// offering essential methods for retrieval and addition of prescriptions.
+        /// </summary>
+
         private UnitOfWork unitOfWork;
         public PrescriptionRepository()
         {
