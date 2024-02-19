@@ -31,7 +31,6 @@ namespace PatientMSWinForms
             string phonenumber = txtPhone.Text;
             string emailAddress = txtMail.Text;
 
-            // Klientvalidering
             if (!Regex.IsMatch(personalNumber, @"^\d{4}-\d{2}-\d{2}-\d{4}$"))
             {
                 MessageBox.Show("Invalid personal number format. \nPlease enter the personal number (yyyy-mm-dd-xxxx).");
@@ -43,11 +42,8 @@ namespace PatientMSWinForms
                 MessageBox.Show("Please make sure all fields contain information before proceeding", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            // Servervalidering
             if (patientController.IsPersonalNumberUnique(personalNumber))
             {
-                // Skapa ny patient om personnumret är unikt
                 patientController.CreateNewPatient(name, personalNumber, address, phonenumber, emailAddress);
                 MessageBox.Show($"Patient registered successfully, See details below:\n Name: {name}\n SSN: {personalNumber}\n Address: {address}\n Phone: {phonenumber}\n Email: {emailAddress}");
                 this.Hide();
