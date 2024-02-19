@@ -1,6 +1,7 @@
 ﻿using PatientDL;
 using PatientEntities;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,11 @@ namespace PatientBL
 {
     public class JournalController
     {
+        /// <summary>
+        /// Returns a patient based on personalnumber
+        /// Fetches a list of appointments for a given patient from the journal repository and returns it
+        /// </summary>
+
         private JournalRepository journalRepository;
         public JournalController()
         {

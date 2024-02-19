@@ -11,7 +11,6 @@ namespace PatientDL
         internal PatientContext context;
         internal DbSet<T> dbSet;
 
-
         public Repository(PatientContext context)
         {
             this.context = context;
@@ -54,11 +53,20 @@ namespace PatientDL
         {
             return dbSet.FirstOrDefault(predicate);
         }
+
+        /// <summary>
+        /// Returns all entities of type T from the database
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<T> GetAll()
         {
             return dbSet;
         }
 
+        /// <summary>
+        /// Returns a queryable collection of entities of type T
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<T> Query() 
         {
             return dbSet;

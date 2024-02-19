@@ -10,6 +10,12 @@ namespace PatientBL
 {
     public class PatientController
     {
+        /// <summary>
+        /// Returns a patient based on personalnumber
+        /// Creates a new patient by invoking the CreateNewPatient method of the patientRepository
+        /// Updates the information of a patient with the provided parameters
+        /// </summary>
+
         private PatientRepository patientRepository;
         public PatientController()
         {

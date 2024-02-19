@@ -9,6 +9,9 @@ namespace PatientDL
 {
     public class LogInRepository
     {
+        /// <summary>
+        /// Validates a user's login credentials and returns the user object. Otherwise it sets LoggidIn to null and returns null
+        /// </summary>
         private UnitOfWork unitOfWork;
 
         public Staff LoggedIn

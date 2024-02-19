@@ -9,6 +9,11 @@ namespace PatientDL
 {
     public class PatientRepository
     {
+        /// <summary>
+        /// Retrieves a patient from the database based on personal number
+        /// Creates a new patient record with the provided information
+        /// Uppdates the information of a patient based on the provided choice. After uppdating it saves the changes to the database.
+        /// </summary>
         private UnitOfWork unitOfWork;
         public PatientRepository()
         {
