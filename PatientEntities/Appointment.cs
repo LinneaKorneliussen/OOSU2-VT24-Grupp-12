@@ -13,11 +13,11 @@ namespace PatientEntities
         [Column("Reason for visit")]
         public string ReasonForVisit { get; private set; }
         [Required]
-        public Staff Doctor {  get; private set; }
+        public Doctor Doctor {  get; private set; }
         [Required]
         public Patient Patient { get; private set; }
 
-        public Appointment(Patient patient, DateTime dateAndTime, string reason, Staff doctor)
+        public Appointment(Patient patient, DateTime dateAndTime, string reason, Doctor doctor)
         {
             Patient = patient;
             DateAndTime = dateAndTime;

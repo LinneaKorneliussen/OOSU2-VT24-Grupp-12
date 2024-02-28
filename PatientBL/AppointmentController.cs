@@ -32,14 +32,14 @@ namespace PatientBL
 
         #region Book appointment Methods
 
-        public void BookAppointment(Patient patient, DateTime dateAndTime, string reasonForVisit, Staff selectedDoctor)
+        public void BookAppointment(Patient patient, DateTime dateAndTime, string reasonForVisit, Doctor selectedDoctor)
         {
            appointmentRepository.BookAppointment(patient, dateAndTime, reasonForVisit, selectedDoctor);
         }
         #endregion
 
         #region Get doctors avilable Methods
-        public List<Staff> GetAllAvailableDoctors(DateTime appointmentDateTime)
+        public List<Doctor> GetAllAvailableDoctors(DateTime appointmentDateTime)
         {
             return appointmentRepository.GetAllAvailableDoctors(appointmentDateTime);
         }

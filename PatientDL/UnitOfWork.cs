@@ -19,6 +19,8 @@ namespace PatientDL
         public Repository<Patient> PatientRepository { get; private set; }
         public Repository<Prescription> PrescriptionRepository { get; private set; }
         public Repository<Staff> StaffRepository { get; private set; }
+        public Repository<Doctor> DoctorRepository { get; private set; }
+        public Repository<Nurse> NurseRepository { get; private set; }
 
         // Using singelton pattern to ensure only one instance.
         public static UnitOfWork GetInstance()
@@ -32,6 +34,8 @@ namespace PatientDL
                 instance.PatientRepository = new Repository<Patient>(instance.context);
                 instance.PrescriptionRepository = new Repository<Prescription>(instance.context);
                 instance.StaffRepository = new Repository<Staff>(instance.context);
+                instance.DoctorRepository = new Repository<Doctor> (instance.context);  
+                instance.NurseRepository = new Repository<Nurse> (instance.context);    
             }
             return instance;
         }

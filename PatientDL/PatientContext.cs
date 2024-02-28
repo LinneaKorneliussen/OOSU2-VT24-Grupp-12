@@ -22,8 +22,10 @@ namespace PatientDL
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Diagnosis> Diagnoses { get; set; }
         public DbSet<Prescription> Prescriptions { get; set; }  
-        public DbSet<Staff> Staff { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }    
+        public DbSet<Nurse> Nurses { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+      
 
         public PatientContext()
         {
@@ -43,6 +45,8 @@ namespace PatientDL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Patient>().HasIndex(p => p.PersonalNumber).IsUnique();
+            modelBuilder.Entity<Doctor>().ToTable("Doctors");
+            modelBuilder.Entity<Nurse>().ToTable("Nurses");
             base.OnModelCreating(modelBuilder);
         }
 
@@ -51,6 +55,15 @@ namespace PatientDL
         {
             ////Database.EnsureDeleted();
             //Database.EnsureCreated();
+
+            //Doctor s = new Doctor("Arizona Robbins", "Doctor Peds", "Heja", "General practitioner", 10);
+            //Doctors.Add(s);
+
+            //Doctor s2 = new Doctor("Derek Shepherd", "Doctor", "Iamderek", "Neurologist", 1);
+            //Doctors.Add(s2);
+
+            //Nurse n = new Nurse("Joe Jonas", "Anesthesia nurse", "Iamjoe", "General Nurse");
+            //Nurses.Add(n);
 
             //Patient p = new Patient("Lisa Svensson", "1994-05-18-6462", "St Patric 6", "070-2298675", "LisaSvensson@gmail.com");
             //Patients.Add(p);
@@ -95,47 +108,47 @@ namespace PatientDL
             //Prescription prescription4 = new Prescription(p4, "Pioglitazone", "100 mg", new DateTime(2024, 8, 6, 9, 30, 0));
             //Prescriptions.Add(prescription4);
 
-            //Staff s = new Staff("Derek Shepherd", "Doctor", "Iamderek", "Neurologist");
-            //Staff.Add(s);
+            //////Staff s = new Staff("Derek Shepherd", "Doctor", "Iamderek", "Neurologist");
+            //////Staff.Add(s);
 
-            //Staff s2 = new Staff("Arizona Robbins", "Doctor", "Iamarizona", "General practitioner");
-            //Staff.Add(s2);
+            //////Staff s2 = new Staff("Arizona Robbins", "Doctor", "Iamarizona", "General practitioner");
+            //////Staff.Add(s2);
 
-            //Staff s3 = new Staff("Meredith Grey", "Doctor", "Iammeredith", "General practitioner");
-            //Staff.Add(s3);
+            //////Staff s3 = new Staff("Meredith Grey", "Doctor", "Iammeredith", "General practitioner");
+            //////Staff.Add(s3);
 
-            //Staff s4 = new Staff("Christina Yang", "Doctor", "Iamchristina", "Medical specialists");
-            //Staff.Add(s4);
+            //////Staff s4 = new Staff("Christina Yang", "Doctor", "Iamchristina", "Medical specialists");
+            //////Staff.Add(s4);
 
-            //Staff s5 = new Staff("Mark Sloan", "Doctor", "Iammark", "Surgical specialists");
-            //Staff.Add(s5);
+            //////Staff s5 = new Staff("Mark Sloan", "Doctor", "Iammark", "Surgical specialists");
+            //////Staff.Add(s5);
 
-            //Staff s6 = new Staff("April Kepner", "Doctor", "Iamapril", "Endocrinologist");
-            //Staff.Add(s6);
+            //////Staff s6 = new Staff("April Kepner", "Doctor", "Iamapril", "Endocrinologist");
+            //////Staff.Add(s6);
 
-            //Staff s7 = new Staff("Joe Jonas", "Nurse", "Iamjoe", "General Nurse");
-            //Staff.Add(s7);
+            //////Staff s7 = new Staff("Joe Jonas", "Nurse", "Iamjoe", "General Nurse");
+            //////Staff.Add(s7);
 
-            //Staff s8 = new Staff("Julia Robert", "Nurse", "Iamjulia", "Oncology Nurse");
-            //Staff.Add(s8);
+            //////Staff s8 = new Staff("Julia Robert", "Nurse", "Iamjulia", "Oncology Nurse");
+            //////Staff.Add(s8);
 
-            //Staff s9 = new Staff("Samuel Smith", "Nurse", "Iamsamuel", "Pediatric Nurse");
-            //Staff.Add(s9);
+            //////Staff s9 = new Staff("Samuel Smith", "Nurse", "Iamsamuel", "Pediatric Nurse");
+            //////Staff.Add(s9);
 
             //Appointment a = new Appointment(p2, new DateTime(2024, 2, 9, 10, 30, 0), "Feeling ill, sore throat", s);
             //Appointments.Add(a);
 
-            //Appointment a2 = new Appointment(p3, new DateTime(2024, 2, 17, 10, 30, 0), "Stomach ache, tired", s2);
-            //Appointments.Add(a2);
+            ////Appointment a2 = new Appointment(p3, new DateTime(2024, 2, 17, 10, 30, 0), "Stomach ache, tired", d);
+            ////Appointments.Add(a2);
 
-            //Appointment a3 = new Appointment(p, new DateTime(2024, 2, 17, 10, 30, 0), "Blurred vision, wounds", s5);
-            //Appointments.Add(a3);
+            ////Appointment a3 = new Appointment(p, new DateTime(2024, 2, 17, 10, 30, 0), "Blurred vision, wounds", d);
+            ////Appointments.Add(a3);
 
-            //Appointment a4 = new Appointment(p6, new DateTime(2024, 2, 17, 10, 30, 0), "Headache, a chesty cough", s4);
-            //Appointments.Add(a4);
+            ////Appointment a4 = new Appointment(p6, new DateTime(2024, 2, 17, 10, 30, 0), "Headache, a chesty cough", s4);
+            ////Appointments.Add(a4);
 
-            //Appointment a5 = new Appointment(p4, new DateTime(2024, 2, 17, 10, 30, 0), "Chills or shivering attacks", s4);
-            //Appointments.Add(a5);
+            ////Appointment a5 = new Appointment(p4, new DateTime(2024, 2, 17, 10, 30, 0), "Chills or shivering attacks", s4);
+            ////Appointments.Add(a5);
 
             //SaveChanges();
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PatientEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,10 +50,17 @@ namespace PatientDL
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
+      
+         public T FirstOrDefault<T>(Func<T, bool> predicate) 
+        {
+            return dbSet.OfType<T>().FirstOrDefault(predicate);
+        }
+
         public T FirstOrDefault(Func<T, bool> predicate)
         {
             return dbSet.FirstOrDefault(predicate);
         }
+       
 
         /// <summary>
         /// Returns all entities of type T from the database

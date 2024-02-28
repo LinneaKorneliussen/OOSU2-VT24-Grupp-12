@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace PatientEntities
 {
-    public class Staff
+    public abstract class Staff
     {
+        [Key]
         public int StaffId { get; init; }
         [Required]
         public string StaffName { get; private set; }
@@ -18,7 +21,6 @@ namespace PatientEntities
         [Required]
         public string PasswordHash { get; private set; }
         public string Specialization { get; private set; }
-        public ICollection<Appointment> appointments { get; set; }
 
 
         public Staff(string staffName, string occupationalRole, string password, string specialization)

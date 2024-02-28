@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,16 +25,24 @@ namespace PatientDL
         {
             unitOfWork = UnitOfWork.GetInstance();
 
-            Staff VerifiedUser = unitOfWork.StaffRepository.FirstOrDefault(s => s.StaffId == staffId);
-
-            if (VerifiedUser != null && VerifiedUser.GetHashedPassword(password) == VerifiedUser.PasswordHash)
+            Doctor doctor = unitOfWork.DoctorRepository.FirstOrDefault(d => d.StaffId == staffId);
+            if (doctor != null && doctor.GetHashedPassword(password) == doctor.PasswordHash)
             {
-                LoggedIn = VerifiedUser;
-                return VerifiedUser;
+                LoggedIn = doctor;
+                return doctor;
+            }
+
+            Nurse nurse = unitOfWork.NurseRepository.FirstOrDefault(n => n.StaffId == staffId);
+            if (nurse != null && nurse.GetHashedPassword(password) == nurse.PasswordHash)
+            {
+                LoggedIn = nurse;
+                return nurse;
             }
 
             LoggedIn = null;
             return null;
+            
+
         }
         #endregion
     }

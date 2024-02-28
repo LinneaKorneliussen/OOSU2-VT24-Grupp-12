@@ -21,7 +21,7 @@ namespace PatientMSWinForms
     {
         private AppointmentController appointmentController;
         private Patient patient;
-        private List<Staff> allDoctors;
+        private List<Doctor> allDoctors;
         private DateTime appointmentDateTime;
 
         public BookAppointmentViewForm()
@@ -89,7 +89,7 @@ namespace PatientMSWinForms
                 MessageBox.Show("Please make sure all fields contain information before proceeding", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Staff selectedDoctor = allDoctors[listBox_Doctor.SelectedIndex];
+            Doctor selectedDoctor = allDoctors[listBox_Doctor.SelectedIndex];
 
             appointmentController.BookAppointment(patient, appointmentDateTime, reasonForVisit, selectedDoctor);
             MessageBox.Show("Appointment successfully booked.");
@@ -108,7 +108,7 @@ namespace PatientMSWinForms
         #endregion
 
         #region Appointment Methods
-        private void DisplayAvailableDoctors(List<Staff> availableDoctors)
+        private void DisplayAvailableDoctors(List<Doctor> availableDoctors)
         {
             listBox_Doctor.Items.Clear();
 

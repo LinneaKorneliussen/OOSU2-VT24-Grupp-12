@@ -30,7 +30,7 @@ namespace PatientDL
         #endregion
 
         #region Book appointment and get doctors Methods
-        public void BookAppointment(Patient patient, DateTime dateAndTime, string reasonForVisit, Staff selectedDoctor)
+        public void BookAppointment(Patient patient, DateTime dateAndTime, string reasonForVisit, Doctor selectedDoctor)
         {
             if (selectedDoctor != null)
             {
@@ -41,9 +41,9 @@ namespace PatientDL
             }
         }
 
-        public List<Staff> GetAllDoctors()
+        public List<Doctor> GetAllDoctors()
         {
-            return unitOfWork.StaffRepository.Find(s => s.OccupationalRole == "Doctor").ToList();
+            return unitOfWork.DoctorRepository.GetAll().ToList();
         }
 
         public List<Appointment> GetAppointmentsForDateTime(DateTime appointmentDateTime)
@@ -54,12 +54,12 @@ namespace PatientDL
             return appointments;
         }
 
-        public List<Staff> GetAllAvailableDoctors(DateTime appointmentDateTime)
+        public List<Doctor> GetAllAvailableDoctors(DateTime appointmentDateTime)
         {
-            List<Staff> allDoctors = GetAllDoctors();
+            List<Doctor> allDoctors = GetAllDoctors();
             List<Appointment> appointments = GetAppointmentsForDateTime(appointmentDateTime);
 
-            List<Staff> availableDoctors = allDoctors.Where(doctor =>
+            List<Doctor> availableDoctors = allDoctors.Where(doctor =>
                 !appointments.Any(appointment => appointment.Doctor.StaffId == doctor.StaffId)).ToList();
 
             return availableDoctors;
