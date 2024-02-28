@@ -45,6 +45,7 @@
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             sidebarTimer = new System.Windows.Forms.Timer(components);
             PictureBox_logo = new System.Windows.Forms.PictureBox();
+            lblText = new System.Windows.Forms.Label();
             FlowLayoutPanel_menu.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PictureBox_bar).BeginInit();
@@ -176,6 +177,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(lblText);
             panel1.Controls.Add(lblMenubar);
             panel1.Controls.Add(PictureBox_bar);
             panel1.Location = new System.Drawing.Point(3, 3);
@@ -186,10 +188,10 @@
             // lblMenubar
             // 
             lblMenubar.AutoSize = true;
-            lblMenubar.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblMenubar.Location = new System.Drawing.Point(73, 27);
+            lblMenubar.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblMenubar.Location = new System.Drawing.Point(73, 13);
             lblMenubar.Name = "lblMenubar";
-            lblMenubar.Size = new System.Drawing.Size(122, 33);
+            lblMenubar.Size = new System.Drawing.Size(101, 26);
             lblMenubar.TabIndex = 0;
             lblMenubar.Text = "Menu bar";
             // 
@@ -219,12 +221,22 @@
             // 
             PictureBox_logo.Image = (System.Drawing.Image)resources.GetObject("PictureBox_logo.Image");
             PictureBox_logo.Location = new System.Drawing.Point(370, 77);
-            PictureBox_logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            PictureBox_logo.Margin = new System.Windows.Forms.Padding(2);
             PictureBox_logo.Name = "PictureBox_logo";
             PictureBox_logo.Size = new System.Drawing.Size(500, 500);
             PictureBox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             PictureBox_logo.TabIndex = 10;
             PictureBox_logo.TabStop = false;
+            // 
+            // lblText
+            // 
+            lblText.AutoSize = true;
+            lblText.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblText.Location = new System.Drawing.Point(73, 39);
+            lblText.Name = "lblText";
+            lblText.Size = new System.Drawing.Size(76, 26);
+            lblText.TabIndex = 11;
+            lblText.Text = "Doctor";
             // 
             // MenuViewForm
             // 
@@ -263,5 +275,6 @@
         private System.Windows.Forms.PictureBox PictureBox_bar;
         private System.Windows.Forms.Timer sidebarTimer;
         private System.Windows.Forms.PictureBox PictureBox_logo;
+        private System.Windows.Forms.Label lblText;
     }
 }
