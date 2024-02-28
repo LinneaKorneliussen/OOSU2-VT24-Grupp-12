@@ -50,12 +50,6 @@ namespace PatientDL
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-      
-         public T FirstOrDefault<T>(Func<T, bool> predicate) 
-        {
-            return dbSet.OfType<T>().FirstOrDefault(predicate);
-        }
-
         public T FirstOrDefault(Func<T, bool> predicate)
         {
             return dbSet.FirstOrDefault(predicate);

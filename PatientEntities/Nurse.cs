@@ -11,12 +11,16 @@ namespace PatientEntities
     [Table("Nurses")]
     public class Nurse : Staff
     {
-        //[Key]
-        //public int NurseId { get; init; }
-        
-        public Nurse (string staffName, string occupationalRole, string password, string specialization)
-            : base(staffName, occupationalRole, password, specialization) {}
+        public override string OccupationalRole => "Nurse";
+        public Nurse (string staffName, string password, string specialization)
+            : base(staffName, password, specialization) {}
 
         public Nurse() { }
+
+        public override string GenerateUsername()
+        {
+            string username = $"{StaffId}{StaffName.Split(' ')[0].Substring(0, 1)}{StaffName.Split(' ')[1]}_Nur";
+            return username;
+        }
     }
 }

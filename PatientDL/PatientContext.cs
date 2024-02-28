@@ -47,23 +47,16 @@ namespace PatientDL
             modelBuilder.Entity<Patient>().HasIndex(p => p.PersonalNumber).IsUnique();
             modelBuilder.Entity<Doctor>().ToTable("Doctors");
             modelBuilder.Entity<Nurse>().ToTable("Nurses");
+
+
             base.OnModelCreating(modelBuilder);
         }
 
         #region Reset Seed Method
         public void resetSeed()
         {
-            ////Database.EnsureDeleted();
+            //////Database.EnsureDeleted();
             //Database.EnsureCreated();
-
-            //Doctor s = new Doctor("Arizona Robbins", "Doctor Peds", "Heja", "General practitioner", 10);
-            //Doctors.Add(s);
-
-            //Doctor s2 = new Doctor("Derek Shepherd", "Doctor", "Iamderek", "Neurologist", 1);
-            //Doctors.Add(s2);
-
-            //Nurse n = new Nurse("Joe Jonas", "Anesthesia nurse", "Iamjoe", "General Nurse");
-            //Nurses.Add(n);
 
             //Patient p = new Patient("Lisa Svensson", "1994-05-18-6462", "St Patric 6", "070-2298675", "LisaSvensson@gmail.com");
             //Patients.Add(p);
@@ -84,17 +77,17 @@ namespace PatientDL
             //Patients.Add(p6);
 
 
-            //Diagnosis d = new Diagnosis(p, "Allergy", "Steroid medication");
-            //Diagnoses.Add(d);
+            //Diagnosis diagnos = new Diagnosis(p, "Allergy", "Steroid medication");
+            //Diagnoses.Add(diagnos);
 
-            //Diagnosis d2 = new Diagnosis(p6, "Cold", "Nosespray and paracetamol");
-            //Diagnoses.Add(d2);
+            //Diagnosis diagnos1 = new Diagnosis(p6, "Cold", "Nosespray and paracetamol");
+            //Diagnoses.Add(diagnos1);
 
-            //Diagnosis d3 = new Diagnosis(p2, "Atopic Eczema", "Avoid triggers");
-            //Diagnoses.Add(d3);
+            //Diagnosis diagnos2 = new Diagnosis(p2, "Atopic Eczema", "Avoid triggers");
+            //Diagnoses.Add(diagnos2);
 
-            //Diagnosis d4 = new Diagnosis(p3, "Diabetes type 2", "Insulin treatment");
-            //Diagnoses.Add(d4);
+            //Diagnosis diagnos3 = new Diagnosis(p3, "Diabetes type 2", "Insulin treatment");
+            //Diagnoses.Add(diagnos3);
 
             //Prescription prescription = new Prescription(p, "Nasaleze Allergy Shield", "800 mg", new DateTime(2024, 4, 6, 10, 30, 0));
             //Prescriptions.Add(prescription);
@@ -108,47 +101,50 @@ namespace PatientDL
             //Prescription prescription4 = new Prescription(p4, "Pioglitazone", "100 mg", new DateTime(2024, 8, 6, 9, 30, 0));
             //Prescriptions.Add(prescription4);
 
-            //////Staff s = new Staff("Derek Shepherd", "Doctor", "Iamderek", "Neurologist");
-            //////Staff.Add(s);
+            //Doctor d = new Doctor("Derek Shepherd", "Iamderek", "Neurologist");
+            //Doctors.Add(d);
 
-            //////Staff s2 = new Staff("Arizona Robbins", "Doctor", "Iamarizona", "General practitioner");
-            //////Staff.Add(s2);
+            //Doctor d2 = new Doctor("Arizona Robbins", "Iamarizona", "General practitioner");
+            //Doctors.Add(d2);
 
-            //////Staff s3 = new Staff("Meredith Grey", "Doctor", "Iammeredith", "General practitioner");
-            //////Staff.Add(s3);
+            //Doctor d3 = new Doctor("Derek Shepherd", "Iamderek", "Neurologist");
+            //Doctors.Add(d3);
 
-            //////Staff s4 = new Staff("Christina Yang", "Doctor", "Iamchristina", "Medical specialists");
-            //////Staff.Add(s4);
+            //Doctor d4 = new Doctor("Meredith Grey", "Iammeredith", "General practitioner");
+            //Doctors.Add(d4);
 
-            //////Staff s5 = new Staff("Mark Sloan", "Doctor", "Iammark", "Surgical specialists");
-            //////Staff.Add(s5);
+            //Doctor d5 = new Doctor("Christina Yang", "Iamchristina", "Medical specialists");
+            //Doctors.Add(d5);
 
-            //////Staff s6 = new Staff("April Kepner", "Doctor", "Iamapril", "Endocrinologist");
-            //////Staff.Add(s6);
+            //Doctor d6 = new Doctor("Mark Sloan", "Iammark", "Surgical specialists");
+            //Doctors.Add(d6);
 
-            //////Staff s7 = new Staff("Joe Jonas", "Nurse", "Iamjoe", "General Nurse");
-            //////Staff.Add(s7);
+            //Doctor d7 = new Doctor("April Kepner", "Iamapril", "Endocrinologist");
+            //Doctors.Add(d7);
 
-            //////Staff s8 = new Staff("Julia Robert", "Nurse", "Iamjulia", "Oncology Nurse");
-            //////Staff.Add(s8);
+            //Nurse n1 = new Nurse("Joe Jonas", "Iamjoe", "General Nurse");
+            //Nurses.Add(n1);
 
-            //////Staff s9 = new Staff("Samuel Smith", "Nurse", "Iamsamuel", "Pediatric Nurse");
-            //////Staff.Add(s9);
+            //Nurse n2 = new Nurse("Julia Robert", "Iamjulia", "Oncology Nurse");
+            //Nurses.Add(n2);
 
-            //Appointment a = new Appointment(p2, new DateTime(2024, 2, 9, 10, 30, 0), "Feeling ill, sore throat", s);
+            //Nurse n3 = new Nurse("Samuel Smith", "Iamsamuel", "Pediatric Nurse");
+            //Nurses.Add(n3);
+
+            //Appointment a = new Appointment(p2, new DateTime(2024, 2, 9, 10, 30, 0), "Feeling ill, sore throat", d);
             //Appointments.Add(a);
 
-            ////Appointment a2 = new Appointment(p3, new DateTime(2024, 2, 17, 10, 30, 0), "Stomach ache, tired", d);
-            ////Appointments.Add(a2);
+            //Appointment a2 = new Appointment(p3, new DateTime(2024, 2, 17, 10, 30, 0), "Stomach ache, tired", d6);
+            //Appointments.Add(a2);
 
-            ////Appointment a3 = new Appointment(p, new DateTime(2024, 2, 17, 10, 30, 0), "Blurred vision, wounds", d);
-            ////Appointments.Add(a3);
+            //Appointment a3 = new Appointment(p, new DateTime(2024, 2, 17, 10, 30, 0), "Blurred vision, wounds", d3);
+            //Appointments.Add(a3);
 
-            ////Appointment a4 = new Appointment(p6, new DateTime(2024, 2, 17, 10, 30, 0), "Headache, a chesty cough", s4);
-            ////Appointments.Add(a4);
+            //Appointment a4 = new Appointment(p6, new DateTime(2024, 2, 17, 10, 30, 0), "Headache, a chesty cough", d4);
+            //Appointments.Add(a4);
 
-            ////Appointment a5 = new Appointment(p4, new DateTime(2024, 2, 17, 10, 30, 0), "Chills or shivering attacks", s4);
-            ////Appointments.Add(a5);
+            //Appointment a5 = new Appointment(p4, new DateTime(2024, 2, 17, 10, 30, 0), "Chills or shivering attacks", d7);
+            //Appointments.Add(a5);
 
             //SaveChanges();
 

@@ -17,16 +17,16 @@ namespace PatientEntities
         [Required]
         public string StaffName { get; private set; }
         [Required]
-        public string OccupationalRole { get; private set; }
+        public abstract string OccupationalRole { get; }
         [Required]
         public string PasswordHash { get; private set; }
         public string Specialization { get; private set; }
+        public abstract string GenerateUsername();
 
 
-        public Staff(string staffName, string occupationalRole, string password, string specialization)
+        public Staff(string staffName, string password, string specialization)
         {
             StaffName = staffName;
-            OccupationalRole = occupationalRole;
             Specialization = specialization;
             PasswordHash = HashFunction(password);
         }

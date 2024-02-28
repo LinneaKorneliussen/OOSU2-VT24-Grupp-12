@@ -26,40 +26,53 @@ namespace PatientMSWinForms
         #region Log in click
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            string staffIdInput = txtStaffID.Text;
+            string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            if (IsValidInteger(staffIdInput))
+            pictureLoading.Visible = true;
+
+            Staff user = loginController.AuthorizeUser(username, password);
+            if (user != null)
             {
-                int staffId = int.Parse(staffIdInput);
-                pictureLoading.Visible = true;
-
-                Staff user = loginController.AuthorizeUser(staffId, password);
-                if (user != null)
+                if (user is Doctor)
                 {
-                    MessageBox.Show($"You are logged in as Caregiver: {user.OccupationalRole} {user.StaffName}");
+                    Doctor doctor = (Doctor)user;
+                    MessageBox.Show($"You are logged in as Doctor: {doctor.StaffName}");
 
-                    MenuViewForm menu = new MenuViewForm();
-                    menu.Show();
-
-                    this.Hide();
+                    MenuViewForm doctorView = new MenuViewForm();
+                    doctorView.Show();
                 }
-                else
+                else if (user is Nurse)
                 {
-                    MessageBox.Show($"Failed to log in. Try again!");
+                    Nurse nurse = (Nurse)user;
+                    MessageBox.Show($"You are logged in as Nurse: {nurse.StaffName}");
+
+                    MenuNurseForm nurseView = new MenuNurseForm();
+                    nurseView.Show();
                 }
-                pictureLoading.Visible = false;
+
+                this.Hide();
+
             }
             else
             {
-                MessageBox.Show("Invalid Staff ID. Please enter a valid integer.");
+                MessageBox.Show($"Failed to log in. Try again!");
             }
+            pictureLoading.Visible = false;
+
+
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtStaffID.Clear();
-            txtPassword.Clear();    
+            txtUsername.Clear();
+            txtPassword.Clear();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
         #endregion
 
@@ -69,6 +82,5 @@ namespace PatientMSWinForms
             return int.TryParse(input, out _);
         }
         #endregion
-
     }
 }

@@ -57,8 +57,10 @@ namespace PatientMSWinForms
                 this.Left -= shakeDistance;
                 System.Threading.Thread.Sleep(20);
             }
+            this.Close();
+            LogInForm log = new LogInForm();
+            log.Show();
 
-            Environment.Exit(0);
         }
     }
 }

@@ -11,19 +11,22 @@ namespace PatientEntities
     [Table ("Doctors")]
     public class Doctor : Staff
     {
-        //[Key]
-        //public int DoctorId { get; init; }
-        public int YearsOfExperience {  get; set; }
-
+        public override string OccupationalRole => "Doctor";
         public ICollection<Appointment> appointments { get; set; }
 
-        public Doctor(string staffName, string occupationalRole, string password, string specialization, int yearsOfExperience)
-            : base(staffName, occupationalRole, password, specialization)
-        {
-            this.YearsOfExperience = yearsOfExperience;
-        }
-        public Doctor() { } 
 
+        public Doctor(string staffName, string password, string specialization)
+            : base(staffName, password, specialization)
+        {
+   
+        }
+        public Doctor() { }
+
+        public override string GenerateUsername()
+        {
+            string username = $"{StaffId}{StaffName.Split(' ')[0].Substring(0, 1)}{StaffName.Split(' ')[1]}_Doc";
+            return username;
+        }
     }
 
     

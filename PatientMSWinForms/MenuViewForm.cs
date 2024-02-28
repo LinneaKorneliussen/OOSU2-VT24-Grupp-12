@@ -77,7 +77,9 @@ namespace PatientMSWinForms
                 System.Threading.Thread.Sleep(20);
             }
 
-            Environment.Exit(0);
+            this.Close();
+            LogInForm log = new LogInForm();
+            log.Show();
         }
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
