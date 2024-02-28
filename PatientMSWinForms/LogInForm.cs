@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using PatientBL;
 using PatientEntities;
 
-
+// Grupp 12: Linnea Korneliussen, Celina Linnerblom, Beata Jacobsson, Clara Hansson
 namespace PatientMSWinForms
 {
     public partial class LogInForm : Form

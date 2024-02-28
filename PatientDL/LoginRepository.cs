@@ -25,18 +25,18 @@ namespace PatientDL
         {
             unitOfWork = UnitOfWork.GetInstance();
 
-            Doctor doctor = unitOfWork.DoctorRepository.FirstOrDefault(d => d.GenerateUsername() == username);
-            if (doctor != null && doctor.GetHashedPassword(password) == doctor.PasswordHash)
+            Doctor verifiedDoctor = unitOfWork.DoctorRepository.FirstOrDefault(d => d.GenerateUsername() == username);
+            if (verifiedDoctor != null && verifiedDoctor.GetHashedPassword(password) == verifiedDoctor.PasswordHash)
             {
-                LoggedIn = doctor;
-                return doctor;
+                LoggedIn = verifiedDoctor;
+                return verifiedDoctor;
             }
 
-            Nurse nurse = unitOfWork.NurseRepository.FirstOrDefault(n => n.GenerateUsername() == username);
-            if (nurse != null && nurse.GetHashedPassword(password) == nurse.PasswordHash)
+            Nurse verifiedNurse = unitOfWork.NurseRepository.FirstOrDefault(n => n.GenerateUsername() == username);
+            if (verifiedNurse != null && verifiedNurse.GetHashedPassword(password) == verifiedNurse.PasswordHash)
             {
-                LoggedIn = nurse;
-                return nurse;
+                LoggedIn = verifiedNurse;
+                return verifiedNurse;
             }
 
             LoggedIn = null;

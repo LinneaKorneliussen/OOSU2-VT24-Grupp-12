@@ -22,9 +22,9 @@ namespace PatientBL
         }
 
         #region Log in Method
-        public Staff AuthorizeUser(string staffId, string password)
+        public Staff AuthorizeUser(string username, string password)
         {
-            return loginRepository.AuthorizeUser(staffId, password);
+            return loginRepository.AuthorizeUser(username, password);
         }
         #endregion
     }
