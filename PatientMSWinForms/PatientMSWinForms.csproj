@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PatientBL\PatientBL.csproj" />
     <ProjectReference Include="..\PatientEntities\PatientEntities.csproj" />
   </ItemGroup>
