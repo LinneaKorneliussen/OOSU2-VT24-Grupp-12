@@ -1,4 +1,45 @@
----
+# Patient Management System
+
+## Projektöversikt
+
+Patient Management System (PMS) är en applikation utvecklad i **C#** med **.NET 5.0**. Den är designad för att hantera patientinformation och administrativa uppgifter inom sjukvården. Projektet bygger på en flerskiktsarkitektur med tydlig separation av ansvarsområden, vilket gör det skalbart, underhållbart och testbart.
+
+## Arkitektur
+
+### Backend
+
+- **Teknologi**: .NET 5.0
+- **Lager**:
+  - **Business Layer (PatientBL)**:
+    - Implementerar affärslogik och hanterar kommunikation mellan frontend och data layer.
+  - **Data Layer (PatientDL)**:
+    - Repository-mönster för att hantera databasinteraktioner.
+    - Använder Entity Framework Core för databaskommunikation.
+  - **Entities (PatientEntities)**:
+    - Domänmodeller som representerar applikationens data.
+
+### Frontend
+
+- **Teknologi**: Windows Forms (WinForms)
+- **Funktioner**:
+  - Användargränssnitt för att hantera patienter och deras ärenden.
+  - Implementerar logik för att kommunicera med backend.
+
+## Teknologistack
+
+- **Språk & Plattform**: C# (.NET 5.0), Windows Forms
+- **Designmönster**: Repository Pattern, Dependency Injection
+- **Databas**: Microsoft SQL Server med Entity Framework Core
+- **Bibliotek och Paket**:
+  - `Microsoft.EntityFrameworkCore.SqlServer` för databasåtkomst.
+  - `Microsoft.Extensions.Configuration.Json` för konfigurationshantering.
+
+## Projektstruktur
+
+- **PatientManagement**: WinForms-applikationen (frontend).
+- **PatientBL (Business Layer)**: Hanterar affärslogik och kommunikation mellan frontend och data layer.
+- **PatientEntities**: Domänmodeller för patientdata.
+- **PatientDL (Data Layer)**: Repository och databaslogik med Entity Framework Core.
 
 ## Team
 
